@@ -1,0 +1,80 @@
+spring:
+  application:
+    name: ecommerce-backend
+  
+  data:
+    mongodb:
+      uri: ${SPRING_DATA_MONGODB_URI:mongodb://localhost:27017/ecommerce}
+      auto-index-creation: true
+  
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    timeout: 2000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 2
+        max-wait: 1000
+  
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 446900832273-lta0elv014dtqu63m2e7h9v7vdvjnlbk.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+            redirect-uri: ${APP_URL:http://localhost:8080}/api/auth/oauth2/callback/google
+  
+  session:
+    store-type: redis
+    redis:
+      namespace: ecommerce:session
+      flush-mode: immediate
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,application/javascript,application/json
+    min-response-size: 1024
+
+jwt:
+  secret: ${JWT_SECRET:your_default_jwt_secret_key_for_development}
+  expiration: ${JWT_EXPIRATION:86400000}
+  refresh-token:
+    expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+
+app:
+  cors:
+    allowed-origins: ${FRONTEND_URL:http://localhost:3000}
+    allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+    allowed-headers: Authorization,Content-Type,X-Requested-With
+    exposed-headers: Authorization
+    allow-credentials: true
+    max-age: 3600
+  
+  security:
+    password-strength:
+      min-length: 8
+      require-uppercase: true
+      require-lowercase: true
+      require-digit: true
+      require-special: true
+    account-locking:
+      max-attempts: 5
+      lock-duration: 300
+
+logging:
+  level:
+    root: INFO
+    com.ecommerce: DEBUG
+    org.springframework.security: INFO
+    org.springframework.web: INFO
