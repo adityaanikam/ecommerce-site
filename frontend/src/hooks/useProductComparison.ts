@@ -195,7 +195,7 @@ export const useProductComparison = () => {
     if (comparisonProducts.length === 0) return [];
 
     const features = [
-      { name: 'Price', key: 'price', format: (value: any) => `$${value}` },
+      { name: 'Price', key: 'price', format: (value: any) => `$${value.toFixed(2)}` },
       { name: 'Rating', key: 'rating', format: (value: any) => value ? `${value}/5` : 'No rating' },
       { name: 'Reviews', key: 'reviewCount', format: (value: any) => value ? `${value} reviews` : 'No reviews' },
       { name: 'Brand', key: 'brand', format: (value: any) => value || 'N/A' },
@@ -322,7 +322,7 @@ export const comparisonUtils = {
     const { totalProducts, priceRange, ratingRange } = summary;
     
     let text = `Comparing ${totalProducts} products. `;
-    text += `Price range: $${priceRange.min} - $${priceRange.max}. `;
+    text += `Price range: $${priceRange.min.toFixed(2)} - $${priceRange.max.toFixed(2)}. `;
     text += `Rating range: ${ratingRange.min}/5 - ${ratingRange.max}/5.`;
     
     return text;

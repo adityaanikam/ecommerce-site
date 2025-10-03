@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { UserService } from '@/services/api';
+import { UserService } from '@/services/api/userService';
 import { queryKeys, invalidateQueries } from '@/lib/react-query';
 import { ApiError, getErrorMessage } from '@/lib/axios';
 

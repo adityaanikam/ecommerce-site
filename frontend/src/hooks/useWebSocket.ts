@@ -93,7 +93,7 @@ export const useWebSocket = (options: UseWebSocketOptions): UseWebSocketResult =
 
           onMessage?.(message);
         } catch (err) {
-          console.error('Failed to parse WebSocket message:', err);
+          console.error('Failed to parse WebSocket message:', err instanceof Error ? err.message : String(err));
         }
       };
 

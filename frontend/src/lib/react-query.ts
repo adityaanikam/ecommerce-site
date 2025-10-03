@@ -182,7 +182,7 @@ export const prefetchQueries = {
     await queryClient.prefetchQuery({
       queryKey: queryKeys.products.detail(id),
       queryFn: async () => {
-        const { ProductService } = await import('@/services/api');
+        const { ProductService } = await import('@/services/api/index');
         const response = await ProductService.getProductById(id);
         return response.data;
       },
@@ -195,7 +195,7 @@ export const prefetchQueries = {
     await queryClient.prefetchQuery({
       queryKey: queryKeys.users.profile,
       queryFn: async () => {
-        const { UserService } = await import('@/services/api');
+        const { UserService } = await import('@/services/api/index');
         const response = await UserService.getCurrentUser();
         return response.data;
       },
@@ -208,7 +208,7 @@ export const prefetchQueries = {
     await queryClient.prefetchQuery({
       queryKey: queryKeys.cart.current,
       queryFn: async () => {
-        const { CartService } = await import('@/services/api');
+        const { CartService } = await import('@/services/api/index');
         const response = await CartService.getCart();
         return response.data;
       },

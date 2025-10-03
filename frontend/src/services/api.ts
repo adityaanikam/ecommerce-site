@@ -48,7 +48,7 @@ api.interceptors.response.use(
     
     // Log errors
     if (import.meta.env.DEV) {
-      console.error(`❌ ${error.config?.method?.toUpperCase()} ${error.config?.url}`, error.response?.data);
+      console.error(`❌ ${error.config?.method?.toUpperCase()} ${error.config?.url}`, JSON.stringify(error.response?.data, null, 2));
     }
     
     // Handle 401 errors (token expired)

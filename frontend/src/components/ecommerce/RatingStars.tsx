@@ -1,124 +1,80 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, StarHalf } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
-export interface RatingStarsProps {
+interface RatingStarsProps {
   rating: number;
   maxRating?: number;
   size?: 'sm' | 'md' | 'lg';
-  showNumber?: boolean;
-  showCount?: boolean;
-  count?: number;
   interactive?: boolean;
-  onRatingChange?: (rating: number) => void;
+  onChange?: (rating: number) => void;
   className?: string;
 }
-
-const sizeClasses = {
-  sm: 'h-3 w-3',
-  md: 'h-4 w-4',
-  lg: 'h-5 w-5',
-};
-
-const textSizeClasses = {
-  sm: 'text-xs',
-  md: 'text-sm',
-  lg: 'text-base',
-};
 
 export const RatingStars: React.FC<RatingStarsProps> = ({
   rating,
   maxRating = 5,
   size = 'md',
-  showNumber = false,
-  showCount = false,
-  count,
   interactive = false,
-  onRatingChange,
+  onChange,
   className,
 }) => {
-  const [hoveredRating, setHoveredRating] = React.useState(0);
-  const [isHovering, setIsHovering] = React.useState(false);
+  const [hoverRating, setHoverRating] = React.useState<number | null>(null);
 
-  const displayRating = isHovering ? hoveredRating : rating;
-
-  const handleStarClick = (starRating: number) => {
-    if (interactive && onRatingChange) {
-      onRatingChange(starRating);
-    }
+  const sizes = {
+    sm: 'h-3 w-3',
+    md: 'h-4 w-4',
+    lg: 'h-5 w-5',
   };
 
-  const handleStarHover = (starRating: number) => {
-    if (interactive) {
-      setHoveredRating(starRating);
-      setIsHovering(true);
-    }
-  };
+  const renderStar = (index: number) => {
+    const value = index + 1;
+    const isHovered = interactive && hoverRating !== null && value <= hoverRating;
+    const isActive = (hoverRating !== null ? hoverRating : rating) >= value;
+    const isHalf = !isHovered && !isActive && rating > index && rating < value;
 
-  const handleMouseLeave = () => {
-    if (interactive) {
-      setIsHovering(false);
-      setHoveredRating(0);
-    }
+    return (
+      <button
+        key={index}
+        className={cn(
+          'focus:outline-none transition-colors',
+          interactive && 'cursor-pointer hover:scale-110 transition-transform',
+          !interactive && 'cursor-default'
+        )}
+        onClick={() => interactive && onChange?.(value)}
+        onMouseEnter={() => interactive && setHoverRating(value)}
+        onMouseLeave={() => interactive && setHoverRating(null)}
+        disabled={!interactive}
+      >
+        {isHalf ? (
+          <StarHalf
+            className={cn(
+              sizes[size],
+              'text-warning-500 fill-warning-500'
+            )}
+          />
+        ) : (
+          <Star
+            className={cn(
+              sizes[size],
+              isActive
+                ? 'text-warning-500 fill-warning-500'
+                : 'text-secondary-300 dark:text-secondary-600'
+            )}
+          />
+        )}
+      </button>
+    );
   };
 
   return (
-    <div className={cn('flex items-center space-x-1', className)}>
-      <div 
-        className="flex items-center"
-        onMouseLeave={handleMouseLeave}
-      >
-        {Array.from({ length: maxRating }, (_, index) => {
-          const starRating = index + 1;
-          const isFilled = starRating <= Math.floor(displayRating);
-          const isHalfFilled = starRating === Math.ceil(displayRating) && displayRating % 1 !== 0;
-
-          return (
-            <button
-              key={index}
-              type="button"
-              className={cn(
-                'transition-colors duration-150',
-                interactive && 'cursor-pointer hover:scale-110',
-                !interactive && 'cursor-default'
-              )}
-              onClick={() => handleStarClick(starRating)}
-              onMouseEnter={() => handleStarHover(starRating)}
-              disabled={!interactive}
-            >
-              <Star
-                className={cn(
-                  sizeClasses[size],
-                  isFilled && 'fill-yellow-400 text-yellow-400',
-                  isHalfFilled && 'fill-yellow-400/50 text-yellow-400',
-                  !isFilled && !isHalfFilled && 'text-secondary-300',
-                  interactive && 'hover:text-yellow-400'
-                )}
-              />
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Rating Number */}
-      {showNumber && (
-        <span className={cn(
-          'text-secondary-600 font-medium ml-1',
-          textSizeClasses[size]
-        )}>
-          {rating.toFixed(1)}
-        </span>
+    <div
+      className={cn(
+        'flex items-center gap-0.5',
+        className
       )}
-
-      {/* Review Count */}
-      {showCount && count !== undefined && (
-        <span className={cn(
-          'text-secondary-500 ml-1',
-          textSizeClasses[size]
-        )}>
-          ({count})
-        </span>
-      )}
+    >
+      {Array.from({ length: maxRating }, (_, i) => renderStar(i))}
     </div>
   );
 };

@@ -1,0 +1,142 @@
+/* Tailwind CSS Custom Radio Buttons for Dark Theme */
+
+/* Hide default radio input but keep it clickable */
+.radio-custom input[type="radio"] {
+  @apply absolute opacity-0 cursor-pointer w-5 h-5 z-10;
+}
+
+/* Custom radio button container */
+.radio-custom {
+  @apply relative inline-flex items-center cursor-pointer;
+}
+
+/* Outer circle */
+.radio-custom::before {
+  content: '';
+  @apply absolute left-0 top-1/2 -translate-y-1/2 w-5 h-5 bg-transparent border-2 border-gray-400 rounded-full transition-all duration-200 ease-in-out;
+}
+
+/* Inner circle */
+.radio-custom::after {
+  content: '';
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-transparent rounded-full transition-all duration-200 ease-in-out opacity-0;
+}
+
+/* Hover state */
+.radio-custom:hover::before {
+  @apply border-gray-500 shadow-sm;
+}
+
+/* Focus state */
+.radio-custom input[type="radio"]:focus + .radio-custom::before {
+  @apply ring-2 ring-blue-500/20 outline-none;
+}
+
+/* Checked state */
+.radio-custom input[type="radio"]:checked + .radio-custom::before {
+  @apply border-blue-500 bg-transparent;
+}
+
+.radio-custom input[type="radio"]:checked + .radio-custom::after {
+  @apply bg-blue-500 opacity-100 scale-100;
+}
+
+/* Dark theme adjustments */
+.dark .radio-custom::before {
+  @apply border-gray-500;
+}
+
+.dark .radio-custom:hover::before {
+  @apply border-gray-400 shadow-blue-500/10;
+}
+
+.dark .radio-custom input[type="radio"]:checked + .radio-custom::before {
+  @apply border-blue-400;
+}
+
+.dark .radio-custom input[type="radio"]:checked + .radio-custom::after {
+  @apply bg-blue-400;
+}
+
+/* Label styling */
+.radio-custom-label {
+  @apply ml-8 text-sm text-gray-700 dark:text-gray-300 transition-colors duration-200;
+}
+
+.radio-custom:hover .radio-custom-label {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+/* Disabled state */
+.radio-custom input[type="radio"]:disabled + .radio-custom::before {
+  @apply border-gray-300 opacity-50 cursor-not-allowed;
+}
+
+.radio-custom input[type="radio"]:disabled + .radio-custom::after {
+  @apply bg-transparent;
+}
+
+.radio-custom input[type="radio"]:disabled ~ .radio-custom-label {
+  @apply text-gray-400 cursor-not-allowed;
+}
+
+.dark .radio-custom input[type="radio"]:disabled + .radio-custom::before {
+  @apply border-gray-600;
+}
+
+.dark .radio-custom input[type="radio"]:disabled ~ .radio-custom-label {
+  @apply text-gray-500;
+}
+
+/* Size variants */
+.radio-custom-sm::before {
+  @apply w-4 h-4;
+}
+
+.radio-custom-sm::after {
+  @apply left-1 w-1.5 h-1.5;
+}
+
+.radio-custom-lg::before {
+  @apply w-6 h-6;
+}
+
+.radio-custom-lg::after {
+  @apply left-1.5 w-2.5 h-2.5;
+}
+
+/* Color variants */
+.radio-custom-primary input[type="radio"]:checked + .radio-custom::before {
+  @apply border-blue-500;
+}
+
+.radio-custom-primary input[type="radio"]:checked + .radio-custom::after {
+  @apply bg-blue-500;
+}
+
+.radio-custom-success input[type="radio"]:checked + .radio-custom::before {
+  @apply border-green-500;
+}
+
+.radio-custom-success input[type="radio"]:checked + .radio-custom::after {
+  @apply bg-green-500;
+}
+
+.radio-custom-warning input[type="radio"]:checked + .radio-custom::before {
+  @apply border-yellow-500;
+}
+
+.radio-custom-warning input[type="radio"]:checked + .radio-custom::after {
+  @apply bg-yellow-500;
+}
+
+/* Animation improvements */
+.radio-custom::before,
+.radio-custom::after {
+  @apply transition-all duration-200 ease-out;
+}
+
+/* Focus ring improvements */
+.radio-custom input[type="radio"]:focus-visible + .radio-custom::before {
+  @apply ring-2 ring-blue-500/30 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+}

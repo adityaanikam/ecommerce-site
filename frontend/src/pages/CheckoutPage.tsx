@@ -1,178 +1,275 @@
 import React from 'react';
-import { CreditCard, Truck, CheckCircle, ArrowRight, ArrowLeft, Lock } from 'lucide-react';
-import { Container, Button, Card, CardContent } from '@/components';
+import { useNavigate } from 'react-router-dom';
+import { ChevronLeft, CreditCard, Truck, MapPin } from 'lucide-react';
+import { Container, Button, Card, CardContent, Input, Tabs, TabsList, TabsTrigger, TabsContent } from '@/components';
+import { useCart } from '@/contexts/CartContext';
+import { Address } from '@/types/api';
 
 export const CheckoutPage: React.FC = () => {
-  const [currentStep, setCurrentStep] = React.useState(1);
+  const navigate = useNavigate();
+  const { state: cartState } = useCart();
+  const [shippingAddress, setShippingAddress] = React.useState<Address>({
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    country: '',
+  });
 
-  const steps = [
-    { id: 1, title: 'Shipping', icon: Truck },
-    { id: 2, title: 'Payment', icon: CreditCard },
-    { id: 3, title: 'Review', icon: CheckCircle }
-  ];
+  const subtotal = cartState.totalAmount;
+  const shipping = subtotal >= 50 ? 0 : 4.99;
+  const tax = subtotal * 0.1;
+  const total = subtotal + shipping + tax;
+
+  const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setShippingAddress(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle order submission
+    console.log('Order submitted:', {
+      items: cartState.items,
+      shippingAddress,
+      total,
+    });
+  };
+
+  if (cartState.items.length === 0) {
+    return (
+      <Container className="py-8">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
+          <Button onClick={() => navigate('/products')}>Continue Shopping</Button>
+        </div>
+      </Container>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-secondary-50 dark:bg-secondary-900">
       <Container className="py-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-secondary-900 dark:text-secondary-100 mb-2">
+        <Button
+          variant="ghost"
+          onClick={() => navigate(-1)}
+          className="mb-6"
+        >
+          <ChevronLeft className="h-4 w-4 mr-2" />
+          Back
+        </Button>
+
+        <h1 className="text-3xl font-bold text-secondary-900 dark:text-secondary-100 mb-8">
             Checkout
           </h1>
-          <p className="text-secondary-600 dark:text-secondary-400">
-            Complete your order securely
-          </p>
-        </div>
-
-        {/* Progress Steps */}
-        <div className="flex items-center justify-center mb-12">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            const isActive = currentStep === step.id;
-            const isCompleted = currentStep > step.id;
-            
-            return (
-              <div key={step.id} className="flex items-center">
-                <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
-                  isCompleted 
-                    ? 'bg-success-600 border-success-600 text-white' 
-                    : isActive 
-                      ? 'bg-primary-600 border-primary-600 text-white' 
-                      : 'bg-white dark:bg-secondary-800 border-secondary-300 dark:border-secondary-600 text-secondary-400'
-                }`}>
-                  {isCompleted ? (
-                    <CheckCircle className="h-5 w-5" />
-                  ) : (
-                    <Icon className="h-5 w-5" />
-                  )}
-                </div>
-                <span className={`ml-2 text-sm font-medium ${
-                  isActive ? 'text-primary-600' : 'text-secondary-500'
-                }`}>
-                  {step.title}
-                </span>
-                {index < steps.length - 1 && (
-                  <div className={`w-16 h-0.5 mx-4 ${
-                    isCompleted ? 'bg-success-600' : 'bg-secondary-300 dark:bg-secondary-600'
-                  }`} />
-                )}
-              </div>
-            );
-          })}
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
+            <div className="space-y-6">
+              {/* Shipping Address */}
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <MapPin className="h-5 w-5 text-primary-500" />
+                    <h2 className="text-xl font-semibold">Shipping Address</h2>
+                  </div>
+
+                  <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Input
+                      name="street"
+                      placeholder="Street Address"
+                      value={shippingAddress.street}
+                      onChange={handleAddressChange}
+                      className="md:col-span-2"
+                    />
+                    <Input
+                      name="city"
+                      placeholder="City"
+                      value={shippingAddress.city}
+                      onChange={handleAddressChange}
+                    />
+                    <Input
+                      name="state"
+                      placeholder="State"
+                      value={shippingAddress.state}
+                      onChange={handleAddressChange}
+                    />
+                    <Input
+                      name="zipCode"
+                      placeholder="ZIP Code"
+                      value={shippingAddress.zipCode}
+                      onChange={handleAddressChange}
+                    />
+                    <Input
+                      name="country"
+                      placeholder="Country"
+                      value={shippingAddress.country}
+                      onChange={handleAddressChange}
+                    />
+                  </form>
+                </CardContent>
+              </Card>
+
+              {/* Shipping Method */}
             <Card>
               <CardContent className="p-6">
-                {currentStep === 1 && (
-                  <div>
-                    <h2 className="text-xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
-                      Shipping Information
-                    </h2>
-                    <p className="text-secondary-600 dark:text-secondary-400 mb-6">
-                      Shipping form will be implemented here
-                    </p>
-                    <Button onClick={() => setCurrentStep(2)} size="lg">
-                      Continue to Payment
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
+                  <div className="flex items-center gap-3 mb-6">
+                    <Truck className="h-5 w-5 text-primary-500" />
+                    <h2 className="text-xl font-semibold">Shipping Method</h2>
                   </div>
-                )}
 
-                {currentStep === 2 && (
-                  <div>
-                    <h2 className="text-xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
-                      Payment Information
-                    </h2>
-                    <p className="text-secondary-600 dark:text-secondary-400 mb-6">
-                      Payment form will be implemented here
-                    </p>
-                    <div className="flex gap-4">
-                      <Button variant="outline" onClick={() => setCurrentStep(1)} size="lg">
-                        <ArrowLeft className="mr-2 h-5 w-5" />
-                        Back to Shipping
-                      </Button>
-                      <Button onClick={() => setCurrentStep(3)} size="lg">
-                        Review Order
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                    </div>
-                  </div>
-                )}
+                  <div className="space-y-4">
+                    <label className="flex items-center justify-between p-4 border border-secondary-200 dark:border-secondary-700 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
+                      <div className="flex items-center gap-3">
+                        <input
+                          type="radio"
+                          name="shipping"
+                          className="text-primary-600 focus:ring-primary-500"
+                          defaultChecked
+                        />
+                        <div>
+                          <p className="font-medium">Standard Shipping</p>
+                          <p className="text-sm text-secondary-500">3-5 business days</p>
+                        </div>
+                      </div>
+                      <span className="font-medium">
+                        {subtotal >= 50 ? 'Free' : '$4.99'}
+                      </span>
+                    </label>
 
-                {currentStep === 3 && (
+                    <label className="flex items-center justify-between p-4 border border-secondary-200 dark:border-secondary-700 rounded-lg cursor-pointer hover:border-primary-500 transition-colors">
+                      <div className="flex items-center gap-3">
+                        <input
+                          type="radio"
+                          name="shipping"
+                          className="text-primary-600 focus:ring-primary-500"
+                        />
                   <div>
-                    <h2 className="text-xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
-                      Review Your Order
-                    </h2>
-                    <p className="text-secondary-600 dark:text-secondary-400 mb-6">
-                      Order review will be implemented here
-                    </p>
-                    <div className="flex gap-4">
-                      <Button variant="outline" onClick={() => setCurrentStep(2)} size="lg">
-                        <ArrowLeft className="mr-2 h-5 w-5" />
-                        Back to Payment
-                      </Button>
-                      <Button size="lg">
-                        <Lock className="mr-2 h-5 w-5" />
-                        Place Order
-                      </Button>
+                          <p className="font-medium">Express Shipping</p>
+                          <p className="text-sm text-secondary-500">1-2 business days</p>
+                        </div>
                     </div>
+                      <span className="font-medium">$14.99</span>
+                    </label>
                   </div>
-                )}
+                </CardContent>
+              </Card>
+
+              {/* Payment Method */}
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <CreditCard className="h-5 w-5 text-primary-500" />
+                    <h2 className="text-xl font-semibold">Payment Method</h2>
+                  </div>
+
+                  <Tabs defaultValue="card">
+                    <TabsList>
+                      <TabsTrigger value="card">Credit Card</TabsTrigger>
+                      <TabsTrigger value="paypal">PayPal</TabsTrigger>
+                    </TabsList>
+
+                    <TabsContent value="card" className="mt-4">
+                      <form className="space-y-4">
+                        <Input placeholder="Card Number" />
+                        <div className="grid grid-cols-3 gap-4">
+                          <Input placeholder="MM/YY" className="col-span-1" />
+                          <Input placeholder="CVC" className="col-span-1" />
+                        </div>
+                        <Input placeholder="Name on Card" />
+                      </form>
+                    </TabsContent>
+
+                    <TabsContent value="paypal" className="mt-4">
+                      <div className="text-center py-8">
+                        <p className="text-secondary-600 dark:text-secondary-400">
+                          You will be redirected to PayPal to complete your payment.
+                        </p>
+                      </div>
+                    </TabsContent>
+                  </Tabs>
               </CardContent>
             </Card>
+            </div>
           </div>
 
-          {/* Order Summary Sidebar */}
+          {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-secondary-800 rounded-lg shadow-sm p-6 sticky top-8">
-              <h2 className="text-xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
-                Order Summary
-              </h2>
+            <Card className="sticky top-8">
+              <CardContent className="p-6">
+                <h2 className="text-xl font-semibold mb-6">Order Summary</h2>
 
+                {/* Items */}
               <div className="space-y-4 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-secondary-600 dark:text-secondary-400">Subtotal</span>
-                  <span className="font-medium text-secondary-900 dark:text-secondary-100">
-                    $449.98
-                  </span>
+                  {cartState.items.map((item) => (
+                    <div key={item.productId} className="flex items-center gap-4">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-16 h-16 rounded-lg object-cover"
+                      />
+                      <div className="flex-1">
+                        <h3 className="font-medium text-secondary-900 dark:text-secondary-100">
+                          {item.name}
+                        </h3>
+                        <p className="text-sm text-secondary-500">
+                          Qty: {item.quantity}
+                        </p>
+                      </div>
+                      <p className="font-medium">
+                        ${(item.price * item.quantity).toFixed(2)}
+                      </p>
+                </div>
+                  ))}
                 </div>
                 
+                {/* Summary */}
+                <div className="space-y-3 py-6 border-y border-secondary-200 dark:border-secondary-700">
                 <div className="flex justify-between">
-                  <span className="text-secondary-600 dark:text-secondary-400">Shipping</span>
-                  <span className="font-medium text-success-600">FREE</span>
+                    <span className="text-secondary-600 dark:text-secondary-400">Subtotal</span>
+                    <span className="font-medium">${subtotal.toFixed(2)}</span>
                 </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-secondary-600 dark:text-secondary-400">Tax</span>
-                  <span className="font-medium text-secondary-900 dark:text-secondary-100">
-                    $36.00
-                  </span>
-                </div>
-                
-                <div className="border-t border-secondary-200 dark:border-secondary-700 pt-4">
                   <div className="flex justify-between">
-                    <span className="text-lg font-semibold text-secondary-900 dark:text-secondary-100">
-                      Total
-                    </span>
-                    <span className="text-lg font-semibold text-secondary-900 dark:text-secondary-100">
-                      $485.98
+                    <span className="text-secondary-600 dark:text-secondary-400">Shipping</span>
+                    <span className="font-medium">
+                      {shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
+                  <div className="flex justify-between">
+                    <span className="text-secondary-600 dark:text-secondary-400">Tax</span>
+                    <span className="font-medium">${tax.toFixed(2)}</span>
+                  </div>
                 </div>
+
+                <div className="flex justify-between items-center mb-6">
+                  <span className="text-lg font-semibold">Total</span>
+                  <span className="text-2xl font-bold text-primary-600">
+                    ${total.toFixed(2)}
+                  </span>
               </div>
 
-              <div className="text-center text-sm text-secondary-600 dark:text-secondary-400">
-                <Lock className="h-4 w-4 inline mr-1" />
-                Secure checkout with SSL encryption
-              </div>
-            </div>
+                <Button
+                  size="lg"
+                  className="w-full"
+                  onClick={handleSubmit}
+                >
+                  Place Order
+                </Button>
+
+                <p className="text-xs text-center text-secondary-500 mt-4">
+                  By placing your order, you agree to our Terms of Service and Privacy Policy
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </Container>
     </div>
   );
 };
+
+export default CheckoutPage;

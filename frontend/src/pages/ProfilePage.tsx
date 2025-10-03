@@ -36,3 +36,5 @@ export const ProfilePage: React.FC = () => {
     </AuthGuard>
   );
 };
+
+export default ProfilePage;

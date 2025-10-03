@@ -5,3 +5,5 @@ export const LoginPage: React.FC = () => {
   // Redirect to the unified auth page
   return <Navigate to="/auth?mode=login" replace />;
 };
+
+export default LoginPage;

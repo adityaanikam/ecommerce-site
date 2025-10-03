@@ -42,7 +42,7 @@ export const SessionTimeout: React.FC<SessionTimeoutProps> = ({
       // Close warning modal
       setShowWarningModal(false);
     } catch (error) {
-      console.error('Failed to extend session:', error);
+      console.error('Failed to extend session:', error instanceof Error ? error.message : String(error));
       showWarning('Failed to extend session. Please log in again.');
     } finally {
       setIsExtending(false);
@@ -55,7 +55,7 @@ export const SessionTimeout: React.FC<SessionTimeoutProps> = ({
       await logout();
       onTimeout?.();
     } catch (error) {
-      console.error('Logout failed:', error);
+      console.error('Logout failed:', error instanceof Error ? error.message : String(error));
     }
   }, [logout, onTimeout]);
 

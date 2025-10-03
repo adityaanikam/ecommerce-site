@@ -10,6 +10,7 @@ export { Dropdown } from './Dropdown';
 export { Avatar } from './Avatar';
 export { Spinner, DotsSpinner, PulseSpinner } from './Spinner';
 export { Skeleton, SkeletonText, SkeletonAvatar, SkeletonButton, SkeletonCard } from './Skeleton';
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './Tabs';
 
 // Re-export types
 export type { ButtonProps } from './Button';

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Debug Test - Blue Dots & Filter Chips</title>
+    <style>
+        /* Import the custom radio styles */
+        @import url('./custom-radio.css');
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .count-badge {
+            background-color: #4b5563;
+            color: #d1d5db;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+        
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #4b5563;
+        }
+        
+        .filter-chip {
+            background-color: #4b5563;
+            color: #d1d5db;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .filter-chip button {
+            background: none;
+            border: none;
+            color: #d1d5db;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 0.25rem;
+        }
+        
+        .filter-chip button:hover {
+            color: #ef4444;
+        }
+        
+        .clear-all {
+            color: #60a5fa;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+        
+        .clear-all:hover {
+            color: #93c5fd;
+        }
+        
+        .test-info {
+            background-color: #059669;
+            color: #d1fae5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .results {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .space-y-3 > * + * {
+            margin-top: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="test-info">
+            <h3>🔧 Category Debug Test</h3>
+            <p>Test blue dots and filter chips for categories</p>
+            <p>Click on categories and check if blue dots appear and filter chips show below search</p>
+        </div>
+        
+        <h1 style="margin-bottom: 2rem; color: #f9fafb;">Category Debug Test</h1>
+        
+        <!-- Search Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Search Products</h3>
+            <input type="text" placeholder="Search products..." style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #4b5563; background-color: #1f2937; color: #f9fafb;">
+            
+            <!-- Active Filters (This should show selected categories) -->
+            <div class="active-filters" id="activeFilters" style="display: none;">
+                <div class="filter-chip" id="categoryChip" style="display: none;">
+                    <span id="categoryName"></span>
+                    <button onclick="removeCategory()">×</button>
+                </div>
+                <div class="filter-chip" id="priceChip" style="display: none;">
+                    <span id="priceName"></span>
+                    <button onclick="removePrice()">×</button>
+                </div>
+                <button class="clear-all" onclick="clearAllFilters()">Clear All</button>
+            </div>
+        </div>
+        
+        <!-- Categories Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Categories</h3>
+            <div class="space-y-3">
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="electronics" name="category" value="electronics">
+                        <label for="electronics" class="custom-radio-label">Electronics</label>
+                    </div>
+                    <span class="count-badge">50</span>
+                </div>
+                
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="fashion" name="category" value="fashion">
+                        <label for="fashion" class="custom-radio-label">Fashion</label>
+                    </div>
+                    <span class="count-badge">30</span>
+                </div>
+                
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="sports" name="category" value="sports">
+                        <label for="sports" class="custom-radio-label">Sports</label>
+                    </div>
+                    <span class="count-badge">24</span>
+                </div>
+                
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="home-garden" name="category" value="home-garden">
+                        <label for="home-garden" class="custom-radio-label">Home & Garden</label>
+                    </div>
+                    <span class="count-badge">24</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Price Range Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Price Range</h3>
+            <div class="space-y-3">
+                <div class="custom-radio">
+                    <input type="radio" id="under-50" name="priceRange" value="under-50">
+                    <label for="under-50" class="custom-radio-label">Under $50</label>
+                </div>
+                
+                <div class="custom-radio">
+                    <input type="radio" id="50-100" name="priceRange" value="50-100">
+                    <label for="50-100" class="custom-radio-label">$50 - $100</label>
+                </div>
+                
+                <div class="custom-radio">
+                    <input type="radio" id="100-200" name="priceRange" value="100-200">
+                    <label for="100-200" class="custom-radio-label">$100 - $200</label>
+                </div>
+                
+                <div class="custom-radio">
+                    <input type="radio" id="200-500" name="priceRange" value="200-500">
+                    <label for="200-500" class="custom-radio-label">$200 - $500</label>
+                </div>
+                
+                <div class="custom-radio">
+                    <input type="radio" id="over-500" name="priceRange" value="over-500">
+                    <label for="over-500" class="custom-radio-label">Over $500</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results -->
+        <div class="results">
+            <h3 style="margin-bottom: 1rem; color: #f9fafb;">Debug Instructions:</h3>
+            <ul style="color: #d1d5db; line-height: 1.6;">
+                <li>1. <strong>Click on "Sports"</strong> - Should show blue dot + "Sports" filter chip</li>
+                <li>2. <strong>Click on "Electronics"</strong> - Should show blue dot + "Electronics" filter chip</li>
+                <li>3. <strong>Click on "Under $50"</strong> - Should show blue dot + "Price: Under $50" filter chip</li>
+                <li>4. <strong>Check console</strong> for any JavaScript errors</li>
+                <li>5. <strong>Filter chips</strong> should appear below search bar</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        let selectedCategory = '';
+        let selectedPrice = '';
+        
+        // Add interactivity
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                console.log(`Selected: ${this.name} = ${this.value}`);
+                
+                if (this.name === 'category') {
+                    selectedCategory = this.value;
+                    updateCategoryChip();
+                } else if (this.name === 'priceRange') {
+                    selectedPrice = this.value;
+                    updatePriceChip();
+                }
+                
+                updateActiveFilters();
+            });
+        });
+        
+        function updateCategoryChip() {
+            const categoryChip = document.getElementById('categoryChip');
+            const categoryName = document.getElementById('categoryName');
+            
+            if (selectedCategory) {
+                categoryName.textContent = selectedCategory;
+                categoryChip.style.display = 'flex';
+            } else {
+                categoryChip.style.display = 'none';
+            }
+        }
+        
+        function updatePriceChip() {
+            const priceChip = document.getElementById('priceChip');
+            const priceName = document.getElementById('priceName');
+            
+            if (selectedPrice) {
+                priceName.textContent = `Price: ${selectedPrice}`;
+                priceChip.style.display = 'flex';
+            } else {
+                priceChip.style.display = 'none';
+            }
+        }
+        
+        function updateActiveFilters() {
+            const activeFilters = document.getElementById('activeFilters');
+            const hasFilters = selectedCategory || selectedPrice;
+            
+            if (hasFilters) {
+                activeFilters.style.display = 'flex';
+            } else {
+                activeFilters.style.display = 'none';
+            }
+        }
+        
+        function removeCategory() {
+            selectedCategory = '';
+            document.querySelector('input[name="category"]:checked').checked = false;
+            updateCategoryChip();
+            updateActiveFilters();
+        }
+        
+        function removePrice() {
+            selectedPrice = '';
+            document.querySelector('input[name="priceRange"]:checked').checked = false;
+            updatePriceChip();
+            updateActiveFilters();
+        }
+        
+        function clearAllFilters() {
+            selectedCategory = '';
+            selectedPrice = '';
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.checked = false;
+            });
+            updateCategoryChip();
+            updatePriceChip();
+            updateActiveFilters();
+        }
+    </script>
+</body>
+</html>

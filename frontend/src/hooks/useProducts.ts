@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
-import { ProductService, ProductSearchParams, ProductFilters, ProductSortOptions } from '@/services/api';
+import { ProductService } from '@/services/api/index';
+import type { ProductSearchParams, ProductFilters, ProductSortOptions } from '@/services/api/productService';
 import { ProductDto, CategoryDto, ReviewDto } from '@/types/api';
 import { queryKeys, invalidateQueries } from '@/lib/react-query';
 import { ApiError, getErrorMessage } from '@/lib/axios';

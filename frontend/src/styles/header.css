@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header {
+    @apply sticky top-0 z-40 w-full transition-all duration-300;
+  }
+
+  .header-scrolled {
+    @apply bg-white/80 backdrop-blur-md shadow-sm;
+    @apply dark:bg-secondary-900/80;
+    border-bottom: 1px solid rgba(var(--color-border), 0.1);
+  }
+
+  .header-default {
+    @apply bg-white dark:bg-secondary-900;
+  }
+
+  /* Search Input Dark Mode */
+  .search-input {
+    @apply pl-10 w-full;
+    @apply bg-white dark:bg-secondary-800;
+    @apply border-secondary-200 dark:border-secondary-700;
+    @apply text-secondary-900 dark:text-secondary-100;
+    @apply placeholder-secondary-400 dark:placeholder-secondary-500;
+    @apply focus:ring-primary-500 dark:focus:ring-primary-400;
+    @apply focus:border-primary-500 dark:focus:border-primary-400;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+    @apply text-secondary-600 dark:text-secondary-400;
+    @apply hover:text-secondary-900 dark:hover:text-secondary-100;
+    @apply transition-colors;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    @apply border-t border-secondary-200 dark:border-secondary-700;
+    @apply bg-white dark:bg-secondary-900;
+  }
+
+  /* Action Buttons */
+  .action-button {
+    @apply text-secondary-600 dark:text-secondary-400;
+    @apply hover:text-secondary-900 dark:hover:text-secondary-100;
+    @apply bg-transparent dark:bg-transparent;
+    @apply hover:bg-secondary-100 dark:hover:bg-secondary-800;
+  }
+
+  /* Logo */
+  .logo {
+    @apply text-xl font-bold;
+    @apply text-primary-600 dark:text-primary-400;
+    @apply transition-transform duration-300;
+  }
+}

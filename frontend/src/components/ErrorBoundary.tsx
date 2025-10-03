@@ -41,7 +41,11 @@ export class ErrorBoundary extends Component<Props, State> {
 
     // Log error to console in development
     if (import.meta.env.DEV) {
-      console.error('ErrorBoundary caught an error:', error, errorInfo);
+      console.error('ErrorBoundary caught an error:', error.message);
+      console.error('Error stack:', error.stack);
+      if (errorInfo) {
+        console.error('Component stack:', errorInfo.componentStack);
+      }
     }
 
     // Call custom error handler if provided
@@ -152,7 +156,11 @@ export const useErrorHandler = () => {
   const handleError = React.useCallback((error: Error, errorInfo?: any) => {
     // Log error to console in development
     if (import.meta.env.DEV) {
-      console.error('Error caught by useErrorHandler:', error, errorInfo);
+      console.error('Error caught by useErrorHandler:', error.message);
+      console.error('Error stack:', error.stack);
+      if (errorInfo) {
+        console.error('Error info:', JSON.stringify(errorInfo, null, 2));
+      }
     }
 
     // Log error to external service in production

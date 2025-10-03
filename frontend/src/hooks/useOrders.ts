@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
-import { OrderService, CreateOrderRequest, OrderFilters } from '@/services/api';
+import { OrderService } from '@/services/api/index';
+import type { CreateOrderRequest, OrderFilters } from '@/services/api/orderService';
 import { OrderDto } from '@/types/api';
 import { queryKeys, invalidateQueries } from '@/lib/react-query';
 import { ApiError, getErrorMessage } from '@/lib/axios';

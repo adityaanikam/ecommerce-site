@@ -183,7 +183,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       await authService.logout();
     } catch (error) {
       // Continue with logout even if API call fails
-      console.error('Logout API call failed:', error);
+      console.error('Logout API call failed:', error instanceof Error ? error.message : String(error));
     } finally {
       // Clear local storage and state
       localStorage.removeItem('token');

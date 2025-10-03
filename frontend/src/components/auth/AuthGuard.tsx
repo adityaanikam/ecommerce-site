@@ -36,7 +36,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
         
         setIsChecking(false);
       } catch (error) {
-        console.error('Auth check failed:', error);
+        console.error('Auth check failed:', error instanceof Error ? error.message : String(error));
         if (requireAuth) {
           window.location.href = fallbackPath;
         }

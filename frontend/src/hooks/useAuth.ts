@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { AuthService, LoginRequest, RegisterRequest, ChangePasswordRequest } from '@/services/api';
+import { AuthService, LoginRequest, RegisterRequest, ChangePasswordRequest } from '@/services/api/index';
 import { UserDto } from '@/types/api';
 import { queryKeys, invalidateQueries } from '@/lib/react-query';
 import { ApiError, getErrorMessage } from '@/lib/axios';

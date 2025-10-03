@@ -47,7 +47,7 @@ class TokenManager {
       // Set session timeout (15 minutes of inactivity)
       this.setSessionTimeout();
     } catch (error) {
-      console.error('Failed to store tokens:', error);
+      console.error('Failed to store tokens:', error instanceof Error ? error.message : String(error));
     }
   }
 
@@ -246,7 +246,7 @@ class TokenManager {
       this.setTokens(newTokenData);
       return true;
     } catch (error) {
-      console.error('Token refresh failed:', error);
+      console.error('Token refresh failed:', error instanceof Error ? error.message : String(error));
       this.clearTokens();
       return false;
     }

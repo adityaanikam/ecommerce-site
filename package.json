@@ -1,0 +1,21 @@
+{
+  "name": "product-image-mapper",
+  "version": "1.0.0",
+  "description": "Script to map local product images to MongoDB database",
+  "main": "update-product-images.js",
+  "scripts": {
+    "start": "node update-product-images.js",
+    "test": "node update-product-images.js --dry-run"
+  },
+  "dependencies": {
+    "mongodb": "^6.20.0"
+  },
+  "keywords": [
+    "mongodb",
+    "ecommerce",
+    "image-mapping",
+    "product-management"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

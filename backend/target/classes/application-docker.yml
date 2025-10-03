@@ -9,7 +9,8 @@ spring:
   
   data:
     mongodb:
-      uri: ${SPRING_DATA_MONGODB_URI:mongodb://admin:password123@mongodb:27017/ecommerce?authSource=admin}
+      uri: ${SPRING_DATA_MONGODB_URI}
+      database: ${SPRING_DATA_MONGODB_DATABASE}
       auto-index-creation: true
   
   data:

@@ -1,367 +1,244 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Heart, ShoppingCart, Eye, Star } from 'lucide-react';
-import { Card, CardContent, Badge, Button } from '@/components/ui';
+import { motion } from 'framer-motion';
+import { Heart, Eye, ShoppingCart, Plus, Minus } from 'lucide-react';
+import { Button, Card, CardContent, Badge } from '@/components';
+import { Product } from '@/types/api';
 import { cn } from '@/utils/cn';
-import { Product } from '@/types';
+import { AddToCartAnimation } from './AddToCartAnimation';
 
-export interface ProductCardProps {
+interface ProductCardProps {
   product: Product;
-  onAddToCart?: (productId: string) => void;
-  onAddToWishlist?: (productId: string) => void;
-  onQuickView?: (productId: string) => void;
-  onViewDetails?: (productId: string) => void;
+  variant?: 'default' | 'compact';
   className?: string;
-  showActions?: boolean;
-  variant?: 'default' | 'compact' | 'detailed';
-  isLoading?: boolean;
+  onAddToCart?: (id: string, quantity: number) => void;
+  onAddToWishlist?: (id: string) => void;
+  onQuickView?: (id: string) => void;
+  onViewDetails?: (id: string) => void;
+  isInWishlist?: (id: string) => boolean;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   product,
+  variant = 'default',
+  className,
   onAddToCart,
   onAddToWishlist,
   onQuickView,
   onViewDetails,
-  className,
-  showActions = true,
-  variant = 'default',
-  isLoading = false,
+  isInWishlist,
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
-  const [imageError, setImageError] = React.useState(false);
+  const [quantity, setQuantity] = React.useState(1);
+  const [isAddingToCart, setIsAddingToCart] = React.useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
-  const hasDiscount = product.discountPrice && product.discountPrice < product.price;
-  const discountPercentage = hasDiscount 
+  const handleQuantityChange = (delta: number) => {
+    const newQuantity = Math.max(1, Math.min(quantity + delta, product.stock));
+    setQuantity(newQuantity);
+  };
+
+  const handleAddToCart = () => {
+    if (onAddToCart) {
+      setIsAddingToCart(true);
+      onAddToCart(product.id, quantity);
+    }
+  };
+
+  const handleAnimationComplete = () => {
+    setIsAddingToCart(false);
+  };
+
+  // Auto-rotate product images on hover
+  React.useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isHovered && product.images.length > 1) {
+      interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
+      }, 2000);
+    }
+    return () => clearInterval(interval);
+  }, [isHovered, product.images.length]);
+
+  const hasDiscount = product.discountPrice !== undefined;
+  const discountPercentage = hasDiscount
     ? Math.round(((product.price - product.discountPrice!) / product.price) * 100)
     : 0;
 
-  // Normalize rating fields to support different shapes used in tests
-  const ratingAverage: number | undefined =
-    (product as any).ratings?.average ?? (product as any).ratings?.averageRating ?? (product as any).averageRating;
-  const ratingCount: number | undefined =
-    (product as any).ratings?.count ?? (product as any).ratings?.totalRatings ?? (product as any).totalRatings;
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
+  return (
+    <>
+      <Card
         className={cn(
-          'h-4 w-4',
-          i < Math.floor(rating) 
-            ? 'fill-yellow-400 text-yellow-400' 
-            : 'text-secondary-300'
+          'group hover-elevate overflow-hidden backdrop-blur-sm border border-transparent',
+          'hover:border-primary-100/50 dark:hover:border-primary-400/30 transition-all duration-300',
+          'dark:bg-secondary-800 dark:border-secondary-700',
+          className
         )}
-      />
-    ));
-  };
-
-  if (variant === 'compact') {
-    return (
-      <Card className={cn('group hover:shadow-md transition-all duration-200', className)}>
-        <CardContent className="p-4">
-          <div className="flex space-x-4">
-            <div className="relative w-20 h-20 flex-shrink-0">
-              {product.images && product.images.length > 0 && !imageError ? (
-                <img
-                  src={product.images[0]}
-                  alt={product.name}
-                  className="w-full h-full object-cover rounded-lg"
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <div className="w-full h-full bg-secondary-100 rounded-lg flex items-center justify-center">
-                  <span className="text-secondary-400 text-xs">No Image</span>
-                </div>
-              )}
-            </div>
-            
-            <div className="flex-1 min-w-0">
-              <h3 className="font-medium text-secondary-900 truncate">
-                {product.name}
-              </h3>
-              <p className="text-sm text-secondary-500 truncate">
-                {product.brand}
-              </p>
-              <div className="flex items-center justify-between mt-2">
-                <div className="flex items-center space-x-2">
-                  <span className="font-semibold text-primary-600">
-                    ${product.discountPrice || product.price}
-                  </span>
-                  {hasDiscount && (
-                    <span className="text-sm text-secondary-500 line-through">
-                      ${product.price}
-                    </span>
-                  )}
-                </div>
-                {product.ratings && (
-                  <div className="flex items-center space-x-1">
-                    <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                    <span className="text-xs text-secondary-600">
-                      {product.ratings.average.toFixed(1)}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (variant === 'detailed') {
-    return (
-      <Card className={cn('group hover:shadow-lg transition-all duration-300', className)}>
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <CardContent className="p-0">
           <div className="relative">
-            {/* Image */}
-            <div className="aspect-square bg-secondary-100 rounded-t-lg overflow-hidden">
-              {product.images && product.images.length > 0 && !imageError ? (
-                <img
-                  src={product.images[0]}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-secondary-400">No Image</span>
-                </div>
-              )}
-            
+            {/* Image with overlay gradient */}
+            <div className="aspect-square bg-secondary-100 dark:bg-secondary-700 rounded-t-lg overflow-hidden overlay-gradient-bottom">
+              <motion.img
+                key={currentImageIndex}
+                src={product.images[currentImageIndex]}
+                alt={product.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+
               {/* Badges */}
-              <div className="absolute top-3 left-3 flex flex-col space-y-2">
+              <div className="absolute top-3 left-3 flex flex-col space-y-2 z-10">
                 {hasDiscount && (
-                  <Badge variant="error" className="text-xs">
-                    -{discountPercentage}%
+                  <Badge variant="error" className="backdrop-blur-md bg-error-500/80 shadow-md border border-error-400/30 text-xs font-bold">
+                    {discountPercentage}% off
                   </Badge>
                 )}
                 {product.stock === 0 && (
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="backdrop-blur-md bg-secondary-700/70 shadow-md border border-secondary-600/30 text-xs font-bold">
                     Out of Stock
+                  </Badge>
+                )}
+                {product.stock > 0 && product.stock < 10 && (
+                  <Badge variant="warning" className="backdrop-blur-md bg-warning-500/80 shadow-md border border-warning-400/30 text-xs font-bold">
+                    Only {product.stock} left
                   </Badge>
                 )}
               </div>
 
               {/* Quick Actions */}
-              {showActions && (
-                <div className="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <Button
-                    size="icon-sm"
-                    variant="secondary"
-                    onClick={() => onAddToWishlist?.(product.id)}
-                    className="bg-white/90 hover:bg-white shadow-md"
-                  >
-                    <Heart className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    size="icon-sm"
-                    variant="secondary"
-                    aria-label="View Details"
-                    onClick={() => (onViewDetails ? onViewDetails(product.id) : onQuickView?.(product.id))}
-                    className="bg-white/90 hover:bg-white shadow-md"
-                  >
-                    <Eye className="h-4 w-4" />
-                  </Button>
-                </div>
-              )}
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              <div className="mb-2">
-                <h3 className="font-semibold text-secondary-900 line-clamp-2 mb-1">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-secondary-500">
-                  {product.brand}
-                </p>
-              </div>
-
-              <p className="text-sm text-secondary-600 line-clamp-2 mb-4">
-                {product.description}
-              </p>
-
-              {/* Rating */}
-              {product.ratings && (
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="flex items-center">
-                    {renderStars(product.ratings.average)}
-                  </div>
-                  <span className="text-sm text-secondary-600">
-                    ({product.ratings.count})
-                  </span>
-                </div>
-              )}
-
-              {/* Price */}
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <span className="text-xl font-bold text-primary-600">
-                    ${product.discountPrice || product.price}
-                  </span>
-                  {hasDiscount && (
-                    <span className="text-sm text-secondary-500 line-through">
-                      ${product.price}
-                    </span>
-                  )}
-                </div>
-                <span className="text-sm text-secondary-500">
-                  {product.stock > 0 ? `${product.stock} left` : 'Out of stock'}
-                </span>
-              </div>
-
-              {/* Actions */}
-              {showActions && (
-                <div className="flex space-x-2">
-                  <Button
-                    className="flex-1"
-                    disabled={isLoading || product.stock === 0}
-                    onClick={() => onAddToCart?.(product.id)}
-                  >
-                    <ShoppingCart className="mr-2 h-4 w-4" />
-                    Add to Cart
-                  </Button>
-                </div>
-              )}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  // Default variant
-  return (
-    <Card 
-      className={cn('group hover:shadow-md transition-all duration-200', className)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <CardContent className="p-0">
-        <div className="relative">
-          {/* Image */}
-          <div className="aspect-square bg-secondary-100 rounded-t-lg overflow-hidden">
-            {product.images && product.images.length > 0 && !imageError ? (
-              <img
-                src={product.images[0]}
-                alt={product.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-secondary-400">No Image</span>
-              </div>
-            )}
-          
-            {/* Badges */}
-            <div className="absolute top-3 left-3 flex flex-col space-y-2">
-              {hasDiscount && (
-                <Badge variant="error" className="text-xs">
-                  {discountPercentage}% off
-                </Badge>
-              )}
-              {product.stock === 0 && (
-                <Badge variant="secondary" className="text-xs">
-                  Out of Stock
-                </Badge>
-              )}
-            </div>
-
-            {/* Quick Actions */}
-            {showActions && (
-              <div className={cn(
-                'absolute top-3 right-3 flex flex-col space-y-2 transition-opacity duration-200',
-                isHovered ? 'opacity-100' : 'opacity-0'
-              )}>
+              <div
+                className={cn(
+                  'absolute top-3 right-3 flex flex-col space-y-2 transition-all duration-300 z-10',
+                  'transform',
+                  isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+                )}
+              >
                 <Button
                   size="icon-sm"
                   variant="secondary"
                   onClick={() => onAddToWishlist?.(product.id)}
-                  className="bg-white/90 hover:bg-white shadow-md"
+                  className={cn(
+                    "bg-glass hover:bg-white dark:hover:bg-secondary-700 shadow-md backdrop-blur-md hover:shadow-lg transition-all duration-300",
+                    isInWishlist?.(product.id) && "bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-400"
+                  )}
                 >
-                  <Heart className="h-4 w-4" />
+                  <Heart className={cn("h-4 w-4", isInWishlist?.(product.id) && "fill-current")} />
                 </Button>
                 <Button
                   size="icon-sm"
                   variant="secondary"
                   onClick={() => onQuickView?.(product.id)}
-                  className="bg-white/90 hover:bg-white shadow-md"
+                  className="bg-glass hover:bg-white dark:hover:bg-secondary-700 shadow-md backdrop-blur-md hover:shadow-lg transition-all duration-300"
                 >
                   <Eye className="h-4 w-4" />
                 </Button>
               </div>
-            )}
-          </div>
 
-          {/* Content */}
-          <div className="p-4">
-            <div className="mb-2">
-              <h3 className="font-semibold text-secondary-900 line-clamp-2 mb-1">
-                {product.name}
-              </h3>
-              <p className="text-sm text-secondary-500">
-                {product.brand}
-              </p>
-              {product.description && (
-                <p className="text-sm text-secondary-600 mt-1 line-clamp-2">
-                  {product.description}
-                </p>
+              {/* Image Navigation Dots */}
+              {product.images.length > 1 && (
+                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                  {product.images.map((_, index) => (
+                    <button
+                      key={index}
+                      className={cn(
+                        'w-1.5 h-1.5 rounded-full transition-all duration-300',
+                        currentImageIndex === index
+                          ? 'bg-white'
+                          : 'bg-white/50 hover:bg-white/75'
+                      )}
+                      onClick={() => setCurrentImageIndex(index)}
+                    />
+                  ))}
+                </div>
               )}
             </div>
 
-            {/* Rating */}
-            {(ratingAverage !== undefined || ratingCount !== undefined) && (
-              <div className="flex items-center space-x-2 mb-3">
-                <div className="flex items-center">
-                  {renderStars(ratingAverage || 0)}
-                </div>
-                {ratingAverage !== undefined && (
-                  <span className="text-sm text-secondary-700">{Number(ratingAverage).toFixed(1)}</span>
-                )}
-                <span className="text-sm text-secondary-600">({ratingCount ?? ''})</span>
+            {/* Content */}
+            <div className="p-5 bg-gradient-to-b from-white to-secondary-50/30 dark:from-secondary-800 dark:to-secondary-900/80">
+              <div className="mb-3">
+                <h3 className="font-semibold text-secondary-900 dark:text-white line-clamp-2 mb-1.5 text-[1.05rem] tracking-tight">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-secondary-500 dark:text-secondary-400 font-medium">
+                  {product.brand}
+                </p>
+                <p className="text-sm text-secondary-600 dark:text-secondary-300 mt-2 line-clamp-2 leading-relaxed">
+                  {product.description}
+                </p>
               </div>
-            )}
 
-            {/* Price */}
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center space-x-2">
-                <span className="text-lg font-bold text-primary-600">
-                  ${product.discountPrice || product.price}
-                </span>
-                {hasDiscount && (
-                  <span className="text-sm text-secondary-500 line-through">
-                    ${product.price}
+              {/* Price */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <span className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                    ${(product.discountPrice || product.price).toFixed(2)}
                   </span>
-                )}
+                  {hasDiscount && (
+                    <span className="text-sm text-secondary-500 dark:text-secondary-400 line-through opacity-75">
+                      ${product.price.toFixed(2)}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
 
-            {/* Actions */}
-            {showActions && (
+              {/* Quantity Controls */}
+              {product.stock > 0 && (
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-2">
+                    <Button
+                      variant="outline"
+                      size="icon-sm"
+                      onClick={() => handleQuantityChange(-1)}
+                      disabled={quantity <= 1}
+                    >
+                      <Minus className="h-4 w-4" />
+                    </Button>
+                    <span className="w-8 text-center font-medium">
+                      {quantity}
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="icon-sm"
+                      onClick={() => handleQuantityChange(1)}
+                      disabled={quantity >= product.stock}
+                    >
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* Actions */}
               <div className="space-y-2">
                 <Button
-                  className="w-full"
-                  disabled={isLoading || product.stock === 0}
-                  onClick={() => onAddToCart?.(product.id)}
+                  className="w-full bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white shadow-md hover:shadow-lg transform transition-all duration-300 active:scale-[0.98]"
+                  disabled={product.stock === 0}
+                  onClick={handleAddToCart}
                 >
                   <ShoppingCart className="mr-2 h-4 w-4" />
                   Add to Cart
                 </Button>
                 <Button
                   variant="secondary"
-                  className="w-full"
+                  className="w-full bg-white hover:bg-secondary-50 dark:bg-secondary-800 dark:hover:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 shadow-sm hover:shadow-md transform transition-all duration-300 active:scale-[0.98]"
                   onClick={() => onViewDetails?.(product.id)}
                 >
                   View Details
                 </Button>
               </div>
-            )}
+            </div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+
+      <AddToCartAnimation
+        isAnimating={isAddingToCart}
+        onAnimationComplete={handleAnimationComplete}
+      />
+    </>
   );
 };

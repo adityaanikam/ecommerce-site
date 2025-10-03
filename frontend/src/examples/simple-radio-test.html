@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Radio Test - Blue Dots</title>
+    <style>
+        /* Custom Radio Button Styles - Clean and Simple */
+
+        /* Hide the default radio input but keep it clickable */
+        .custom-radio input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 20px;
+          width: 20px;
+          margin: 0;
+          padding: 0;
+          z-index: 10;
+        }
+
+        /* Custom radio button container */
+        .custom-radio {
+          position: relative;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          user-select: none;
+          margin-bottom: 0.75rem;
+          width: 100%;
+        }
+
+        /* Label styling */
+        .custom-radio-label {
+          margin-left: 28px;
+          color: #374151;
+          font-size: 14px;
+          line-height: 1.5;
+          cursor: pointer;
+          flex: 1;
+          position: relative;
+        }
+
+        /* Create the outer circle */
+        .custom-radio-label::before {
+          content: '';
+          position: absolute;
+          left: -28px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 20px;
+          width: 20px;
+          background-color: transparent;
+          border: 2px solid #6b7280;
+          border-radius: 50%;
+          transition: all 0.2s ease-in-out;
+          z-index: 1;
+        }
+
+        /* Create the inner circle */
+        .custom-radio-label::after {
+          content: '';
+          position: absolute;
+          left: -22px;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 8px;
+          width: 8px;
+          background-color: transparent;
+          border-radius: 50%;
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+          z-index: 2;
+        }
+
+        /* Hover state */
+        .custom-radio:hover .custom-radio-label::before {
+          border-color: #9ca3af;
+        }
+
+        /* Focus state */
+        .custom-radio input[type="radio"]:focus + .custom-radio-label::before {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        /* CHECKED STATE - This is the key fix */
+        .custom-radio input[type="radio"]:checked + .custom-radio-label::before {
+          border-color: #3b82f6 !important;
+          background-color: transparent;
+        }
+
+        .custom-radio input[type="radio"]:checked + .custom-radio-label::after {
+          background-color: #3b82f6 !important;
+          opacity: 1 !important;
+        }
+
+        /* Dark theme adjustments */
+        .dark .custom-radio-label {
+          color: #d1d5db;
+        }
+
+        .dark .custom-radio-label::before {
+          border-color: #9ca3af;
+        }
+
+        .dark .custom-radio:hover .custom-radio-label::before {
+          border-color: #d1d5db;
+        }
+
+        .dark .custom-radio input[type="radio"]:checked + .custom-radio-label::before {
+          border-color: #60a5fa !important;
+        }
+
+        .dark .custom-radio input[type="radio"]:checked + .custom-radio-label::after {
+          background-color: #60a5fa !important;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .count-badge {
+            background-color: #4b5563;
+            color: #d1d5db;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+        
+        .test-info {
+            background-color: #059669;
+            color: #d1fae5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .space-y-3 > * + * {
+            margin-top: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="test-info">
+            <h3>🔧 Simple Radio Test</h3>
+            <p>Test if blue dots appear when clicking radio buttons</p>
+            <p><strong>Expected:</strong> Click any option → Blue dot should appear immediately</p>
+        </div>
+        
+        <h1 style="margin-bottom: 2rem; color: #f9fafb;">Simple Radio Test</h1>
+        
+        <!-- Categories Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Categories</h3>
+            <div class="space-y-3">
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="electronics" name="category" value="electronics">
+                        <label for="electronics" class="custom-radio-label">Electronics</label>
+                    </div>
+                    <span class="count-badge">50</span>
+                </div>
+                
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="fashion" name="category" value="fashion">
+                        <label for="fashion" class="custom-radio-label">Fashion</label>
+                    </div>
+                    <span class="count-badge">30</span>
+                </div>
+                
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="sports" name="category" value="sports">
+                        <label for="sports" class="custom-radio-label">Sports</label>
+                    </div>
+                    <span class="count-badge">24</span>
+                </div>
+                
+                <div class="filter-item">
+                    <div class="custom-radio">
+                        <input type="radio" id="home-garden" name="category" value="home-garden">
+                        <label for="home-garden" class="custom-radio-label">Home & Garden</label>
+                    </div>
+                    <span class="count-badge">24</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Price Range Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Price Range</h3>
+            <div class="space-y-3">
+                <div class="custom-radio">
+                    <input type="radio" id="under-50" name="priceRange" value="under-50">
+                    <label for="under-50" class="custom-radio-label">Under $50</label>
+                </div>
+                
+                <div class="custom-radio">
+                    <input type="radio" id="50-100" name="priceRange" value="50-100">
+                    <label for="50-100" class="custom-radio-label">$50 - $100</label>
+                </div>
+                
+                <div class="custom-radio">
+                    <input type="radio" id="100-200" name="priceRange" value="100-200">
+                    <label for="100-200" class="custom-radio-label">$100 - $200</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Debug Info -->
+        <div class="filter-section">
+            <h3 class="filter-title">Debug Information</h3>
+            <div style="color: #d1d5db; line-height: 1.6;">
+                <p><strong>Instructions:</strong></p>
+                <ul style="margin-left: 1rem;">
+                    <li>1. Click on "Sports" - Should show blue dot</li>
+                    <li>2. Click on "Fashion" - Should show blue dot</li>
+                    <li>3. Click on "Under $50" - Should show blue dot</li>
+                    <li>4. Only one option should be selected at a time</li>
+                    <li>5. Blue dots should appear immediately when clicked</li>
+                </ul>
+                
+                <p style="margin-top: 1rem;"><strong>If blue dots don't appear:</strong></p>
+                <ul style="margin-left: 1rem;">
+                    <li>Check browser console for errors</li>
+                    <li>Try refreshing the page</li>
+                    <li>Check if CSS is loading properly</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some debugging
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                console.log(`Selected: ${this.name} = ${this.value}`);
+                
+                // Force a repaint to ensure CSS is applied
+                this.style.display = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.display = '';
+            });
+        });
+        
+        // Log when page loads
+        console.log('Simple Radio Test loaded');
+        console.log('CSS should be applied to custom radio buttons');
+    </script>
+</body>
+</html>

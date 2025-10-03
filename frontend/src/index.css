@@ -1,3 +1,306 @@
+/* Import custom radio button styles */
+@import './styles/custom-radio.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Modern UI theme variables */
+:root {
+  /* Core colors */
+  --color-background: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f1f5f9;
+  --color-text: #0f172a;
+  --color-text-light: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-primary: #3b82f6;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #2563eb;
+  
+  /* Enhanced UI */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  
+  /* Glassmorphism */
+  --glass-background: rgba(255, 255, 255, 0.7);
+  --glass-background-dark: rgba(15, 23, 42, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --glass-blur: 12px;
+  
+  /* Animation */
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-secondary: #1e293b;
+  --color-text: #f8fafc;
+  --color-text-light: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+  --color-primary: #60a5fa;
+  --color-primary-light: #93c5fd;
+  --color-primary-dark: #3b82f6;
+  
+  --glass-background: rgba(30, 41, 59, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+html, body, #root {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+/* Dark mode specific styles */
+.dark .bg-white {
+  background-color: var(--color-surface);
+}
+
+.dark .bg-secondary-50 {
+  background-color: var(--color-surface-secondary);
+}
+
+.dark .border-secondary-200 {
+  border-color: var(--color-border);
+}
+
+.dark .text-secondary-600 {
+  color: var(--color-text-light);
+}
+
+.dark .text-secondary-700 {
+  color: var(--color-text-light);
+}
+
+.dark .text-secondary-900 {
+  color: var(--color-text);
+}
+
+/* Product Card Dark Mode */
+.dark .product-card {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.dark .product-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+/* Filter Sidebar Dark Mode */
+.dark .filter-sidebar {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.dark .filter-group {
+  border-bottom-color: var(--color-border);
+}
+
+.dark .filter-checkbox {
+  border-color: var(--color-border);
+}
+
+.dark .filter-checkbox:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Price Range Slider Dark Mode */
+.dark .price-slider {
+  background-color: var(--color-border);
+}
+
+.dark .price-slider::-webkit-slider-thumb {
+  background-color: var(--color-primary);
+}
+
+.dark .price-slider::-moz-range-thumb {
+  background-color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Utility helpers */
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-glass {
+  background-color: var(--glass-background);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.dark .bg-glass {
+  background-color: var(--glass-background-dark);
+  border-color: var(--glass-border-dark);
+}
+
+/* Modern Animation Utilities */
+.hover-scale {
+  transition: transform var(--transition-fast);
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+.hover-elevate {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.hover-elevate:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Gradient Overlays */
+.overlay-gradient-bottom {
+  position: relative;
+}
+.overlay-gradient-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+/* Dark mode specific gradients */
+.dark .overlay-gradient-bottom::after {
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+}
+
+/* Improved text contrast in dark mode */
+.dark .text-contrast-high {
+  color: var(--color-text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dark .text-contrast-medium {
+  color: var(--color-text-light);
+}
+
+.dark .text-contrast-low {
+  color: var(--color-text-muted);
+}
+
+/* Card and container styles for dark mode */
+.dark .card {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.dark .container {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+/* Button styles for dark mode */
+.dark .btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.dark .btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.dark .btn-secondary {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.dark .btn-secondary:hover {
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-primary);
+}

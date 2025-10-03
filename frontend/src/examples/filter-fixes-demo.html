@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Fixes Demo - Category Chips & Centered Blue Dots</title>
+    <style>
+        /* Import the fixed custom radio styles */
+        @import url('./custom-radio.css');
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .count-badge {
+            background-color: #4b5563;
+            color: #d1d5db;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+        
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #4b5563;
+        }
+        
+        .filter-chip {
+            background-color: #4b5563;
+            color: #d1d5db;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .filter-chip button {
+            background: none;
+            border: none;
+            color: #d1d5db;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 0.25rem;
+        }
+        
+        .filter-chip button:hover {
+            color: #ef4444;
+        }
+        
+        .clear-all {
+            color: #60a5fa;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+        
+        .clear-all:hover {
+            color: #93c5fd;
+        }
+        
+        .test-info {
+            background-color: #1e40af;
+            color: #dbeafe;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .results {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="test-info">
+            <h3>✅ Filter Fixes Applied</h3>
+            <p>1. Category selection now shows as active filter chip below search bar</p>
+            <p>2. Blue dot is properly centered inside radio buttons (matching price range style)</p>
+        </div>
+        
+        <h1 style="margin-bottom: 2rem; color: #f9fafb;">Product Filters - Fixed Version</h1>
+        
+        <!-- Filter Sidebar -->
+        <div class="filter-section">
+            <h3 class="filter-title">Search Products</h3>
+            <input type="text" placeholder="Search products..." style="width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #4b5563; background-color: #1f2937; color: #f9fafb;">
+            
+            <!-- Active Filters (This is the new feature!) -->
+            <div class="active-filters">
+                <div class="filter-chip">
+                    Fashion
+                    <button onclick="removeFilter('category')">×</button>
+                </div>
+                <div class="filter-chip">
+                    Price: Under $50
+                    <button onclick="removeFilter('price')">×</button>
+                </div>
+                <button class="clear-all" onclick="clearAllFilters()">Clear All</button>
+            </div>
+        </div>
+        
+        <!-- Categories Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Categories</h3>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="electronics" name="category" value="electronics">
+                    <label for="electronics" class="custom-radio-label">Electronics</label>
+                </div>
+                <span class="count-badge">50</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="fashion" name="category" value="fashion" checked>
+                    <label for="fashion" class="custom-radio-label">Fashion</label>
+                </div>
+                <span class="count-badge">30</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="sports" name="category" value="sports">
+                    <label for="sports" class="custom-radio-label">Sports</label>
+                </div>
+                <span class="count-badge">24</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="home-garden" name="category" value="home-garden">
+                    <label for="home-garden" class="custom-radio-label">Home & Garden</label>
+                </div>
+                <span class="count-badge">24</span>
+            </div>
+        </div>
+        
+        <!-- Price Range Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Price Range</h3>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="under-50" name="priceRange" value="under-50" checked>
+                    <label for="under-50" class="custom-radio-label">Under $50</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="50-100" name="priceRange" value="50-100">
+                    <label for="50-100" class="custom-radio-label">$50 - $100</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="100-200" name="priceRange" value="100-200">
+                    <label for="100-200" class="custom-radio-label">$100 - $200</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="200-500" name="priceRange" value="200-500">
+                    <label for="200-500" class="custom-radio-label">$200 - $500</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="over-500" name="priceRange" value="over-500">
+                    <label for="over-500" class="custom-radio-label">Over $500</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results -->
+        <div class="results">
+            <h3 style="margin-bottom: 1rem; color: #f9fafb;">What's Fixed:</h3>
+            <ul style="color: #d1d5db; line-height: 1.6;">
+                <li>✅ <strong>Category Filter Chips:</strong> When "Fashion" is selected, it appears as an active filter chip below the search bar</li>
+                <li>✅ <strong>Centered Blue Dots:</strong> The blue dot is now properly centered inside the radio button, matching the price range style</li>
+                <li>✅ <strong>Consistent Styling:</strong> All radio buttons use the same custom styling</li>
+                <li>✅ <strong>Dark Theme:</strong> Perfect visibility on dark backgrounds</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Add interactivity
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                console.log(`${this.name}: ${this.value}`);
+            });
+        });
+        
+        function removeFilter(type) {
+            console.log(`Remove ${type} filter`);
+        }
+        
+        function clearAllFilters() {
+            console.log('Clear all filters');
+        }
+    </script>
+</body>
+</html>

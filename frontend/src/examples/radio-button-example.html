@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Radio Buttons - Dark Theme</title>
+    <style>
+        /* Import the custom radio styles */
+        @import url('./custom-radio.css');
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .count-badge {
+            background-color: #4b5563;
+            color: #d1d5db;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 2rem; color: #f9fafb;">Product Filters</h1>
+        
+        <!-- Categories Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Categories</h3>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="electronics" name="category" value="electronics" checked>
+                    <label for="electronics" class="custom-radio-label">Electronics</label>
+                </div>
+                <span class="count-badge">5</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="fashion" name="category" value="fashion">
+                    <label for="fashion" class="custom-radio-label">Fashion</label>
+                </div>
+                <span class="count-badge">30</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="sports" name="category" value="sports">
+                    <label for="sports" class="custom-radio-label">Sports</label>
+                </div>
+                <span class="count-badge">24</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="home-garden" name="category" value="home-garden">
+                    <label for="home-garden" class="custom-radio-label">Home & Garden</label>
+                </div>
+                <span class="count-badge">24</span>
+            </div>
+        </div>
+        
+        <!-- Price Range Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Price Range</h3>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="under-50" name="priceRange" value="under-50">
+                    <label for="under-50" class="custom-radio-label">Under $50</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="50-100" name="priceRange" value="50-100">
+                    <label for="50-100" class="custom-radio-label">$50 - $100</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="100-200" name="priceRange" value="100-200">
+                    <label for="100-200" class="custom-radio-label">$100 - $200</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="200-500" name="priceRange" value="200-500">
+                    <label for="200-500" class="custom-radio-label">$200 - $500</label>
+                </div>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="over-500" name="priceRange" value="over-500">
+                    <label for="over-500" class="custom-radio-label">Over $500</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                console.log(`${this.name}: ${this.value}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,372 +1,234 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Star, ShoppingBag, Truck, Shield, Headphones } from 'lucide-react';
-import { Container, Grid, Button, Card, CardContent, Badge, RatingStars, PriceDisplay } from '@/components';
-import { ProductCard, CategoryCard } from '@/components/ecommerce';
-
-// Mock data - in real app, this would come from API
-const featuredProducts = [
-  {
-    id: '1',
-    name: 'Wireless Bluetooth Headphones',
-    brand: 'TechSound',
-    price: 199.99,
-    discountPrice: 149.99,
-    images: ['/api/placeholder/300/300'],
-    ratings: { average: 4.5, count: 128 },
-    stock: 25,
-    description: 'Premium wireless headphones with noise cancellation'
-  },
-  {
-    id: '2',
-    name: 'Smart Fitness Watch',
-    brand: 'FitTech',
-    price: 299.99,
-    images: ['/api/placeholder/300/300'],
-    ratings: { average: 4.8, count: 89 },
-    stock: 15,
-    description: 'Advanced fitness tracking with heart rate monitor'
-  },
-  {
-    id: '3',
-    name: 'Wireless Charging Pad',
-    brand: 'PowerUp',
-    price: 49.99,
-    discountPrice: 39.99,
-    images: ['/api/placeholder/300/300'],
-    ratings: { average: 4.2, count: 67 },
-    stock: 50,
-    description: 'Fast wireless charging for all compatible devices'
-  },
-  {
-    id: '4',
-    name: 'Bluetooth Speaker',
-    brand: 'SoundWave',
-    price: 79.99,
-    images: ['/api/placeholder/300/300'],
-    ratings: { average: 4.6, count: 156 },
-    stock: 30,
-    description: 'Portable speaker with 360-degree sound'
-  }
-];
-
-const categories = [
-  {
-    id: '1',
-    name: 'Electronics',
-    description: 'Latest gadgets and tech',
-    imageUrl: '/api/placeholder/400/300',
-    productCount: 245
-  },
-  {
-    id: '2',
-    name: 'Fashion',
-    description: 'Trendy clothing and accessories',
-    imageUrl: '/api/placeholder/400/300',
-    productCount: 189
-  },
-  {
-    id: '3',
-    name: 'Home & Garden',
-    description: 'Everything for your home',
-    imageUrl: '/api/placeholder/400/300',
-    productCount: 156
-  },
-  {
-    id: '4',
-    name: 'Sports',
-    description: 'Fitness and outdoor gear',
-    imageUrl: '/api/placeholder/400/300',
-    productCount: 98
-  }
-];
-
-const testimonials = [
-  {
-    id: '1',
-    name: 'Sarah Johnson',
-    role: 'Fashion Blogger',
-    content: 'Amazing quality products and super fast delivery! I\'ve been shopping here for months and never disappointed.',
-    rating: 5,
-    avatar: '/api/placeholder/60/60'
-  },
-  {
-    id: '2',
-    name: 'Mike Chen',
-    role: 'Tech Enthusiast',
-    content: 'Great selection of electronics at competitive prices. The customer service is outstanding!',
-    rating: 5,
-    avatar: '/api/placeholder/60/60'
-  },
-  {
-    id: '3',
-    name: 'Emily Davis',
-    role: 'Home Decorator',
-    content: 'Beautiful home products that arrived exactly as described. Highly recommend this store!',
-    rating: 5,
-    avatar: '/api/placeholder/60/60'
-  }
-];
-
-const features = [
-  {
-    icon: <Truck className="h-8 w-8" />,
-    title: 'Free Shipping',
-    description: 'Free shipping on orders over $50'
-  },
-  {
-    icon: <Shield className="h-8 w-8" />,
-    title: 'Secure Payment',
-    description: '100% secure payment processing'
-  },
-  {
-    icon: <Headphones className="h-8 w-8" />,
-    title: '24/7 Support',
-    description: 'Round-the-clock customer support'
-  },
-  {
-    icon: <ShoppingBag className="h-8 w-8" />,
-    title: 'Easy Returns',
-    description: '30-day hassle-free returns'
-  }
-];
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { Container, Button } from '@/components';
+import { CategoryCard, ProductCard } from '@/components/ecommerce';
+import { useQuery } from '@tanstack/react-query';
+import { categoryService } from '@/services/categoryService';
+import { productService } from '@/services/productService';
+import { useCart } from '@/contexts/CartContext';
+import { useWishlist } from '@/contexts/WishlistContext';
 
 export const HomePage: React.FC = () => {
-  const [email, setEmail] = React.useState('');
+  const navigate = useNavigate();
+  
+  const { addToCart } = useCart();
+  const { addToWishlist, isInWishlist } = useWishlist();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
+  const { data: categories, isLoading: categoriesLoading, error: categoriesError, refetch: refetchCategories } = useQuery({
+    queryKey: ['categories'],
+    queryFn: () => categoryService.getCategories(),
+  });
+
+  const { data: featuredProducts, isLoading: productsLoading, error: productsError, refetch: refetchProducts } = useQuery({
+    queryKey: ['featured-products'],
+    queryFn: () => productService.getProducts({
+      page: 0,
+      size: 8,
+      sortBy: 'rating',
+      sortOrder: 'desc'
+    }),
+    select: (data) => data.content,
+  });
+
+  const isLoading = categoriesLoading || productsLoading;
+  const error = categoriesError || productsError;
+  const refetch = () => {
+    refetchCategories();
+    refetchProducts();
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-900">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <Container className="relative py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800">
+        <div className="absolute inset-0 bg-grid-white/10" />
+        <Container className="relative py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+            <div className="space-y-8 animate-fadeIn">
+              <div className="space-y-5">
+                <h1 className="text-4xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
                   Discover Amazing
-                  <span className="block text-yellow-300">Products</span>
+                  <span className="block text-yellow-300 mt-1 drop-shadow-md">Products</span>
                 </h1>
-                <p className="text-xl text-primary-100 max-w-lg">
-                  Shop the latest trends in electronics, fashion, home decor, and more. 
+                <p className="text-xl text-primary-50 max-w-lg leading-relaxed">
+                  Shop the latest trends in electronics, fashion, home decor, and more.
                   Quality products at unbeatable prices with fast, free shipping.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/products">
-                  <Button size="lg" variant="secondary" className="w-full sm:w-auto">
-                    Shop Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/categories">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary-600">
-                    Browse Categories
-                  </Button>
-                </Link>
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="w-full sm:w-auto shadow-xl hover:shadow-yellow-400/20 bg-yellow-400 hover:bg-yellow-500 text-primary-900"
+                  onClick={() => navigate('/products')}
+                >
+                  Shop Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto bg-white/10 border-white border-opacity-50 text-white hover:bg-white hover:text-primary-600 hover:border-white backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={() => navigate('/categories')}
+                >
+                  Browse Categories
+                </Button>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold">10K+</div>
-                  <div className="text-primary-200">Happy Customers</div>
+                <div className="bg-white/10 backdrop-blur-sm text-center py-3 px-2 rounded-xl">
+                  <div className="text-3xl font-bold text-white">10K+</div>
+                  <div className="text-primary-200 font-medium text-sm">Happy Customers</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold">5K+</div>
-                  <div className="text-primary-200">Products</div>
+                <div className="bg-white/10 backdrop-blur-sm text-center py-3 px-2 rounded-xl">
+                  <div className="text-3xl font-bold text-white">150+</div>
+                  <div className="text-primary-200 font-medium text-sm">Products</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold">99%</div>
-                  <div className="text-primary-200">Satisfaction</div>
+                <div className="bg-white/10 backdrop-blur-sm text-center py-3 px-2 rounded-xl">
+                  <div className="text-3xl font-bold text-white">99%</div>
+                  <div className="text-primary-200 font-medium text-sm">Satisfaction</div>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-sm p-8">
+            <div className="relative animate-float">
+              <div className="aspect-square bg-white/10 rounded-2xl backdrop-blur-lg border border-white/20 p-5 shadow-2xl">
                 <img
-                  src="/api/placeholder/500/500"
-                  alt="Featured Product"
-                  className="w-full h-full object-cover rounded-xl"
+                  src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=800&h=800"
+                  alt="Featured Products"
+                  className="w-full h-full object-cover rounded-xl shadow-md"
+                  style={{ boxShadow: '0 0 30px rgba(255,255,255,0.1)' }}
                 />
               </div>
+
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 bg-yellow-400 text-primary-900 px-4 py-2 rounded-full font-bold">
-                -30% OFF
+              <div className="absolute -top-6 -right-6 bg-yellow-400 text-primary-900 px-6 py-3 rounded-full font-bold shadow-xl transform hover:scale-105 transition-transform duration-300 border-2 border-yellow-300">
+                Up to 50% OFF
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 bg-secondary-50 dark:bg-secondary-800">
-        <Container>
-          <Grid cols={4} gap="lg" responsive={{ sm: 2, md: 4 }}>
-            {features.map((feature, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full text-primary-600 dark:text-primary-400">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100">
-                  {feature.title}
-                </h3>
-                <p className="text-secondary-600 dark:text-secondary-400">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </Grid>
-        </Container>
-      </section>
-
-      {/* Featured Products Section */}
-      <section className="py-20">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 dark:text-secondary-100 mb-4">
-              Featured Products
-            </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-              Discover our handpicked selection of the best products, carefully chosen for quality and value.
-            </p>
-          </div>
-
-          <Grid cols={4} gap="lg" responsive={{ sm: 1, md: 2, lg: 4 }}>
-            {featuredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onAddToCart={(id) => console.log('Add to cart:', id)}
-                onAddToWishlist={(id) => console.log('Add to wishlist:', id)}
-                onQuickView={(id) => console.log('Quick view:', id)}
-              />
-            ))}
-          </Grid>
-
-          <div className="text-center mt-12">
-            <Link to="/products">
-              <Button size="lg" variant="outline">
-                View All Products
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
           </div>
         </Container>
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 bg-secondary-50 dark:bg-secondary-800">
+      <section className="py-16">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 dark:text-secondary-100 mb-4">
+            <h2 className="text-3xl font-bold text-secondary-900 dark:text-secondary-100 mb-4">
               Shop by Category
             </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-              Explore our wide range of categories and find exactly what you're looking for.
+            <p className="text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+              Explore our wide range of products across different categories.
+              From the latest electronics to trendy fashion, we've got everything you need.
             </p>
           </div>
 
-          <Grid cols={4} gap="lg" responsive={{ sm: 1, md: 2, lg: 4 }}>
-            {categories.map((category) => (
-              <CategoryCard
-                key={category.id}
-                category={category}
-                productCount={category.productCount}
-                variant="default"
-              />
-            ))}
-          </Grid>
-        </Container>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 dark:text-secondary-100 mb-4">
-              What Our Customers Say
-            </h2>
-            <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied customers have to say.
-            </p>
-          </div>
-
-          <Grid cols={3} gap="lg" responsive={{ sm: 1, md: 3 }}>
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="h-full">
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <RatingStars rating={testimonial.rating} size="sm" />
-                    <p className="text-secondary-600 dark:text-secondary-400 italic">
-                      "{testimonial.content}"
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 dark:text-secondary-100">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-sm text-secondary-500 dark:text-secondary-400">
-                          {testimonial.role}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </Grid>
-        </Container>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-20 bg-primary-600 text-white">
-        <Container>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-xl text-primary-100 mb-8">
-              Subscribe to our newsletter and be the first to know about new products, 
-              exclusive deals, and special offers.
-            </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-              <div className="flex gap-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg text-secondary-900 placeholder-secondary-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  required
-                />
-                <Button type="submit" variant="secondary" size="lg">
-                  Subscribe
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {isLoading ? (
+              // Loading skeleton
+              Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="aspect-[4/3] bg-secondary-200 dark:bg-secondary-700 rounded-xl mb-4" />
+                  <div className="h-6 bg-secondary-200 dark:bg-secondary-700 rounded w-3/4 mb-2" />
+                  <div className="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-1/2" />
+                </div>
+              ))
+            ) : error ? (
+              <div className="col-span-4 text-center py-12">
+                <p className="text-secondary-600 dark:text-secondary-400">
+                  Failed to load categories. Please try again later.
+                </p>
+                <Button onClick={() => refetch()} className="mt-4">
+                  Retry
                 </Button>
               </div>
-            </form>
-            
-            <p className="text-sm text-primary-200 mt-4">
-              We respect your privacy. Unsubscribe at any time.
+            ) : categories ? (
+              categories.map((category) => (
+                <CategoryCard
+                  key={category.slug}
+                  name={category.name}
+                  description={category.description}
+                  image={category.image}
+                  productCount={category.subcategories.reduce((acc, sub) => acc + sub.count, 0)}
+                  onClick={() => navigate(`/products?category=${category.slug}`)}
+                />
+              ))
+            ) : null}
+          </div>
+        </Container>
+      </section>
+
+      {/* Featured Products Section */}
+      <section className="py-16 bg-white dark:bg-secondary-800">
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-secondary-900 dark:text-secondary-100 mb-4">
+              Featured Products
+            </h2>
+            <p className="text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+              Check out our most popular products and latest arrivals.
+              Don't miss out on these amazing deals!
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {isLoading ? (
+              // Loading skeleton
+              Array.from({ length: 8 }).map((_, i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="aspect-square bg-secondary-200 dark:bg-secondary-700 rounded-xl mb-4" />
+                  <div className="h-6 bg-secondary-200 dark:bg-secondary-700 rounded w-3/4 mb-2" />
+                  <div className="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-1/2" />
+                </div>
+              ))
+            ) : error ? (
+              <div className="col-span-4 text-center py-12">
+                <p className="text-secondary-600 dark:text-secondary-400">
+                  Failed to load featured products. Please try again later.
+                </p>
+                <Button onClick={() => refetch()} className="mt-4">
+                  Retry
+                </Button>
+              </div>
+            ) : featuredProducts ? (
+              featuredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAddToCart={(id, quantity) => {
+                    const product = featuredProducts.find(p => p.id === id);
+                    if (product) addToCart(product, quantity);
+                  }}
+                  onAddToWishlist={(id) => {
+                    const product = featuredProducts.find(p => p.id === id);
+                    if (product) addToWishlist(product);
+                  }}
+                  isInWishlist={(id) => isInWishlist(id)}
+                  onQuickView={(id) => navigate(`/products/${id}`)}
+                  onViewDetails={(id) => navigate(`/products/${id}`)}
+                />
+              ))
+            ) : null}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              onClick={() => navigate('/products')}
+              className="bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg"
+            >
+              View All Products
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </Container>
       </section>
     </div>
   );
 };
+
+export default HomePage;

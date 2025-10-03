@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Radio Buttons - Inner Blue Circle</title>
+    <style>
+        /* Import the fixed custom radio styles */
+        @import url('./custom-radio.css');
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            background-color: #374151;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .count-badge {
+            background-color: #4b5563;
+            color: #d1d5db;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+        
+        .test-info {
+            background-color: #1e40af;
+            color: #dbeafe;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="test-info">
+            <h3>✅ Fixed Radio Buttons</h3>
+            <p>Now the selected radio button shows both a blue border AND an inner blue circle for clear visual feedback.</p>
+        </div>
+        
+        <h1 style="margin-bottom: 2rem; color: #f9fafb;">Product Filters</h1>
+        
+        <!-- Categories Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Categories</h3>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="electronics" name="category" value="electronics">
+                    <label for="electronics" class="custom-radio-label">Electronics</label>
+                </div>
+                <span class="count-badge">50</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="fashion" name="category" value="fashion" checked>
+                    <label for="fashion" class="custom-radio-label">Fashion</label>
+                </div>
+                <span class="count-badge">30</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="sports" name="category" value="sports">
+                    <label for="sports" class="custom-radio-label">Sports</label>
+                </div>
+                <span class="count-badge">24</span>
+            </div>
+            
+            <div class="filter-item">
+                <div class="custom-radio">
+                    <input type="radio" id="home-garden" name="category" value="home-garden">
+                    <label for="home-garden" class="custom-radio-label">Home & Garden</label>
+                </div>
+                <span class="count-badge">24</span>
+            </div>
+        </div>
+        
+        <div class="test-info">
+            <h4>What's Fixed:</h4>
+            <ul style="margin: 0.5rem 0; padding-left: 1rem;">
+                <li>✅ Blue border around selected radio button</li>
+                <li>✅ Inner blue circle/dot appears when selected</li>
+                <li>✅ Smooth animation when selecting/deselecting</li>
+                <li>✅ Perfect visibility on dark background</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Add interactivity to show the selection
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                console.log(`Selected: ${this.value}`);
+                
+                // Update the test info
+                const info = document.querySelector('.test-info p');
+                if (info) {
+                    info.textContent = `Currently selected: ${this.value}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
