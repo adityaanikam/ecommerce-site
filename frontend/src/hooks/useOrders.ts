@@ -23,6 +23,7 @@ export const useUserOrders = (params: { page: number; limit: number; filters?: O
 export const useInfiniteUserOrders = (filters?: OrderFilters) => {
   return useInfiniteQuery({
     queryKey: queryKeys.orders.list(filters || {}),
+    initialPageParam: 1,
     queryFn: async ({ pageParam = 1 }) => {
       const response = await OrderService.getUserOrders({
         page: pageParam,

@@ -57,6 +57,14 @@ export interface Product {
     average: number;
     count: number;
   };
+  rating?: number; // For backward compatibility
+  sku?: string;
+  slug?: string;
+  isFeatured?: boolean;
+  isNew?: boolean;
+  isOnSale?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface ProductCategory {
@@ -152,6 +160,46 @@ export interface SearchFilters {
   inStock: boolean;
   sortBy: string;
   sortDirection: 'asc' | 'desc';
+}
+
+// DTO Types (Data Transfer Objects)
+export interface UserDto {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  role: string;
+  avatar?: string;
+  phone?: string;
+  address?: Address;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ProductDto extends Product {}
+export interface CategoryDto extends ProductCategory {}
+export interface CartDto extends Cart {}
+export interface CartItemDto extends CartItem {}
+export interface OrderDto extends Order {}
+export interface OrderItemDto extends OrderItem {}
+
+export interface ReviewDto {
+  id: string;
+  productId: string;
+  userId: string;
+  rating: number;
+  title: string;
+  comment: string;
+  helpful: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AuthDto {
+  user: UserDto;
+  token: string;
+  refreshToken: string;
+  expiresIn: number;
 }
 
 // Error Types

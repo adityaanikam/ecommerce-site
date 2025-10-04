@@ -1,0 +1,4422 @@
+[
+  {
+    "_id": "ELEC001",
+    "name": "iPhone 15 Pro",
+    "brand": "Apple",
+    "price": 999.99,
+    "discountPrice": 590.7493114716888,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/iPhone+15+Pro/1.jpg",
+      "/products/Electronics/iPhone+15+Pro/2.jpg",
+      "/products/Electronics/iPhone+15+Pro/3.jpg"
+    ],
+    "description": "Latest iPhone with titanium design and A17 Pro chip. Features a stunning 48MP camera system and advanced computational photography.",
+    "stock": 50,
+    "rating": 4.8,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "A17 Pro",
+      "Display": "6.1-inch Super Retina XDR",
+      "Storage": "256GB"
+    },
+    "slug": "elec001",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754763566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754763566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC002",
+    "name": "Samsung Galaxy S24",
+    "brand": "Samsung",
+    "price": 899.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Samsung+Galaxy+S24/1.jpg",
+      "/products/Electronics/Samsung+Galaxy+S24/2.jpg",
+      "/products/Electronics/Samsung+Galaxy+S24/3.jpg"
+    ],
+    "description": "Premium Android flagship with advanced AI features and a stunning Dynamic AMOLED display. Exceptional camera system and all-day battery life.",
+    "stock": 45,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 3",
+      "Display": "6.8-inch Dynamic AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec002",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757355566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757355566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC003",
+    "name": "iPhone 14",
+    "brand": "Apple",
+    "price": 799.99,
+    "discountPrice": 338.4115939237549,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/iPhone+14/1.webp",
+      "/products/Electronics/iPhone+14/2.webp",
+      "/products/Electronics/iPhone+14/3.webp"
+    ],
+    "description": "Powerful iPhone with A15 Bionic chip and advanced dual-camera system. Features all-day battery life and Ceramic Shield front cover.",
+    "stock": 60,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "A15 Bionic",
+      "Display": "6.1-inch Super Retina XDR",
+      "Storage": "128GB"
+    },
+    "slug": "elec003",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755541166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755541166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC004",
+    "name": "iPhone 13",
+    "brand": "Apple",
+    "price": 699.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/iPhone+13/1.webp",
+      "/products/Electronics/iPhone+13/2.webp",
+      "/products/Electronics/iPhone+13/3.webp"
+    ],
+    "description": "Feature-rich iPhone with A15 Bionic chip and impressive camera capabilities. Great value for performance and quality.",
+    "stock": 55,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "A15 Bionic",
+      "Display": "6.1-inch Super Retina XDR",
+      "Storage": "128GB"
+    },
+    "slug": "elec004",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758219566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758219566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC005",
+    "name": "Samsung Galaxy A54",
+    "brand": "Samsung",
+    "price": 449.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Samsung+Galaxy+A54/1.jpg",
+      "/products/Electronics/Samsung+Galaxy+A54/2.jpg",
+      "/products/Electronics/Samsung+Galaxy+A54/3.jpg"
+    ],
+    "description": "Mid-range smartphone with excellent features and great camera performance. Perfect balance of features and value.",
+    "stock": 70,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Exynos 1380",
+      "Display": "6.4-inch Super AMOLED",
+      "Storage": "128GB"
+    },
+    "slug": "elec005",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757441966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757441966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC006",
+    "name": "Xiaomi 14",
+    "brand": "Xiaomi",
+    "price": 699.99,
+    "discountPrice": 301.648414507439,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Xiaomi+14/1.jpg",
+      "/products/Electronics/Xiaomi+14/2.jpg",
+      "/products/Electronics/Xiaomi+14/3.jpg"
+    ],
+    "description": "Flagship phone with Leica optics and powerful Snapdragon processor. Premium build quality and excellent performance.",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 3",
+      "Display": "6.36-inch AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec006",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758651566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758651566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC007",
+    "name": "OnePlus 11",
+    "brand": "OnePlus",
+    "price": 699.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/OnePlus+11/1.webp",
+      "/products/Electronics/OnePlus+11/2.webp",
+      "/products/Electronics/OnePlus+11/3.webp"
+    ],
+    "description": "Flagship killer with Hasselblad cameras and lightning-fast charging. Smooth performance and premium design.",
+    "stock": 45,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 2",
+      "Display": "6.7-inch AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec007",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756837166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756837166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC008",
+    "name": "Realme GT 5",
+    "brand": "Realme",
+    "price": 499.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Realme+GT+5/1.jpg",
+      "/products/Electronics/Realme+GT+5/2.jpg",
+      "/products/Electronics/Realme+GT+5/3.jpg"
+    ],
+    "description": "Performance-focused phone with gaming features and fast charging. Great value for high-end specs.",
+    "stock": 50,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 2",
+      "Display": "6.74-inch AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec008",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1753985966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1753985966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC009",
+    "name": "Google Pixel 8",
+    "brand": "Google",
+    "price": 699.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Google+Pixel+8/1.jpg",
+      "/products/Electronics/Google+Pixel+8/2.jpg",
+      "/products/Electronics/Google+Pixel+8/3.jpg"
+    ],
+    "description": "Pure Android experience with exceptional computational photography. Powered by Google Tensor G3 chip.",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Google Tensor G3",
+      "Display": "6.2-inch OLED",
+      "Storage": "128GB"
+    },
+    "slug": "elec009",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755886766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755886766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC010",
+    "name": "Honor Magic 6",
+    "brand": "Honor",
+    "price": 649.99,
+    "discountPrice": 236.19582140456112,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Honor+Magic+6/1.jpg",
+      "/products/Electronics/Honor+Magic+6/2.jpg",
+      "/products/Electronics/Honor+Magic+6/3.jpg"
+    ],
+    "description": "Flagship smartphone with powerful camera system and sleek design. Features advanced AI capabilities.",
+    "stock": 35,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 8 Gen 3",
+      "Display": "6.78-inch OLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec010",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757787566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757787566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC011",
+    "name": "Oppo Reno 11",
+    "brand": "Oppo",
+    "price": 359.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Oppo+Reno+11/1.webp",
+      "/products/Electronics/Oppo+Reno+11/2.webp",
+      "/products/Electronics/Oppo+Reno+11/3.webp"
+    ],
+    "description": "Stylish mid-range phone with excellent camera capabilities and fast charging. Great value proposition.",
+    "stock": 50,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Dimensity 8200",
+      "Display": "6.7-inch AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec011",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756405166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756405166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC012",
+    "name": "Poco X6",
+    "brand": "Xiaomi",
+    "price": 249.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Poco+X6/1.webp",
+      "/products/Electronics/Poco+X6/2.webp",
+      "/products/Electronics/Poco+X6/3.webp"
+    ],
+    "description": "Budget gaming phone with high refresh rate display and powerful processor. Excellent performance for the price.",
+    "stock": 65,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 7s Gen 2",
+      "Display": "6.67-inch AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec012",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755800366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755800366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC013",
+    "name": "Redmi Note 13",
+    "brand": "Xiaomi",
+    "price": 299.99,
+    "discountPrice": 170.9403218092874,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Redmi+Note+13/1.jpg",
+      "/products/Electronics/Redmi+Note+13/2.jpg",
+      "/products/Electronics/Redmi+Note+13/3.jpg"
+    ],
+    "description": "Feature-packed budget phone with great camera and battery life. Perfect for everyday use.",
+    "stock": 80,
+    "rating": 4.2,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 685",
+      "Display": "6.67-inch AMOLED",
+      "Storage": "128GB"
+    },
+    "slug": "elec013",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757614766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757614766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC014",
+    "name": "Samsung A55",
+    "brand": "Samsung",
+    "price": 399.99,
+    "discountPrice": 162.32532554372483,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Samsung+A55/1.jpg",
+      "/products/Electronics/Samsung+A55/2.jpg",
+      "/products/Electronics/Samsung+A55/3.jpg"
+    ],
+    "description": "Mid-range phone with excellent features and build quality. Great all-around performance.",
+    "stock": 70,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Exynos 1480",
+      "Display": "6.6-inch Super AMOLED",
+      "Storage": "128GB"
+    },
+    "slug": "elec014",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754072366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754072366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC015",
+    "name": "Realme GT 6",
+    "brand": "Realme",
+    "price": 449.99,
+    "discountPrice": 239.9198827109402,
+    "category": "Electronics",
+    "subcategory": "Mobiles",
+    "images": [
+      "/products/Electronics/Realme+GT+6/1.jpg",
+      "/products/Electronics/Realme+GT+6/2.jpg",
+      "/products/Electronics/Realme+GT+6/3.jpg"
+    ],
+    "description": "High-performance phone with gaming features and fast charging. Excellent value for money.",
+    "stock": 55,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Snapdragon 8s Gen 3",
+      "Display": "6.78-inch AMOLED",
+      "Storage": "256GB"
+    },
+    "slug": "elec015",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757096366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757096366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC016",
+    "name": "iPad Pro 11\"",
+    "brand": "Apple",
+    "price": 799.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Tablets",
+    "images": [
+      "/products/Electronics/iPad+Pro+11\"/1.jpg",
+      "/products/Electronics/iPad+Pro+11\"/2.jpg",
+      "/products/Electronics/iPad+Pro+11\"/3.jpg"
+    ],
+    "description": "Powerful tablet with M2 chip and stunning Liquid Retina display. Perfect for creativity and productivity.",
+    "stock": 30,
+    "rating": 4.8,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "M2",
+      "Display": "11-inch Liquid Retina",
+      "Storage": "256GB"
+    },
+    "slug": "elec016",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756059566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756059566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC017",
+    "name": "Surface Laptop 5",
+    "brand": "Microsoft",
+    "price": 999.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "images": [
+      "/products/Electronics/Surface+Laptop+5/1.jpg",
+      "/products/Electronics/Surface+Laptop+5/2.jpg",
+      "/products/Electronics/Surface+Laptop+5/3.jpg"
+    ],
+    "description": "Premium laptop with touchscreen and all-day battery life. Perfect blend of style and performance.",
+    "stock": 25,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Intel Core i5",
+      "Display": "13.5-inch PixelSense",
+      "Storage": "512GB"
+    },
+    "slug": "elec017",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758737966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758737966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC018",
+    "name": "MacBook Air M2",
+    "brand": "Apple",
+    "price": 1199.99,
+    "discountPrice": 480.64118686467714,
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "images": [
+      "/products/Electronics/MacBook+Air+M2/1.jpg",
+      "/products/Electronics/MacBook+Air+M2/2.jpg",
+      "/products/Electronics/MacBook+Air+M2/3.jpg"
+    ],
+    "description": "Ultra-thin laptop with powerful M2 chip and stunning Retina display. Amazing performance and battery life.",
+    "stock": 20,
+    "rating": 4.9,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "M2",
+      "Display": "13.6-inch Liquid Retina",
+      "Storage": "512GB"
+    },
+    "slug": "elec018",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1756750766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756750766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC019",
+    "name": "Dell XPS 13",
+    "brand": "Dell",
+    "price": 1299.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "images": [
+      "/products/Electronics/Dell+XPS+13/1.jpg",
+      "/products/Electronics/Dell+XPS+13/2.jpg",
+      "/products/Electronics/Dell+XPS+13/3.jpg"
+    ],
+    "description": "Premium ultrabook with InfinityEdge display and powerful performance. Perfect for professionals.",
+    "stock": 15,
+    "rating": 4.8,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "Intel Core i7",
+      "Display": "13.4-inch InfinityEdge",
+      "Storage": "1TB"
+    },
+    "slug": "elec019",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754245166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754245166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC020",
+    "name": "HP Pavilion",
+    "brand": "HP",
+    "price": 699.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Laptops",
+    "images": [
+      "/products/Electronics/HP+Pavilion/1.jpg",
+      "/products/Electronics/HP+Pavilion/2.jpg",
+      "/products/Electronics/HP+Pavilion/3.jpg"
+    ],
+    "description": "Versatile laptop for everyday computing needs. Great performance at an affordable price.",
+    "stock": 30,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Processor": "AMD Ryzen 5",
+      "Display": "15.6-inch FHD",
+      "Storage": "512GB"
+    },
+    "slug": "elec020",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756059566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756059566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC021",
+    "name": "Sony WH-1000XM5",
+    "brand": "Sony",
+    "price": 399.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "images": [
+      "/products/Electronics/Sony+WH-1000XM5/1.jpg",
+      "/products/Electronics/Sony+WH-1000XM5/2.jpg",
+      "/products/Electronics/Sony+WH-1000XM5/3.jpg"
+    ],
+    "description": "Industry-leading noise cancelling headphones with exceptional sound quality. Premium comfort and features.",
+    "stock": 40,
+    "rating": 4.8,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Over-ear",
+      "Battery Life": "30 hours",
+      "Noise Cancelling": "Yes"
+    },
+    "slug": "elec021",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755713966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755713966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC022",
+    "name": "AirPods Pro 2",
+    "brand": "Apple",
+    "price": 249.99,
+    "discountPrice": 81.61348016012266,
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "images": [
+      "/products/Electronics/AirPods+Pro+2/1.webp",
+      "/products/Electronics/AirPods+Pro+2/2.webp",
+      "/products/Electronics/AirPods+Pro+2/3.webp"
+    ],
+    "description": "Premium wireless earbuds with active noise cancellation and spatial audio. Amazing sound quality and comfort.",
+    "stock": 50,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "In-ear",
+      "Battery Life": "6 hours",
+      "Noise Cancelling": "Yes"
+    },
+    "slug": "elec022",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758133166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758133166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC023",
+    "name": "Sony WH-CH720N",
+    "brand": "Sony",
+    "price": 149.99,
+    "discountPrice": 82.96782582254616,
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "images": [
+      "/products/Electronics/Sony+WH-CH720N/1.jpg",
+      "/products/Electronics/Sony+WH-CH720N/2.jpg",
+      "/products/Electronics/Sony+WH-CH720N/3.jpg"
+    ],
+    "description": "Mid-range noise cancelling headphones with great sound quality. Excellent value for money.",
+    "stock": 60,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Over-ear",
+      "Battery Life": "35 hours",
+      "Noise Cancelling": "Yes"
+    },
+    "slug": "elec023",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754245166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754245166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC024",
+    "name": "JBL Tune 760NC",
+    "brand": "JBL",
+    "price": 129.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "images": [
+      "/products/Electronics/JBL+Tune+760NC/1.jpg",
+      "/products/Electronics/JBL+Tune+760NC/2.jpg",
+      "/products/Electronics/JBL+Tune+760NC/3.jpg"
+    ],
+    "description": "Wireless headphones with active noise cancellation and JBL Pure Bass sound.",
+    "stock": 70,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Over-ear",
+      "Battery Life": "35 hours",
+      "Noise Cancelling": "Yes"
+    },
+    "slug": "elec024",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757787566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757787566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC025",
+    "name": "Beats Solo 3",
+    "brand": "Beats",
+    "price": 199.99,
+    "discountPrice": 126.40754511777378,
+    "category": "Electronics",
+    "subcategory": "Audio",
+    "images": [
+      "/products/Electronics/Beats+Solo+3/1.jpg",
+      "/products/Electronics/Beats+Solo+3/2.jpg",
+      "/products/Electronics/Beats+Solo+3/3.jpg"
+    ],
+    "description": "Wireless on-ear headphones with Apple W1 chip. Great sound and seamless connectivity.",
+    "stock": 45,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "On-ear",
+      "Battery Life": "40 hours",
+      "Noise Cancelling": "No"
+    },
+    "slug": "elec025",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758133166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758133166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC026",
+    "name": "Anker PowerCore 26800",
+    "brand": "Anker",
+    "price": 59.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Anker+PowerCore+26800/1.jpg",
+      "/products/Electronics/Anker+PowerCore+26800/2.jpg",
+      "/products/Electronics/Anker+PowerCore+26800/3.jpg"
+    ],
+    "description": "High-capacity power bank with fast charging support. Perfect for multiple device charging.",
+    "stock": 100,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "26800mAh",
+      "Fast Charging": "Yes",
+      "Ports": "3 USB-A"
+    },
+    "slug": "elec026",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757269166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757269166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC027",
+    "name": "RAVPower 20000mAh",
+    "brand": "RAVPower",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/RAVPower+20000mAh/1.webp",
+      "/products/Electronics/RAVPower+20000mAh/2.webp",
+      "/products/Electronics/RAVPower+20000mAh/3.webp"
+    ],
+    "description": "Compact power bank with PD fast charging. Great for travel and everyday use.",
+    "stock": 80,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "20000mAh",
+      "Fast Charging": "Yes",
+      "Ports": "USB-C PD"
+    },
+    "slug": "elec027",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756232366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756232366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC028",
+    "name": "Baseus Power Bank",
+    "brand": "Baseus",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Baseus+Power+Bank/1.jpg",
+      "/products/Electronics/Baseus+Power+Bank/2.jpg",
+      "/products/Electronics/Baseus+Power+Bank/3.jpg"
+    ],
+    "description": "Slim power bank with wireless charging capability. Perfect for modern devices.",
+    "stock": 90,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "10000mAh",
+      "Fast Charging": "Yes",
+      "Wireless": "Yes"
+    },
+    "slug": "elec028",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757873966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757873966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC029",
+    "name": "iPhone 15 Case",
+    "brand": "Apple",
+    "price": 49.99,
+    "discountPrice": 23.988744403528965,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/iPhone+15+Case/1.jpg",
+      "/products/Electronics/iPhone+15+Case/2.jpg",
+      "/products/Electronics/iPhone+15+Case/3.jpg"
+    ],
+    "description": "Official silicone case with MagSafe support. Perfect protection for your iPhone.",
+    "stock": 120,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "MagSafe": "Yes",
+      "Color": "Various",
+      "Material": "Silicone"
+    },
+    "slug": "elec029",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754158766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754158766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC030",
+    "name": "Samsung S24 Screen Protector",
+    "brand": "Spigen",
+    "price": 14.99,
+    "discountPrice": 8.562935488278008,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Samsung+S24+Screen+Protector/1.jpg",
+      "/products/Electronics/Samsung+S24+Screen+Protector/2.jpg",
+      "/products/Electronics/Samsung+S24+Screen+Protector/3.jpg"
+    ],
+    "description": "Tempered glass screen protector with easy installation. Maximum protection for your screen.",
+    "stock": 150,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Anti-Fingerprint": "Yes",
+      "Material": "Tempered Glass",
+      "Hardness": "9H"
+    },
+    "slug": "elec030",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754504366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754504366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC031",
+    "name": "USB-C Hub",
+    "brand": "Anker",
+    "price": 39.99,
+    "discountPrice": 21.259734990204922,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/USB-C+Hub/1.jpg",
+      "/products/Electronics/USB-C+Hub/2.jpg",
+      "/products/Electronics/USB-C+Hub/3.jpg"
+    ],
+    "description": "7-in-1 USB-C hub with HDMI, USB ports, and card reader. Perfect for laptops.",
+    "stock": 60,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Power Delivery": "100W",
+      "HDMI": "4K@60Hz",
+      "Ports": "7"
+    },
+    "slug": "elec031",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758133166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758133166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC032",
+    "name": "Lightning Cable",
+    "brand": "Apple",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Lightning+Cable/1.jpg",
+      "/products/Electronics/Lightning+Cable/2.jpg",
+      "/products/Electronics/Lightning+Cable/3.jpg"
+    ],
+    "description": "Official MFi-certified Lightning to USB-C cable. Fast charging support.",
+    "stock": 100,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "USB-C to Lightning",
+      "MFi": "Yes",
+      "Length": "1m"
+    },
+    "slug": "elec032",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757182766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757182766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC033",
+    "name": "MagSafe Charger",
+    "brand": "Apple",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/MagSafe+Charger/1.webp",
+      "/products/Electronics/MagSafe+Charger/2.webp",
+      "/products/Electronics/MagSafe+Charger/3.webp"
+    ],
+    "description": "Official MagSafe wireless charger for iPhone. Fast and convenient charging.",
+    "stock": 70,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Wireless",
+      "Power": "15W",
+      "MagSafe": "Yes"
+    },
+    "slug": "elec033",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC034",
+    "name": "Ring Light",
+    "brand": "Neewer",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Ring+Light/1.jpg",
+      "/products/Electronics/Ring+Light/2.jpg",
+      "/products/Electronics/Ring+Light/3.jpg"
+    ],
+    "description": "10-inch LED ring light with phone holder. Perfect for content creation.",
+    "stock": 45,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Power": "USB",
+      "Size": "10 inch",
+      "Modes": "3"
+    },
+    "slug": "elec034",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758824366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758824366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC035",
+    "name": "Phone Tripod",
+    "brand": "UBeesize",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Phone+Tripod/1.jpg",
+      "/products/Electronics/Phone+Tripod/2.jpg",
+      "/products/Electronics/Phone+Tripod/3.jpg"
+    ],
+    "description": "Flexible phone tripod with remote. Great for photos and videos.",
+    "stock": 80,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Remote": "Bluetooth",
+      "Height": "12 inch",
+      "Material": "Metal"
+    },
+    "slug": "elec035",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757182766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757182766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC036",
+    "name": "Bluetooth Speaker",
+    "brand": "JBL",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Bluetooth+Speaker/1.webp",
+      "/products/Electronics/Bluetooth+Speaker/2.webp",
+      "/products/Electronics/Bluetooth+Speaker/3.webp"
+    ],
+    "description": "Portable waterproof Bluetooth speaker. Great sound in a compact size.",
+    "stock": 55,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Power": "10W",
+      "Battery": "12 hours",
+      "Waterproof": "IPX7"
+    },
+    "slug": "elec036",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755195566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755195566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC037",
+    "name": "Car Charger",
+    "brand": "Anker",
+    "price": 24.99,
+    "discountPrice": 13.289720414699367,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Car+Charger/1.jpg",
+      "/products/Electronics/Car+Charger/2.jpg",
+      "/products/Electronics/Car+Charger/3.jpg"
+    ],
+    "description": "Dual-port car charger with PowerIQ technology. Fast charging on the go.",
+    "stock": 90,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Technology": "PowerIQ",
+      "Power": "24W",
+      "Ports": "2"
+    },
+    "slug": "elec037",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758824366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758824366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC038",
+    "name": "Phone Stand",
+    "brand": "Lamicall",
+    "price": 15.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Phone+Stand/1.jpg",
+      "/products/Electronics/Phone+Stand/2.jpg",
+      "/products/Electronics/Phone+Stand/3.jpg"
+    ],
+    "description": "Adjustable phone stand for desk. Perfect angle for video calls.",
+    "stock": 110,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Universal",
+      "Adjustable": "270°",
+      "Material": "Aluminum"
+    },
+    "slug": "elec038",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756059566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756059566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC039",
+    "name": "Power Strip",
+    "brand": "Belkin",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Power+Strip/1.jpg",
+      "/products/Electronics/Power+Strip/2.jpg",
+      "/products/Electronics/Power+Strip/3.jpg"
+    ],
+    "description": "Surge protector power strip with USB ports. Protection for all devices.",
+    "stock": 65,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Surge Protection": "Yes",
+      "USB Ports": "4",
+      "Outlets": "8"
+    },
+    "slug": "elec039",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755454766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755454766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC040",
+    "name": "Wall Mount",
+    "brand": "PERLESMITH",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Wall+Mount/1.jpg",
+      "/products/Electronics/Wall+Mount/2.jpg",
+      "/products/Electronics/Wall+Mount/3.jpg"
+    ],
+    "description": "TV wall mount bracket with full motion. Easy installation and sturdy.",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "32-55 inch",
+      "Motion": "Full",
+      "Weight Capacity": "88 lbs"
+    },
+    "slug": "elec040",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758910766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758910766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC041",
+    "name": "Cable Organizer",
+    "brand": "JOTO",
+    "price": 16.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Cable+Organizer/1.jpg",
+      "/products/Electronics/Cable+Organizer/2.jpg",
+      "/products/Electronics/Cable+Organizer/3.jpg"
+    ],
+    "description": "Cable management sleeve system. Keep your desk neat and tidy.",
+    "stock": 85,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Material": "Neoprene",
+      "Length": "20 inch",
+      "Pack": "4"
+    },
+    "slug": "elec041",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755454766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755454766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC042",
+    "name": "Smart Plug",
+    "brand": "TP-Link",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Smart+Plug/1.jpg",
+      "/products/Electronics/Smart+Plug/2.jpg",
+      "/products/Electronics/Smart+Plug/3.jpg"
+    ],
+    "description": "WiFi smart plug with energy monitoring. Control devices with your phone.",
+    "stock": 75,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "App": "Kasa",
+      "WiFi": "2.4GHz",
+      "Voice Control": "Yes"
+    },
+    "slug": "elec042",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756750766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756750766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC043",
+    "name": "Keyboard",
+    "brand": "Logitech",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Keyboard/1.jpg",
+      "/products/Electronics/Keyboard/2.jpg",
+      "/products/Electronics/Keyboard/3.jpg"
+    ],
+    "description": "Wireless keyboard with long battery life. Comfortable typing experience.",
+    "stock": 50,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Wireless",
+      "Battery": "24 months",
+      "Layout": "Full"
+    },
+    "slug": "elec043",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755800366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755800366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC044",
+    "name": "Mouse",
+    "brand": "Logitech",
+    "price": 29.99,
+    "discountPrice": 12.071948850366681,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Mouse/1.jpg",
+      "/products/Electronics/Mouse/2.jpg",
+      "/products/Electronics/Mouse/3.jpg"
+    ],
+    "description": "Wireless mouse with ergonomic design. Precise tracking and comfort.",
+    "stock": 60,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Battery": "12 months",
+      "Buttons": "6",
+      "DPI": "1000"
+    },
+    "slug": "elec044",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755454766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755454766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC045",
+    "name": "Hard Drive",
+    "brand": "WD",
+    "price": 79.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Hard+Drive/1.jpg",
+      "/products/Electronics/Hard+Drive/2.jpg",
+      "/products/Electronics/Hard+Drive/3.jpg"
+    ],
+    "description": "2TB portable hard drive. Fast data transfer and reliable storage.",
+    "stock": 40,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "2TB",
+      "Interface": "USB 3.0",
+      "Speed": "5Gbps"
+    },
+    "slug": "elec045",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756145966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756145966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC046",
+    "name": "Memory Card",
+    "brand": "SanDisk",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Memory+Card/1.jpg",
+      "/products/Electronics/Memory+Card/2.jpg",
+      "/products/Electronics/Memory+Card/3.jpg"
+    ],
+    "description": "128GB microSD card with adapter. Fast read and write speeds.",
+    "stock": 95,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "128GB",
+      "Class": "U3",
+      "Speed": "A2"
+    },
+    "slug": "elec046",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755886766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755886766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC047",
+    "name": "Phone Grip",
+    "brand": "PopSockets",
+    "price": 9.99,
+    "discountPrice": 3.330077553740982,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Phone+Grip/1.jpg",
+      "/products/Electronics/Phone+Grip/2.jpg",
+      "/products/Electronics/Phone+Grip/3.jpg"
+    ],
+    "description": "Phone grip and stand in one. Customizable designs available.",
+    "stock": 120,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Collapsible",
+      "Material": "Plastic",
+      "Adhesive": "Reusable"
+    },
+    "slug": "elec047",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758565166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758565166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC048",
+    "name": "Webcam",
+    "brand": "Logitech",
+    "price": 69.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Webcam/1.jpg",
+      "/products/Electronics/Webcam/2.jpg",
+      "/products/Electronics/Webcam/3.jpg"
+    ],
+    "description": "1080p webcam with microphone. Perfect for video calls and streaming.",
+    "stock": 35,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Microphone": "Stereo",
+      "Resolution": "1080p",
+      "FPS": "30"
+    },
+    "slug": "elec048",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757701166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757701166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC049",
+    "name": "USB Hub",
+    "brand": "Sabrent",
+    "price": 19.99,
+    "discountPrice": 10.766167571126363,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/USB+Hub/1.jpg",
+      "/products/Electronics/USB+Hub/2.jpg",
+      "/products/Electronics/USB+Hub/3.jpg"
+    ],
+    "description": "4-port USB 3.0 hub. Expand your connectivity options.",
+    "stock": 70,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Power": "Individual",
+      "Ports": "4",
+      "Speed": "5Gbps"
+    },
+    "slug": "elec049",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758133166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758133166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "ELEC050",
+    "name": "Cable Ties",
+    "brand": "VELCRO",
+    "price": 12.99,
+    "discountPrice": 0,
+    "category": "Electronics",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Electronics/Cable+Ties/1.jpg",
+      "/products/Electronics/Cable+Ties/2.jpg",
+      "/products/Electronics/Cable+Ties/3.jpg"
+    ],
+    "description": "Reusable cable ties for organization. Keep cables neat and tidy.",
+    "stock": 100,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Reusable": "Yes",
+      "Length": "8 inch",
+      "Pack": "50"
+    },
+    "slug": "elec050",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758305966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758305966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH001",
+    "name": "Basic White Tee",
+    "brand": "EssentialWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "T-shirts",
+    "images": [
+      "/products/Fashion/Basic+White+Tee/1.jpg",
+      "/products/Fashion/Basic+White+Tee/2.jpg",
+      "/products/Fashion/Basic+White+Tee/3.jpg"
+    ],
+    "description": "Premium cotton crew neck t-shirt. Classic fit with excellent comfort and durability.",
+    "stock": 100,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "100% Cotton"
+    },
+    "slug": "fash001",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755454766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755454766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH002",
+    "name": "Black Crew Neck",
+    "brand": "BasicWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "T-shirts",
+    "images": [
+      "/products/Fashion/Black+Crew+Neck/1.webp",
+      "/products/Fashion/Black+Crew+Neck/2.webp",
+      "/products/Fashion/Black+Crew+Neck/3.webp"
+    ],
+    "description": "Versatile black t-shirt made from soft cotton. Perfect for everyday wear.",
+    "stock": 100,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "100% Cotton"
+    },
+    "slug": "fash002",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756491566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756491566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH003",
+    "name": "Navy Tee",
+    "brand": "ComfortWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "T-shirts",
+    "images": [
+      "/products/Fashion/Navy+Tee/1.webp",
+      "/products/Fashion/Navy+Tee/2.webp",
+      "/products/Fashion/Navy+Tee/3.webp"
+    ],
+    "description": "Classic navy t-shirt in premium cotton. Essential wardrobe staple.",
+    "stock": 90,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "100% Cotton"
+    },
+    "slug": "fash003",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755627566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755627566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH004",
+    "name": "Gray Tee",
+    "brand": "BasicWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "T-shirts",
+    "images": [
+      "/products/Fashion/Gray+Tee/1.webp",
+      "/products/Fashion/Gray+Tee/2.webp",
+      "/products/Fashion/Gray+Tee/3.webp"
+    ],
+    "description": "Soft gray t-shirt perfect for layering or wearing alone.",
+    "stock": 85,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "100% Cotton"
+    },
+    "slug": "fash004",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758305966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758305966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH005",
+    "name": "Striped Tee",
+    "brand": "UrbanStyle",
+    "price": 24.99,
+    "discountPrice": 7.731482396430536,
+    "category": "Fashion",
+    "subcategory": "T-shirts",
+    "images": [
+      "/products/Fashion/Striped+Tee/1.webp",
+      "/products/Fashion/Striped+Tee/2.webp",
+      "/products/Fashion/Striped+Tee/3.webp"
+    ],
+    "description": "Classic striped t-shirt with modern fit. Great casual style.",
+    "stock": 75,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Cotton Blend"
+    },
+    "slug": "fash005",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757873966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757873966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH006",
+    "name": "White Dress Shirt",
+    "brand": "FormalWear",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Formal",
+    "images": [
+      "/products/Fashion/White+Dress+Shirt/1.webp",
+      "/products/Fashion/White+Dress+Shirt/2.webp",
+      "/products/Fashion/White+Dress+Shirt/3.webp"
+    ],
+    "description": "Crisp white dress shirt in premium cotton. Perfect for business and formal occasions.",
+    "stock": 50,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Dry Clean",
+      "Material": "Cotton"
+    },
+    "slug": "fash006",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758651566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758651566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH007",
+    "name": "Blue Dress Shirt",
+    "brand": "FormalWear",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Formal",
+    "images": [
+      "/products/Fashion/Blue+Dress+Shirt/1.webp",
+      "/products/Fashion/Blue+Dress+Shirt/2.webp",
+      "/products/Fashion/Blue+Dress+Shirt/3.webp"
+    ],
+    "description": "Classic blue dress shirt with wrinkle-resistant fabric. Professional and stylish.",
+    "stock": 45,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Dry Clean",
+      "Material": "Cotton"
+    },
+    "slug": "fash007",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH008",
+    "name": "Checkered Shirt",
+    "brand": "BusinessWear",
+    "price": 44.99,
+    "discountPrice": 25.592786857520906,
+    "category": "Fashion",
+    "subcategory": "Formal",
+    "images": [
+      "/products/Fashion/Checkered+Shirt/1.webp",
+      "/products/Fashion/Checkered+Shirt/2.webp",
+      "/products/Fashion/Checkered+Shirt/3.webp"
+    ],
+    "description": "Subtle checkered pattern dress shirt. Versatile for office or casual wear.",
+    "stock": 40,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Cotton"
+    },
+    "slug": "fash008",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755195566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755195566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH009",
+    "name": "Oxford Shirt",
+    "brand": "ClassicWear",
+    "price": 54.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Formal",
+    "images": [
+      "/products/Fashion/Oxford+Shirt/1.webp",
+      "/products/Fashion/Oxford+Shirt/2.webp",
+      "/products/Fashion/Oxford+Shirt/3.webp"
+    ],
+    "description": "Premium Oxford cloth button-down shirt. Timeless style and comfort.",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Oxford Cotton"
+    },
+    "slug": "fash009",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754849966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754849966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH010",
+    "name": "Dress Pants",
+    "brand": "FormalWear",
+    "price": 69.99,
+    "discountPrice": 25.232023320846736,
+    "category": "Fashion",
+    "subcategory": "Formal",
+    "images": [
+      "/products/Fashion/Dress+Pants/1.webp",
+      "/products/Fashion/Dress+Pants/2.webp",
+      "/products/Fashion/Dress+Pants/3.webp"
+    ],
+    "description": "Classic black dress pants with perfect drape. Essential formal wear.",
+    "stock": 40,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Dry Clean",
+      "Material": "Wool Blend"
+    },
+    "slug": "fash010",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758997166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758997166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH011",
+    "name": "Slim Fit Jeans",
+    "brand": "DenimCo",
+    "price": 59.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Casual",
+    "images": [
+      "/products/Fashion/Slim+Fit+Jeans/1.webp",
+      "/products/Fashion/Slim+Fit+Jeans/2.webp",
+      "/products/Fashion/Slim+Fit+Jeans/3.webp"
+    ],
+    "description": "Classic blue slim fit jeans. Comfortable stretch denim with perfect fit.",
+    "stock": 75,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Slim",
+      "Care": "Machine Wash",
+      "Material": "Stretch Denim"
+    },
+    "slug": "fash011",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755022766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755022766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH012",
+    "name": "Regular Fit Jeans",
+    "brand": "DenimCo",
+    "price": 54.99,
+    "discountPrice": 29.898362066948508,
+    "category": "Fashion",
+    "subcategory": "Casual",
+    "images": [
+      "/products/Fashion/Regular+Fit+Jeans/1.webp",
+      "/products/Fashion/Regular+Fit+Jeans/2.webp",
+      "/products/Fashion/Regular+Fit+Jeans/3.webp"
+    ],
+    "description": "Comfortable regular fit jeans in classic wash. Perfect everyday denim.",
+    "stock": 70,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Denim"
+    },
+    "slug": "fash012",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754763566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754763566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH013",
+    "name": "Black Jeans",
+    "brand": "UrbanDenim",
+    "price": 49.99,
+    "discountPrice": 25.2530583970399,
+    "category": "Fashion",
+    "subcategory": "Casual",
+    "images": [
+      "/products/Fashion/Black+Jeans/1.webp",
+      "/products/Fashion/Black+Jeans/2.webp",
+      "/products/Fashion/Black+Jeans/3.webp"
+    ],
+    "description": "Versatile black jeans in comfortable stretch fabric. Great for any occasion.",
+    "stock": 65,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Stretch Denim"
+    },
+    "slug": "fash013",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755973166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755973166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH014",
+    "name": "Khaki Chinos",
+    "brand": "CasualWear",
+    "price": 44.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Casual",
+    "images": [
+      "/products/Fashion/Khaki+Chinos/1.webp",
+      "/products/Fashion/Khaki+Chinos/2.webp",
+      "/products/Fashion/Khaki+Chinos/3.webp"
+    ],
+    "description": "Classic khaki chinos in comfortable cotton. Perfect smart casual pants.",
+    "stock": 60,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Cotton"
+    },
+    "slug": "fash014",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757787566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757787566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH015",
+    "name": "Cargo Shorts",
+    "brand": "OutdoorStyle",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Casual",
+    "images": [
+      "/products/Fashion/Cargo+Shorts/1.webp",
+      "/products/Fashion/Cargo+Shorts/2.webp",
+      "/products/Fashion/Cargo+Shorts/3.webp"
+    ],
+    "description": "Practical cargo shorts with multiple pockets. Perfect for summer activities.",
+    "stock": 80,
+    "rating": 4.2,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "Cotton"
+    },
+    "slug": "fash015",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758737966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758737966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH016",
+    "name": "Leather Belt",
+    "brand": "AccessoryPro",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Fashion/Leather+Belt/1.webp",
+      "/products/Fashion/Leather+Belt/2.webp",
+      "/products/Fashion/Leather+Belt/3.webp"
+    ],
+    "description": "Genuine leather belt with classic buckle. Perfect for both casual and formal wear.",
+    "stock": 60,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Care": "Wipe Clean",
+      "Width": "35mm",
+      "Material": "Genuine Leather"
+    },
+    "slug": "fash016",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754158766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754158766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH017",
+    "name": "Canvas Belt",
+    "brand": "CasualStyle",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Fashion/Canvas+Belt/1.webp",
+      "/products/Fashion/Canvas+Belt/2.webp",
+      "/products/Fashion/Canvas+Belt/3.webp"
+    ],
+    "description": "Casual canvas belt with metal buckle. Great for casual outfits.",
+    "stock": 70,
+    "rating": 4.2,
+    "reviewCount": 0,
+    "specs": {
+      "Care": "Machine Wash",
+      "Width": "38mm",
+      "Material": "Canvas"
+    },
+    "slug": "fash017",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757355566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757355566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH018",
+    "name": "Baseball Cap",
+    "brand": "SportStyle",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Fashion/Baseball+Cap/1.jpg",
+      "/products/Fashion/Baseball+Cap/2.jpg",
+      "/products/Fashion/Baseball+Cap/3.jpg"
+    ],
+    "description": "Classic baseball cap in cotton twill. Adjustable fit for comfort.",
+    "stock": 90,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Adjustable",
+      "Care": "Spot Clean",
+      "Material": "Cotton Twill"
+    },
+    "slug": "fash018",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754331566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754331566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH019",
+    "name": "Beanie",
+    "brand": "WinterWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Fashion/Beanie/1.jpg",
+      "/products/Fashion/Beanie/2.jpg",
+      "/products/Fashion/Beanie/3.jpg"
+    ],
+    "description": "Warm knit beanie in soft acrylic. Perfect for cold weather.",
+    "stock": 85,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "One Size",
+      "Care": "Hand Wash",
+      "Material": "Acrylic"
+    },
+    "slug": "fash019",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756577966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756577966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH020",
+    "name": "Backpack",
+    "brand": "UrbanGear",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Fashion/Backpack/1.jpg",
+      "/products/Fashion/Backpack/2.jpg",
+      "/products/Fashion/Backpack/3.jpg"
+    ],
+    "description": "Stylish and practical backpack with laptop compartment. Perfect for daily use.",
+    "stock": 55,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "20L",
+      "Material": "Polyester",
+      "Laptop Sleeve": "15 inch"
+    },
+    "slug": "fash020",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755800366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755800366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH021",
+    "name": "White Linen Shirt",
+    "brand": "LinenLife",
+    "price": 59.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Linen",
+    "images": [
+      "/products/Fashion/White+Linen+Shirt/1.webp",
+      "/products/Fashion/White+Linen+Shirt/2.webp",
+      "/products/Fashion/White+Linen+Shirt/3.webp"
+    ],
+    "description": "Pure linen shirt in classic white. Perfect for summer comfort.",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "100% Linen"
+    },
+    "slug": "fash021",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754331566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754331566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH022",
+    "name": "Linen Pants",
+    "brand": "LinenLife",
+    "price": 54.99,
+    "discountPrice": 34.83156353719909,
+    "category": "Fashion",
+    "subcategory": "Linen",
+    "images": [
+      "/products/Fashion/Linen+Pants/1.webp",
+      "/products/Fashion/Linen+Pants/2.webp",
+      "/products/Fashion/Linen+Pants/3.webp"
+    ],
+    "description": "Comfortable linen pants with drawstring. Perfect summer casual wear.",
+    "stock": 45,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Relaxed",
+      "Care": "Machine Wash",
+      "Material": "100% Linen"
+    },
+    "slug": "fash022",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH023",
+    "name": "Linen Shorts",
+    "brand": "SummerStyle",
+    "price": 44.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Linen",
+    "images": [
+      "/products/Fashion/Linen+Shorts/1.webp",
+      "/products/Fashion/Linen+Shorts/2.webp",
+      "/products/Fashion/Linen+Shorts/3.webp"
+    ],
+    "description": "Casual linen shorts for ultimate summer comfort. Perfect beach wear.",
+    "stock": 50,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Machine Wash",
+      "Material": "100% Linen"
+    },
+    "slug": "fash023",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756059566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756059566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH024",
+    "name": "Striped Linen Shirt",
+    "brand": "LinenLife",
+    "price": 64.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Linen",
+    "images": [
+      "/products/Fashion/Striped+Linen+Shirt/1.webp",
+      "/products/Fashion/Striped+Linen+Shirt/2.webp",
+      "/products/Fashion/Striped+Linen+Shirt/3.webp"
+    ],
+    "description": "Striped linen shirt with modern fit. Perfect smart casual look.",
+    "stock": 35,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Modern",
+      "Care": "Machine Wash",
+      "Material": "100% Linen"
+    },
+    "slug": "fash024",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757269166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757269166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH025",
+    "name": "Linen Blazer",
+    "brand": "FormalLinen",
+    "price": 89.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Linen",
+    "images": [
+      "/products/Fashion/Linen+Blazer/1.webp",
+      "/products/Fashion/Linen+Blazer/2.webp",
+      "/products/Fashion/Linen+Blazer/3.webp"
+    ],
+    "description": "Unstructured linen blazer. Perfect for summer formal occasions.",
+    "stock": 30,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Care": "Dry Clean",
+      "Material": "100% Linen"
+    },
+    "slug": "fash025",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755022766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755022766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH026",
+    "name": "Track Pants",
+    "brand": "ActiveLife",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Activewear",
+    "images": [
+      "/products/Fashion/Track+Pants/1.webp",
+      "/products/Fashion/Track+Pants/2.webp",
+      "/products/Fashion/Track+Pants/3.webp"
+    ],
+    "description": "Comfortable track pants with zip pockets. Perfect for workouts and casual wear.",
+    "stock": 60,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Feature": "Moisture-wicking",
+      "Material": "Polyester"
+    },
+    "slug": "fash026",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754417966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754417966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH027",
+    "name": "Athletic Tee",
+    "brand": "SportStyle",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Activewear",
+    "images": [
+      "/products/Fashion/Athletic+Tee/1.jpg",
+      "/products/Fashion/Athletic+Tee/2.jpg",
+      "/products/Fashion/Athletic+Tee/3.jpg"
+    ],
+    "description": "Lightweight athletic t-shirt. Perfect for high-intensity workouts.",
+    "stock": 70,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Athletic",
+      "Feature": "Quick-dry",
+      "Material": "Polyester"
+    },
+    "slug": "fash027",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754072366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754072366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH028",
+    "name": "Compression Shirt",
+    "brand": "ActivePro",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Fashion",
+    "subcategory": "Activewear",
+    "images": [
+      "/products/Fashion/Compression+Shirt/1.webp",
+      "/products/Fashion/Compression+Shirt/2.webp",
+      "/products/Fashion/Compression+Shirt/3.webp"
+    ],
+    "description": "Long sleeve compression shirt. Great for all sports activities.",
+    "stock": 55,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Compression",
+      "Feature": "Moisture-wicking",
+      "Material": "Spandex Blend"
+    },
+    "slug": "fash028",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758305966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758305966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH029",
+    "name": "Running Shorts",
+    "brand": "ActiveLife",
+    "price": 29.99,
+    "discountPrice": 14.13543914802075,
+    "category": "Fashion",
+    "subcategory": "Activewear",
+    "images": [
+      "/products/Fashion/Running+Shorts/1.webp",
+      "/products/Fashion/Running+Shorts/2.webp",
+      "/products/Fashion/Running+Shorts/3.webp"
+    ],
+    "description": "Lightweight running shorts with built-in liner. Perfect for runners.",
+    "stock": 65,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Feature": "Quick-dry",
+      "Material": "Polyester",
+      "Length": "7 inch"
+    },
+    "slug": "fash029",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1759083566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1759083566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "FASH030",
+    "name": "Yoga Pants",
+    "brand": "ZenWear",
+    "price": 44.99,
+    "discountPrice": 23.464060038516813,
+    "category": "Fashion",
+    "subcategory": "Activewear",
+    "images": [
+      "/products/Fashion/Yoga+Pants/1.webp",
+      "/products/Fashion/Yoga+Pants/2.webp",
+      "/products/Fashion/Yoga+Pants/3.webp"
+    ],
+    "description": "High-waisted yoga pants with pockets. Perfect for yoga and everyday wear.",
+    "stock": 75,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Feature": "4-way Stretch",
+      "Material": "Nylon Blend",
+      "Length": "Full"
+    },
+    "slug": "fash030",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757614766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757614766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME001",
+    "name": "Blackout Curtains",
+    "brand": "HomeStyle",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Curtains",
+    "images": [
+      "/products/Home & Garden/Blackout+Curtains/1.jpg",
+      "/products/Home & Garden/Blackout+Curtains/2.jpg",
+      "/products/Home & Garden/Blackout+Curtains/3.jpg"
+    ],
+    "description": "100% blackout curtains with thermal insulation. Perfect for bedroom and living room.",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "52x84 inches",
+      "Features": "Blackout",
+      "Material": "Polyester"
+    },
+    "slug": "home001",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754590766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754590766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME002",
+    "name": "Sheer Curtains",
+    "brand": "LightStyle",
+    "price": 29.99,
+    "discountPrice": 13.784055233238448,
+    "category": "Home & Garden",
+    "subcategory": "Curtains",
+    "images": [
+      "/products/Home & Garden/Sheer+Curtains/1.jpg",
+      "/products/Home & Garden/Sheer+Curtains/2.jpg",
+      "/products/Home & Garden/Sheer+Curtains/3.jpg"
+    ],
+    "description": "Light and airy sheer curtains. Perfect for letting in natural light while maintaining privacy.",
+    "stock": 50,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "52x84 inches",
+      "Features": "Sheer",
+      "Material": "Voile"
+    },
+    "slug": "home002",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755109166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755109166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME003",
+    "name": "Thermal Curtains",
+    "brand": "ComfortHome",
+    "price": 59.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Curtains",
+    "images": [
+      "/products/Home & Garden/Thermal+Curtains/1.jpg",
+      "/products/Home & Garden/Thermal+Curtains/2.jpg",
+      "/products/Home & Garden/Thermal+Curtains/3.jpg"
+    ],
+    "description": "Energy-efficient thermal curtains. Help maintain room temperature and reduce energy costs.",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "52x84 inches",
+      "Features": "Insulating",
+      "Material": "Thermal Fabric"
+    },
+    "slug": "home003",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758305966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758305966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME004",
+    "name": "Room Divider",
+    "brand": "SpaceStyle",
+    "price": 79.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Curtains",
+    "images": [
+      "/products/Home & Garden/Room+Divider/1.jpg",
+      "/products/Home & Garden/Room+Divider/2.jpg",
+      "/products/Home & Garden/Room+Divider/3.jpg"
+    ],
+    "description": "Elegant room divider curtain. Perfect for creating separate spaces in open areas.",
+    "stock": 30,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "8x8 feet",
+      "Features": "Room Division",
+      "Material": "Heavy Fabric"
+    },
+    "slug": "home004",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758133166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758133166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME005",
+    "name": "Window Valance",
+    "brand": "ElegantHome",
+    "price": 24.99,
+    "discountPrice": 16.00397555624613,
+    "category": "Home & Garden",
+    "subcategory": "Curtains",
+    "images": [
+      "/products/Home & Garden/Window+Valance/1.jpg",
+      "/products/Home & Garden/Window+Valance/2.jpg",
+      "/products/Home & Garden/Window+Valance/3.jpg"
+    ],
+    "description": "Decorative window valance. Adds style and elegance to any window treatment.",
+    "stock": 45,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "52x18 inches",
+      "Style": "Traditional",
+      "Material": "Polyester"
+    },
+    "slug": "home005",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1756664366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756664366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME006",
+    "name": "Curtain Rods",
+    "brand": "HomeHardware",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Curtains",
+    "images": [
+      "/products/Home & Garden/Curtain+Rods/1.jpg",
+      "/products/Home & Garden/Curtain+Rods/2.jpg",
+      "/products/Home & Garden/Curtain+Rods/3.jpg"
+    ],
+    "description": "Adjustable curtain rods with decorative finials. Easy installation and sturdy construction.",
+    "stock": 60,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Finish": "Bronze",
+      "Material": "Metal",
+      "Length": "28-48 inches"
+    },
+    "slug": "home006",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754417966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754417966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME007",
+    "name": "Monstera Deliciosa",
+    "brand": "GreenThumb",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/Monstera+Deliciosa/1.jpg",
+      "/products/Home & Garden/Monstera+Deliciosa/2.jpg",
+      "/products/Home & Garden/Monstera+Deliciosa/3.jpg"
+    ],
+    "description": "Popular indoor plant with unique split leaves. Easy to care for and air-purifying.",
+    "stock": 30,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Medium",
+      "Care": "Weekly Water",
+      "Light": "Indirect"
+    },
+    "slug": "home007",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758392366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758392366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME008",
+    "name": "Snake Plant",
+    "brand": "PlantLife",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/Snake+Plant/1.jpg",
+      "/products/Home & Garden/Snake+Plant/2.jpg",
+      "/products/Home & Garden/Snake+Plant/3.jpg"
+    ],
+    "description": "Low-maintenance indoor plant. Perfect for air purification and modern decor.",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Medium",
+      "Care": "Monthly Water",
+      "Light": "Low to Bright"
+    },
+    "slug": "home008",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755454766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755454766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME009",
+    "name": "Peace Lily",
+    "brand": "GreenHome",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/Peace+Lily/1.jpg",
+      "/products/Home & Garden/Peace+Lily/2.jpg",
+      "/products/Home & Garden/Peace+Lily/3.jpg"
+    ],
+    "description": "Beautiful flowering plant that helps clean indoor air. Easy to care for.",
+    "stock": 35,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Small",
+      "Care": "Weekly Water",
+      "Light": "Low to Medium"
+    },
+    "slug": "home009",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757096366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757096366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME010",
+    "name": "Pothos",
+    "brand": "PlantLife",
+    "price": 19.99,
+    "discountPrice": 10.149122381813855,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/Pothos/1.jpg",
+      "/products/Home & Garden/Pothos/2.jpg",
+      "/products/Home & Garden/Pothos/3.jpg"
+    ],
+    "description": "Trailing vine plant perfect for hanging baskets. Very easy to grow.",
+    "stock": 45,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Small",
+      "Care": "Weekly Water",
+      "Light": "Low to Bright"
+    },
+    "slug": "home010",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1756750766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756750766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME011",
+    "name": "Rubber Plant",
+    "brand": "GreenThumb",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/Rubber+Plant/1.jpg",
+      "/products/Home & Garden/Rubber+Plant/2.jpg",
+      "/products/Home & Garden/Rubber+Plant/3.jpg"
+    ],
+    "description": "Statement plant with large, glossy leaves. Great for adding height to room decor.",
+    "stock": 25,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Large",
+      "Care": "Weekly Water",
+      "Light": "Bright Indirect"
+    },
+    "slug": "home011",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755627566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755627566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME012",
+    "name": "ZZ Plant",
+    "brand": "PlantLife",
+    "price": 27.99,
+    "discountPrice": 15.26053689037018,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/ZZ+Plant/1.jpg",
+      "/products/Home & Garden/ZZ+Plant/2.jpg",
+      "/products/Home & Garden/ZZ+Plant/3.jpg"
+    ],
+    "description": "Nearly indestructible plant perfect for beginners. Tolerates low light conditions.",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Medium",
+      "Care": "Monthly Water",
+      "Light": "Low to Bright"
+    },
+    "slug": "home012",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755195566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755195566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME013",
+    "name": "Spider Plant",
+    "brand": "GreenHome",
+    "price": 22.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Plants",
+    "images": [
+      "/products/Home & Garden/Spider+Plant/1.jpg",
+      "/products/Home & Garden/Spider+Plant/2.jpg",
+      "/products/Home & Garden/Spider+Plant/3.jpg"
+    ],
+    "description": "Classic hanging plant that produces babies. Great air purifier.",
+    "stock": 40,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Medium",
+      "Care": "Weekly Water",
+      "Light": "Indirect"
+    },
+    "slug": "home013",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME014",
+    "name": "Coffee Table",
+    "brand": "FurnitureCo",
+    "price": 149.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Furniture",
+    "images": [
+      "/products/Home & Garden/Coffee+Table/1.jpg",
+      "/products/Home & Garden/Coffee+Table/2.jpg",
+      "/products/Home & Garden/Coffee+Table/3.jpg"
+    ],
+    "description": "Modern coffee table with storage shelf. Perfect centerpiece for any living room.",
+    "stock": 20,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "47x24 inches",
+      "Style": "Modern",
+      "Material": "Wood"
+    },
+    "slug": "home014",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758478766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758478766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME015",
+    "name": "Side Table",
+    "brand": "HomeStyle",
+    "price": 79.99,
+    "discountPrice": 30.399069578239946,
+    "category": "Home & Garden",
+    "subcategory": "Furniture",
+    "images": [
+      "/products/Home & Garden/Side+Table/1.jpg",
+      "/products/Home & Garden/Side+Table/2.jpg",
+      "/products/Home & Garden/Side+Table/3.jpg"
+    ],
+    "description": "Compact side table with drawer. Great for small spaces and storage.",
+    "stock": 25,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "20x20 inches",
+      "Style": "Contemporary",
+      "Material": "Wood"
+    },
+    "slug": "home015",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1756750766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756750766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME016",
+    "name": "Floor Lamp",
+    "brand": "LightingCo",
+    "price": 89.99,
+    "discountPrice": 56.166520298851026,
+    "category": "Home & Garden",
+    "subcategory": "Furniture",
+    "images": [
+      "/products/Home & Garden/Floor+Lamp/1.jpg",
+      "/products/Home & Garden/Floor+Lamp/2.jpg",
+      "/products/Home & Garden/Floor+Lamp/3.jpg"
+    ],
+    "description": "Modern floor lamp with adjustable head. Perfect for reading and ambient lighting.",
+    "stock": 30,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Height": "65 inches",
+      "Bulb Type": "LED",
+      "Material": "Metal"
+    },
+    "slug": "home016",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757355566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757355566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME017",
+    "name": "Table Lamp",
+    "brand": "LightStyle",
+    "price": 49.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Furniture",
+    "images": [
+      "/products/Home & Garden/Table+Lamp/1.jpg",
+      "/products/Home & Garden/Table+Lamp/2.jpg",
+      "/products/Home & Garden/Table+Lamp/3.jpg"
+    ],
+    "description": "Stylish table lamp with fabric shade. Great for bedside or desk lighting.",
+    "stock": 35,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Height": "20 inches",
+      "Material": "Ceramic",
+      "Shade": "Fabric"
+    },
+    "slug": "home017",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754158766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754158766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME018",
+    "name": "Throw Pillow",
+    "brand": "ComfortHome",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Furniture",
+    "images": [
+      "/products/Home & Garden/Throw+Pillow/1.jpg",
+      "/products/Home & Garden/Throw+Pillow/2.jpg",
+      "/products/Home & Garden/Throw+Pillow/3.jpg"
+    ],
+    "description": "Decorative throw pillow with removable cover. Adds comfort and style to any room.",
+    "stock": 50,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "18x18 inches",
+      "Care": "Machine Wash",
+      "Material": "Cotton"
+    },
+    "slug": "home018",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758997166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758997166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME019",
+    "name": "Area Rug",
+    "brand": "FloorDecor",
+    "price": 129.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Furniture",
+    "images": [
+      "/products/Home & Garden/Area+Rug/1.jpg",
+      "/products/Home & Garden/Area+Rug/2.jpg",
+      "/products/Home & Garden/Area+Rug/3.jpg"
+    ],
+    "description": "Soft area rug with modern pattern. Perfect for defining spaces and adding warmth.",
+    "stock": 15,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "5x7 feet",
+      "Style": "Contemporary",
+      "Material": "Synthetic"
+    },
+    "slug": "home019",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755109166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755109166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME020",
+    "name": "Wall Clock",
+    "brand": "TimeStyle",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Decor",
+    "images": [
+      "/products/Home & Garden/Wall+Clock/1.jpg",
+      "/products/Home & Garden/Wall+Clock/2.jpg",
+      "/products/Home & Garden/Wall+Clock/3.jpg"
+    ],
+    "description": "Modern wall clock with silent mechanism. Perfect blend of function and style.",
+    "stock": 40,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "12 inch",
+      "Style": "Modern",
+      "Material": "Metal"
+    },
+    "slug": "home020",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754072366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754072366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME021",
+    "name": "Picture Frame",
+    "brand": "HomeDecor",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Decor",
+    "images": [
+      "/products/Home & Garden/Picture+Frame/1.jpg",
+      "/products/Home & Garden/Picture+Frame/2.jpg",
+      "/products/Home & Garden/Picture+Frame/3.jpg"
+    ],
+    "description": "Classic picture frame in brushed metal finish. Perfect for photos and artwork.",
+    "stock": 45,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "8x10 inches",
+      "Style": "Classic",
+      "Material": "Metal"
+    },
+    "slug": "home021",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758910766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758910766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME022",
+    "name": "Vase",
+    "brand": "ArtDecor",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Decor",
+    "images": [
+      "/products/Home & Garden/Vase/1.jpg",
+      "/products/Home & Garden/Vase/2.jpg",
+      "/products/Home & Garden/Vase/3.jpg"
+    ],
+    "description": "Ceramic vase with modern design. Perfect for fresh or artificial flowers.",
+    "stock": 35,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Height": "12 inches",
+      "Style": "Modern",
+      "Material": "Ceramic"
+    },
+    "slug": "home022",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757009966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757009966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME023",
+    "name": "Candle Holder",
+    "brand": "LightDecor",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Home & Garden",
+    "subcategory": "Decor",
+    "images": [
+      "/products/Home & Garden/Candle+Holder/1.jpg",
+      "/products/Home & Garden/Candle+Holder/2.jpg",
+      "/products/Home & Garden/Candle+Holder/3.jpg"
+    ],
+    "description": "Glass candle holder with metallic finish. Creates beautiful ambient lighting.",
+    "stock": 50,
+    "rating": 4.2,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "4x6 inches",
+      "Style": "Contemporary",
+      "Material": "Glass"
+    },
+    "slug": "home023",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754590766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754590766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME024",
+    "name": "Wall Art",
+    "brand": "ArtHome",
+    "price": 79.99,
+    "discountPrice": 31.443324537833483,
+    "category": "Home & Garden",
+    "subcategory": "Decor",
+    "images": [
+      "/products/Home & Garden/Wall+Art/1.jpg",
+      "/products/Home & Garden/Wall+Art/2.jpg",
+      "/products/Home & Garden/Wall+Art/3.jpg"
+    ],
+    "description": "Abstract wall art print in modern style. Makes a bold statement in any room.",
+    "stock": 25,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "24x36 inches",
+      "Style": "Abstract",
+      "Material": "Canvas"
+    },
+    "slug": "home024",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1757701166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757701166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "HOME025",
+    "name": "Mirror",
+    "brand": "ReflectStyle",
+    "price": 89.99,
+    "discountPrice": 32.150371082963424,
+    "category": "Home & Garden",
+    "subcategory": "Decor",
+    "images": [
+      "/products/Home & Garden/Mirror/1.jpg",
+      "/products/Home & Garden/Mirror/2.jpg",
+      "/products/Home & Garden/Mirror/3.jpg"
+    ],
+    "description": "Decorative wall mirror with elegant frame. Adds light and space to any room.",
+    "stock": 20,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "30x40 inches",
+      "Style": "Traditional",
+      "Material": "Glass & Wood"
+    },
+    "slug": "home025",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758305966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758305966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT001",
+    "name": "Adjustable Dumbbells",
+    "brand": "FitPro",
+    "price": 299.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Gym Equipment",
+    "images": [
+      "/products/Sports/Adjustable+Dumbbells/1.jpg",
+      "/products/Sports/Adjustable+Dumbbells/2.jpg",
+      "/products/Sports/Adjustable+Dumbbells/3.jpg"
+    ],
+    "description": "Space-saving adjustable dumbbells from 5-52.5 lbs. Perfect for home gym.",
+    "stock": 25,
+    "rating": 4.8,
+    "reviewCount": 0,
+    "specs": {
+      "Adjustments": "15 settings",
+      "Material": "Steel",
+      "Weight Range": "5-52.5 lbs"
+    },
+    "slug": "sport001",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755368366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755368366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT002",
+    "name": "Resistance Bands Set",
+    "brand": "FitPro",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Gym Equipment",
+    "images": [
+      "/products/Sports/Resistance+Bands+Set/1.jpg",
+      "/products/Sports/Resistance+Bands+Set/2.jpg",
+      "/products/Sports/Resistance+Bands+Set/3.jpg"
+    ],
+    "description": "Set of 5 resistance bands with different resistance levels. Perfect for strength training and rehabilitation.",
+    "stock": 100,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Pieces": "5",
+      "Material": "Natural Latex",
+      "Resistance": "10-50 lbs"
+    },
+    "slug": "sport002",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754849966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754849966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT003",
+    "name": "Kettlebell 20lb",
+    "brand": "IronFit",
+    "price": 39.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Gym Equipment",
+    "images": [
+      "/products/Sports/Kettlebell+20lb/1.jpg",
+      "/products/Sports/Kettlebell+20lb/2.jpg",
+      "/products/Sports/Kettlebell+20lb/3.jpg"
+    ],
+    "description": "Cast iron kettlebell with comfortable grip. Perfect for full-body workouts.",
+    "stock": 40,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Handle": "Textured",
+      "Material": "Cast Iron",
+      "Weight": "20 lbs"
+    },
+    "slug": "sport003",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756664366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756664366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT004",
+    "name": "Pull-up Bar",
+    "brand": "HomeGym",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Gym Equipment",
+    "images": [
+      "/products/Sports/Pull-up+Bar/1.jpg",
+      "/products/Sports/Pull-up+Bar/2.jpg",
+      "/products/Sports/Pull-up+Bar/3.jpg"
+    ],
+    "description": "Doorway pull-up bar with multiple grip positions. Easy installation and removal.",
+    "stock": 50,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Width": "24-36 inches",
+      "Max Weight": "300 lbs",
+      "Material": "Steel"
+    },
+    "slug": "sport004",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756577966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756577966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT005",
+    "name": "Ab Wheel",
+    "brand": "CoreFit",
+    "price": 19.99,
+    "discountPrice": 8.415997437330786,
+    "category": "Sports",
+    "subcategory": "Gym Equipment",
+    "images": [
+      "/products/Sports/Ab+Wheel/1.jpg",
+      "/products/Sports/Ab+Wheel/2.jpg",
+      "/products/Sports/Ab+Wheel/3.jpg"
+    ],
+    "description": "Dual-wheel ab roller with comfortable grips. Great for core strengthening.",
+    "stock": 60,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Material": "PVC",
+      "Wheel Type": "Dual",
+      "Grip": "Non-slip"
+    },
+    "slug": "sport005",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754763566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754763566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT006",
+    "name": "Yoga Mat",
+    "brand": "YogaPro",
+    "price": 29.99,
+    "discountPrice": 11.592256568178243,
+    "category": "Sports",
+    "subcategory": "Yoga",
+    "images": [
+      "/products/Sports/Yoga+Mat/1.jpg",
+      "/products/Sports/Yoga+Mat/2.jpg",
+      "/products/Sports/Yoga+Mat/3.jpg"
+    ],
+    "description": "Premium yoga mat with alignment lines. Non-slip and eco-friendly material.",
+    "stock": 80,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "72x24 inches",
+      "Thickness": "6mm",
+      "Material": "TPE"
+    },
+    "slug": "sport006",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1759083566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1759083566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT007",
+    "name": "Yoga Blocks",
+    "brand": "YogaPro",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Yoga",
+    "images": [
+      "/products/Sports/Yoga+Blocks/1.jpg",
+      "/products/Sports/Yoga+Blocks/2.jpg",
+      "/products/Sports/Yoga+Blocks/3.jpg"
+    ],
+    "description": "Set of 2 high-density foam yoga blocks. Perfect for support and stability.",
+    "stock": 70,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Pieces": "2",
+      "Size": "9x6x4 inches",
+      "Material": "EVA Foam"
+    },
+    "slug": "sport007",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT008",
+    "name": "Yoga Strap",
+    "brand": "YogaPro",
+    "price": 9.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Yoga",
+    "images": [
+      "/products/Sports/Yoga+Strap/1.jpg",
+      "/products/Sports/Yoga+Strap/2.jpg",
+      "/products/Sports/Yoga+Strap/3.jpg"
+    ],
+    "description": "Cotton yoga strap with D-ring buckle. Great for stretching and flexibility.",
+    "stock": 90,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Width": "1.5 inches",
+      "Material": "Cotton",
+      "Length": "8 feet"
+    },
+    "slug": "sport008",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1755627566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755627566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT009",
+    "name": "Balance Ball",
+    "brand": "FitPro",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Yoga",
+    "images": [
+      "/products/Sports/Balance+Ball/1.jpg",
+      "/products/Sports/Balance+Ball/2.jpg",
+      "/products/Sports/Balance+Ball/3.jpg"
+    ],
+    "description": "Anti-burst exercise ball with pump. Perfect for yoga and core training.",
+    "stock": 55,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "65cm",
+      "Max Weight": "2000 lbs",
+      "Material": "PVC"
+    },
+    "slug": "sport009",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757960366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757960366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT010",
+    "name": "Meditation Cushion",
+    "brand": "ZenFit",
+    "price": 39.99,
+    "discountPrice": 12.989303413584647,
+    "category": "Sports",
+    "subcategory": "Yoga",
+    "images": [
+      "/products/Sports/Meditation+Cushion/1.jpg",
+      "/products/Sports/Meditation+Cushion/2.jpg",
+      "/products/Sports/Meditation+Cushion/3.jpg"
+    ],
+    "description": "Comfortable meditation cushion with carry handle. Perfect height for proper posture.",
+    "stock": 40,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "13x6 inches",
+      "Fill": "Buckwheat",
+      "Material": "Cotton"
+    },
+    "slug": "sport010",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1753985966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1753985966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT011",
+    "name": "Athletic Shirt",
+    "brand": "SportWear",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Apparel",
+    "images": [
+      "/products/Sports/Athletic+Shirt/1.jpg",
+      "/products/Sports/Athletic+Shirt/2.jpg",
+      "/products/Sports/Athletic+Shirt/3.jpg"
+    ],
+    "description": "Moisture-wicking athletic t-shirt. Perfect for workouts and running.",
+    "stock": 75,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Athletic",
+      "Feature": "Moisture-wicking",
+      "Material": "Polyester"
+    },
+    "slug": "sport011",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756318766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756318766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT012",
+    "name": "Gym Shorts",
+    "brand": "SportWear",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Apparel",
+    "images": [
+      "/products/Sports/Gym+Shorts/1.jpg",
+      "/products/Sports/Gym+Shorts/2.jpg",
+      "/products/Sports/Gym+Shorts/3.jpg"
+    ],
+    "description": "Quick-dry gym shorts with pockets. Comfortable and functional.",
+    "stock": 70,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Feature": "Quick-dry",
+      "Material": "Polyester",
+      "Length": "7 inch"
+    },
+    "slug": "sport012",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757528366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757528366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT013",
+    "name": "Compression Leggings",
+    "brand": "FitWear",
+    "price": 34.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Apparel",
+    "images": [
+      "/products/Sports/Compression+Leggings/1.jpg",
+      "/products/Sports/Compression+Leggings/2.jpg",
+      "/products/Sports/Compression+Leggings/3.jpg"
+    ],
+    "description": "High-waisted compression leggings. Perfect for all types of workouts.",
+    "stock": 65,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Feature": "Compression",
+      "Material": "Spandex Blend",
+      "Length": "Full"
+    },
+    "slug": "sport013",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758478766245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758478766245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT014",
+    "name": "Sports Bra",
+    "brand": "FitWear",
+    "price": 29.99,
+    "discountPrice": 13.19076698922208,
+    "category": "Sports",
+    "subcategory": "Apparel",
+    "images": [
+      "/products/Sports/Sports+Bra/1.jpg",
+      "/products/Sports/Sports+Bra/2.jpg",
+      "/products/Sports/Sports+Bra/3.jpg"
+    ],
+    "description": "Medium support sports bra. Comfortable and moisture-wicking.",
+    "stock": 60,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Support": "Medium",
+      "Feature": "Moisture-wicking",
+      "Material": "Nylon Blend"
+    },
+    "slug": "sport014",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1755368366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1755368366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT015",
+    "name": "Tank Top",
+    "brand": "SportWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Apparel",
+    "images": [
+      "/products/Sports/Tank+Top/1.jpg",
+      "/products/Sports/Tank+Top/2.jpg",
+      "/products/Sports/Tank+Top/3.jpg"
+    ],
+    "description": "Breathable athletic tank top. Perfect for high-intensity workouts.",
+    "stock": 80,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Fit": "Regular",
+      "Feature": "Breathable",
+      "Material": "Polyester"
+    },
+    "slug": "sport015",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754417966245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754417966245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT016",
+    "name": "Water Bottle",
+    "brand": "HydroFit",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Sports/Water+Bottle/1.jpg",
+      "/products/Sports/Water+Bottle/2.jpg",
+      "/products/Sports/Water+Bottle/3.jpg"
+    ],
+    "description": "BPA-free water bottle with time markers. Helps track daily water intake.",
+    "stock": 100,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Capacity": "32 oz",
+      "Feature": "Time Markers",
+      "Material": "Tritan"
+    },
+    "slug": "sport016",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758997166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758997166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT017",
+    "name": "Gym Bag",
+    "brand": "SportGear",
+    "price": 39.99,
+    "discountPrice": 14.095487808378543,
+    "category": "Sports",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Sports/Gym+Bag/1.jpg",
+      "/products/Sports/Gym+Bag/2.jpg",
+      "/products/Sports/Gym+Bag/3.jpg"
+    ],
+    "description": "Spacious gym bag with shoe compartment. Perfect for gym and travel.",
+    "stock": 45,
+    "rating": 4.7,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "Medium",
+      "Feature": "Shoe Compartment",
+      "Material": "Polyester"
+    },
+    "slug": "sport017",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1756059566245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756059566245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT018",
+    "name": "Gym Towel",
+    "brand": "FitStyle",
+    "price": 14.99,
+    "discountPrice": 4.500931604992328,
+    "category": "Sports",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Sports/Gym+Towel/1.jpg",
+      "/products/Sports/Gym+Towel/2.jpg",
+      "/products/Sports/Gym+Towel/3.jpg"
+    ],
+    "description": "Quick-dry microfiber gym towel. Perfect size for workouts.",
+    "stock": 120,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "16x32 inches",
+      "Feature": "Quick-dry",
+      "Material": "Microfiber"
+    },
+    "slug": "sport018",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1758565166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758565166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT019",
+    "name": "Lifting Gloves",
+    "brand": "GripPro",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Sports/Lifting+Gloves/1.jpg",
+      "/products/Sports/Lifting+Gloves/2.jpg",
+      "/products/Sports/Lifting+Gloves/3.jpg"
+    ],
+    "description": "Padded weight lifting gloves. Provides grip and hand protection.",
+    "stock": 85,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "M/L/XL",
+      "Feature": "Padded",
+      "Material": "Leather"
+    },
+    "slug": "sport019",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758997166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758997166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT020",
+    "name": "Knee Sleeves",
+    "brand": "JointPro",
+    "price": 24.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Accessories",
+    "images": [
+      "/products/Sports/Knee+Sleeves/1.jpg",
+      "/products/Sports/Knee+Sleeves/2.jpg",
+      "/products/Sports/Knee+Sleeves/3.jpg"
+    ],
+    "description": "Compression knee sleeves for support. Perfect for squats and running.",
+    "stock": 70,
+    "rating": 4.6,
+    "reviewCount": 0,
+    "specs": {
+      "Size": "M/L/XL",
+      "Feature": "Compression",
+      "Material": "Neoprene"
+    },
+    "slug": "sport020",
+    "isNew": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1757528366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1757528366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT021",
+    "name": "Foam Roller",
+    "brand": "RecoveryPro",
+    "price": 29.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Recovery",
+    "images": [
+      "/products/Sports/Foam+Roller/1.jpg",
+      "/products/Sports/Foam+Roller/2.jpg",
+      "/products/Sports/Foam+Roller/3.jpg"
+    ],
+    "description": "High-density foam roller for muscle recovery. Perfect for post-workout.",
+    "stock": 45,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Density": "High",
+      "Length": "18 inch",
+      "Type": "Textured"
+    },
+    "slug": "sport021",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1758133166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1758133166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT022",
+    "name": "Massage Ball",
+    "brand": "RecoveryPro",
+    "price": 14.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Recovery",
+    "images": [
+      "/products/Sports/Massage+Ball/1.jpg",
+      "/products/Sports/Massage+Ball/2.jpg",
+      "/products/Sports/Massage+Ball/3.jpg"
+    ],
+    "description": "Deep tissue massage ball. Perfect for targeting specific muscle groups.",
+    "stock": 60,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Firm",
+      "Size": "2.5 inch",
+      "Material": "Rubber"
+    },
+    "slug": "sport022",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT023",
+    "name": "Compression Socks",
+    "brand": "RecoveryWear",
+    "price": 19.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Recovery",
+    "images": [
+      "/products/Sports/Compression+Socks/1.jpg",
+      "/products/Sports/Compression+Socks/2.jpg",
+      "/products/Sports/Compression+Socks/3.jpg"
+    ],
+    "description": "Graduated compression socks for improved circulation. Perfect for recovery and travel.",
+    "stock": 80,
+    "rating": 4.5,
+    "reviewCount": 0,
+    "specs": {
+      "Length": "Knee High",
+      "Material": "Nylon Blend",
+      "Compression": "20-30mmHg"
+    },
+    "slug": "sport023",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1756232366245"
+    },
+    "updatedAt": {
+      "$numberLong": "1756232366245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT024",
+    "name": "Ice Pack",
+    "brand": "CoolRelief",
+    "price": 12.99,
+    "discountPrice": 0,
+    "category": "Sports",
+    "subcategory": "Recovery",
+    "images": [
+      "/products/Sports/Ice+Pack/1.jpg",
+      "/products/Sports/Ice+Pack/2.jpg",
+      "/products/Sports/Ice+Pack/3.jpg"
+    ],
+    "description": "Reusable ice pack with compression wrap. Perfect for injury recovery.",
+    "stock": 90,
+    "rating": 4.3,
+    "reviewCount": 0,
+    "specs": {
+      "Type": "Gel",
+      "Size": "10x12 inch",
+      "Feature": "Flexible"
+    },
+    "slug": "sport024",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "createdAt": {
+      "$numberLong": "1754677166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754677166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  },
+  {
+    "_id": "SPORT025",
+    "name": "Recovery Bands",
+    "brand": "FlexFit",
+    "price": 16.99,
+    "discountPrice": 8.599605998902902,
+    "category": "Sports",
+    "subcategory": "Recovery",
+    "images": [
+      "/products/Sports/Recovery+Bands/1.jpg",
+      "/products/Sports/Recovery+Bands/2.jpg",
+      "/products/Sports/Recovery+Bands/3.jpg"
+    ],
+    "description": "Light resistance bands for recovery exercises. Perfect for rehabilitation.",
+    "stock": 75,
+    "rating": 4.4,
+    "reviewCount": 0,
+    "specs": {
+      "Material": "Latex",
+      "Pack": "3",
+      "Resistance": "Light"
+    },
+    "slug": "sport025",
+    "isNew": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "createdAt": {
+      "$numberLong": "1754245166245"
+    },
+    "updatedAt": {
+      "$numberLong": "1754245166245"
+    },
+    "_class": "com.ecommerce.model.Product"
+  }
+]

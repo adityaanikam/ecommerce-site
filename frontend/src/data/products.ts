@@ -12,8 +12,10 @@ export const products: Product[] = [
     description: 'Latest iPhone with titanium design and A17 Pro chip',
     stock: 50,
     images: ['/api/placeholder/300/300'],
-    rating: 4.5,
-    reviewCount: 10,
+    ratings: {
+      average: 4.5,
+      count: 10
+    },
     specs: {
       'Display': '6.1-inch Super Retina XDR',
       'Processor': 'A17 Pro chip',
@@ -37,7 +39,10 @@ export const products: Product[] = [
     description: 'Premium Android phone with AI features',
     stock: 45,
     images: ['/api/placeholder/300/300'],
-    rating: 4.4,
+    ratings: {
+      average: 4.4,
+      count: 8
+    },
     reviewCount: 8,
     specs: {
       'Display': '6.2-inch Dynamic AMOLED 2X',

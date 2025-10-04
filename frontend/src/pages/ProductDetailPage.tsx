@@ -111,7 +111,7 @@ export const ProductDetailPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Product Images */}
           <div className="space-y-4">
-            <ProductGallery images={product.images} product={product} />
+            <ProductGallery images={product.images} alt={product.name} product={product} />
           </div>
 
           {/* Product Info */}
@@ -143,7 +143,7 @@ export const ProductDetailPage: React.FC = () => {
                       <svg
                         key={i}
                         className={`h-5 w-5 ${
-                          i < Math.floor(product.rating || 0)
+                          i < Math.floor(product.ratings?.average || 0)
                             ? 'text-yellow-400'
                             : 'text-secondary-300 dark:text-secondary-600'
                         }`}
@@ -155,7 +155,7 @@ export const ProductDetailPage: React.FC = () => {
                     ))}
                   </div>
                   <span className="text-sm text-secondary-600 dark:text-secondary-400">
-                    {product.rating?.toFixed(1)} ({product.stock} reviews)
+                    {product.ratings?.average?.toFixed(1)} ({product.ratings?.count || 0} reviews)
                   </span>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export const ProductDetailPage: React.FC = () => {
                   </span>
                 )}
                 {product.discountPrice && product.discountPrice < product.price && (
-                  <Badge variant="destructive" className="text-sm">
+                  <Badge variant="error" className="text-sm">
                     Save ${(product.price - product.discountPrice).toFixed(2)}
                   </Badge>
                 )}
@@ -235,7 +235,10 @@ export const ProductDetailPage: React.FC = () => {
               </div>
 
               {showAddToCartAnimation && (
-                <AddToCartAnimation />
+                <AddToCartAnimation 
+                  isAnimating={showAddToCartAnimation}
+                  onAnimationComplete={() => setShowAddToCartAnimation(false)}
+                />
               )}
             </div>
           </div>
