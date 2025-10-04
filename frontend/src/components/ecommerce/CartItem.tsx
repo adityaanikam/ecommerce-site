@@ -3,7 +3,7 @@ import { Minus, Plus, Trash2, Heart } from 'lucide-react';
 import { Button, Badge } from '@/components/ui';
 import { PriceDisplay, RatingStars } from './';
 import { cn } from '@/utils/cn';
-import { getImageUrl, getProductImageUrl, handleImageError } from '@/config';
+import { getImageUrl, handleImageError } from '@/config';
 import { CartItem as CartItemType } from '@/types';
 
 export interface CartItemProps {
@@ -28,7 +28,7 @@ export const CartItem: React.FC<CartItemProps> = ({
   const [imageError, setImageError] = React.useState(false);
 
   const handleQuantityChange = (newQuantity: number) => {
-    if (newQuantity >= 1 && newQuantity <= (item.maxQuantity || 999)) {
+    if (newQuantity >= 1 && newQuantity <= item.stock) {
       onUpdateQuantity(item.productId, newQuantity);
     }
   };
@@ -58,11 +58,8 @@ export const CartItem: React.FC<CartItemProps> = ({
         {/* Content */}
         <div className="flex-1 min-w-0">
           <h4 className="font-medium text-secondary-900 truncate">
-            {item.productName}
+            {item.name}
           </h4>
-          <p className="text-sm text-secondary-500">
-            {item.brand}
-          </p>
           <div className="flex items-center justify-between mt-1">
             <PriceDisplay
               price={item.price}
@@ -116,39 +113,8 @@ export const CartItem: React.FC<CartItemProps> = ({
         <div className="flex items-start justify-between">
           <div className="flex-1 min-w-0">
             <h4 className="font-semibold text-secondary-900 line-clamp-2">
-              {item.productName}
+              {item.name}
             </h4>
-            <p className="text-sm text-secondary-500 mt-1">
-              {item.brand}
-            </p>
-            
-            {/* Variants */}
-            {(item.size || item.color || item.variant) && (
-              <div className="flex items-center space-x-2 mt-2">
-                {item.size && (
-                  <Badge variant="outline" className="text-xs">
-                    Size: {item.size}
-                  </Badge>
-                )}
-                {item.color && (
-                  <Badge variant="outline" className="text-xs">
-                    Color: {item.color}
-                  </Badge>
-                )}
-                {item.variant && (
-                  <Badge variant="outline" className="text-xs">
-                    {item.variant}
-                  </Badge>
-                )}
-              </div>
-            )}
-
-            {/* Stock Status */}
-            {!item.isAvailable && (
-              <Badge variant="error" className="text-xs mt-2">
-                Out of Stock
-              </Badge>
-            )}
           </div>
 
           {/* Price */}
@@ -158,7 +124,7 @@ export const CartItem: React.FC<CartItemProps> = ({
               size="md"
             />
             <p className="text-sm text-secondary-600 mt-1">
-              Total: ${item.subtotal.toFixed(2)}
+              Total: ${(item.price * item.quantity).toFixed(2)}
             </p>
           </div>
         </div>
@@ -185,7 +151,7 @@ export const CartItem: React.FC<CartItemProps> = ({
                 size="icon-sm"
                 variant="outline"
                 onClick={() => handleQuantityChange(item.quantity + 1)}
-                disabled={item.quantity >= (item.maxQuantity || 999)}
+                disabled={item.quantity >= item.stock}
               >
                 <Plus className="h-3 w-3" />
               </Button>

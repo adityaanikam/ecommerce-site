@@ -4,7 +4,7 @@ import { Heart, Eye, ShoppingCart, Plus, Minus } from 'lucide-react';
 import { Button, Card, CardContent, Badge } from '@/components';
 import { Product } from '@/types/api';
 import { cn } from '@/utils/cn';
-import { getImageUrl, getProductImageUrl, getProductImageUrls, handleImageError } from '@/config';
+import { getProductImageUrls, handleImageError } from '@/config';
 import { AddToCartAnimation } from './AddToCartAnimation';
 
 interface ProductCardProps {

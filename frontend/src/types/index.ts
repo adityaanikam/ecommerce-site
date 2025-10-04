@@ -1,6 +1,131 @@
 // Re-export all types
 export * from './api';
 
+// Auth types
+export interface User {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  role: UserRole;
+  avatar?: string;
+  phone?: string;
+  address?: Address;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export enum UserRole {
+  USER = 'USER',
+  ADMIN = 'ADMIN',
+  MODERATOR = 'MODERATOR'
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+  rememberMe?: boolean;
+}
+
+export interface RegisterRequest {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  confirmPassword: string;
+}
+
+export interface AuthResponse {
+  user: User;
+  token: string;
+  refreshToken: string;
+  expiresIn: number;
+}
+
+export interface RefreshTokenRequest {
+  refreshToken: string;
+}
+
+export interface PasswordChangeRequest {
+  currentPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+}
+
+export interface ForgotPasswordRequest {
+  email: string;
+}
+
+export interface ResetPasswordRequest {
+  token: string;
+  password: string;
+  confirmPassword: string;
+}
+
+// Additional API types
+export interface UserDto extends User {}
+export interface ProductDto extends Product {}
+export interface CategoryDto extends ProductCategory {}
+export interface ReviewDto {
+  id: string;
+  productId: string;
+  userId: string;
+  rating: number;
+  title: string;
+  comment: string;
+  helpful: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CartDto extends Cart {}
+export interface CartItemDto extends CartItem {}
+export interface OrderDto extends Order {}
+export interface OrderItemDto extends OrderItem {}
+
+export interface CreateProductRequest {
+  name: string;
+  brand: string;
+  description: string;
+  price: number;
+  stock: number;
+  category: string;
+  subcategory: string;
+  specs: Record<string, string>;
+  features?: string[];
+}
+
+export interface UpdateProductRequest {
+  name?: string;
+  brand?: string;
+  description?: string;
+  price?: number;
+  stock?: number;
+  category?: string;
+  subcategory?: string;
+  specs?: Record<string, string>;
+  features?: string[];
+}
+
+export interface CreateOrderRequest {
+  items: OrderItem[];
+  shippingAddress: Address;
+  paymentMethod: string;
+}
+
+export interface AddToCartRequest {
+  productId: string;
+  quantity: number;
+}
+
+export interface PaymentStatus {
+  status: 'pending' | 'completed' | 'failed' | 'refunded';
+  transactionId?: string;
+  amount: number;
+  currency: string;
+  createdAt: string;
+}
+
 // Common utility types
 export type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 export type RequiredFields<T, K extends keyof T> = T & Required<Pick<T, K>>;
