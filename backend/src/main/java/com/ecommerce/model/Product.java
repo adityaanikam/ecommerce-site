@@ -133,4 +133,37 @@ public class Product {
     public long getUpdatedAt() {
         return updatedAt;
     }
+    
+    // Manual setter methods (Lombok not working properly)
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+    
+    public void setFeatured(boolean featured) {
+        this.isFeatured = featured;
+    }
+    
+    public void setNew(boolean isNew) {
+        this.isNew = isNew;
+    }
+    
+    public void setOnSale(boolean onSale) {
+        this.isOnSale = onSale;
+    }
+    
+    public void setDiscountPrice(double discountPrice) {
+        this.discountPrice = discountPrice;
+    }
+    
+    public void setSlug(String slug) {
+        this.slug = slug;
+    }
+    
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
+    }
+    
+    public void setUpdatedAt(long updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

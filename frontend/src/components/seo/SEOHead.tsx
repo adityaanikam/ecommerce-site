@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { getImageUrl } from '@/config';
 
 interface SEOHeadProps {
   title?: string;
@@ -221,7 +222,7 @@ export const seoUtils = {
     title: product.name,
     description: product.description,
     type: 'product' as const,
-    image: product.images[0],
+    image: getImageUrl(product.images[0]),
     price: {
       amount: product.price,
       currency: product.currency,
@@ -236,7 +237,7 @@ export const seoUtils = {
     keywords: [product.name, product.category, product.brand].filter(Boolean),
     structuredData: {
       sku: product.sku,
-      image: product.images,
+      image: product.images.map(img => getImageUrl(img)),
     },
   }),
 

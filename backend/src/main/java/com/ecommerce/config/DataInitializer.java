@@ -58,6 +58,53 @@ public class DataInitializer implements CommandLineRunner {
         List<Product> sportsProducts = SportsProducts.getProducts();
         allProducts.addAll(sportsProducts);
         System.out.println("Added " + sportsProducts.size() + " sports products");
+        
+        // Fix image paths for all products
+        System.out.println("Fixing image paths for all products...");
+        for (Product product : allProducts) {
+            String category = product.getCategory();
+            String name = product.getName();
+            
+            // Generate correct image paths based on actual files
+            List<String> imagePaths = new ArrayList<>();
+            
+            // Use correct extensions based on actual files
+            String[] extensions;
+            if ("Electronics".equals(category)) {
+                // Check specific products that use webp
+                if (name.contains("AirPods") || name.contains("iPhone 13") || name.contains("iPhone 14") || 
+                    name.contains("Bluetooth Speaker") || name.contains("MagSafe") || name.contains("OnePlus") ||
+                    name.contains("Oppo") || name.contains("Poco") || name.contains("RAVPower")) {
+                    extensions = new String[]{"webp", "webp", "webp"};
+                } else {
+                    extensions = new String[]{"jpg", "jpg", "jpg"};
+                }
+            } else if ("Fashion".equals(category)) {
+                // Check specific products that use webp
+                if (name.contains("Black Crew Neck") || name.contains("Black Jeans") || name.contains("Blue Dress Shirt") ||
+                    name.contains("Canvas Belt") || name.contains("Cargo Shorts") || name.contains("Checkered Shirt") ||
+                    name.contains("Compression Shirt") || name.contains("Dress Pants") || name.contains("Gray Tee") ||
+                    name.contains("Khaki Chinos") || name.contains("Leather Belt") || name.contains("Linen Blazer") ||
+                    name.contains("Linen Pants") || name.contains("Linen Shorts") || name.contains("Navy Tee") ||
+                    name.contains("Oxford Shirt") || name.contains("Regular Fit Jeans") || name.contains("Running Shorts") ||
+                    name.contains("Slim Fit Jeans") || name.contains("Striped Linen Shirt") || name.contains("Striped Tee") ||
+                    name.contains("Track Pants") || name.contains("White Dress Shirt") || name.contains("White Linen Shirt") ||
+                    name.contains("Yoga Pants")) {
+                    extensions = new String[]{"webp", "webp", "webp"};
+                } else {
+                    extensions = new String[]{"jpg", "jpg", "jpg"};
+                }
+            } else {
+                extensions = new String[]{"jpg", "jpg", "jpg"}; // Default to jpg
+            }
+            
+            for (int i = 0; i < 3; i++) {
+                imagePaths.add("/products/" + category + "/" + name + "/" + (i + 1) + "." + extensions[i]);
+            }
+            
+            // Update product with correct image paths
+            product.setImages(imagePaths);
+        }
 
         // Set featured, new, and sale flags
         Random random = new Random();

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product } from '@/types/api';
+import { getImageUrl, getProductImageUrl } from '@/config';
 
 interface CartItem {
   productId: string;
@@ -65,7 +66,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         quantity: Math.min(quantity, product.stock),
         name: product.name,
         price: product.price,
-        image: product.images[0],
+        image: getProductImageUrl(product, 0),
         stock: product.stock,
       };
 

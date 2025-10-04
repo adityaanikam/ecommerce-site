@@ -1,216 +1,264 @@
-# E-commerce Backend Application
+# E-commerce Application
 
-A complete Spring Boot e-commerce backend application with MongoDB, Redis, and Docker support.
+A modern, full-stack e-commerce application built with React, TypeScript, Spring Boot, and MongoDB.
 
-## Features
-
-- **User Management**: Registration, authentication, and profile management
-- **Product Management**: CRUD operations for products with search and filtering
-- **Category Management**: Hierarchical category structure
-- **Shopping Cart**: Add, update, and remove items from cart
-- **Order Management**: Complete order lifecycle management
-- **Security**: JWT-based authentication with role-based access control
-- **Caching**: Redis integration for session management and caching
-- **Database**: MongoDB for data persistence
-- **Containerization**: Docker support with docker-compose
-
-## Technology Stack
-
-- **Java 17**
-- **Spring Boot 3.2+**
-- **Spring Security** with JWT
-- **Spring Data MongoDB**
-- **Spring Data Redis**
-- **MongoDB** (Primary Database)
-- **Redis** (Caching & Sessions)
-- **Maven** (Build Tool)
-- **Docker** (Containerization)
-- **Lombok** (Code Generation)
-
-## Project Structure
-
-```
-src/main/java/com/ecommerce/
-├── controller/          # REST Controllers
-├── service/            # Business Logic Layer
-├── repository/         # Data Access Layer
-├── model/             # Entity Models
-├── dto/               # Data Transfer Objects
-├── security/          # Security Configuration
-├── exception/         # Exception Handling
-└── config/            # Configuration Classes
-```
-
-## Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Java 17 or higher
+- Node.js 18+ and npm
+- Java 17+
+- MongoDB (local or Atlas)
 - Maven 3.6+
-- Docker and Docker Compose
-- MongoDB (if running locally)
-- Redis (if running locally)
 
-### Running with Docker Compose (Recommended)
+### Local Development
 
-1. Clone the repository:
+1. **Clone and setup**
+   ```bash
+   git clone <repository-url>
+   cd ecommerce-project
+   ```
+
+2. **Start MongoDB** (if using local)
+   ```bash
+   mongod --dbpath ./data/db
+   ```
+
+3. **Backend**
+   ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
+
+4. **Frontend**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+5. **Verify Setup**
+   - Backend: `http://localhost:8080/api/products/verify`
+   - Frontend: `http://localhost:3000`
+
+## 🏗️ Production Deployment
+
+### Architecture
+- **Frontend**: Vercel (React + TypeScript)
+- **Backend**: Render (Dockerized Spring Boot)
+- **Database**: MongoDB Atlas (Cloud)
+- **Images**: Cloud Storage or Render Static Files
+
+### Quick Deploy Steps
+
+1. **MongoDB Atlas Setup**
+   - Create cluster at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+   - Get connection string
+   - Configure network access
+
+2. **Backend to Render**
+   - Connect GitHub repo to Render
+   - Set environment variables:
+     ```
+     MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ecommerce
+     ALLOWED_ORIGINS=https://your-vercel-app.vercel.app
+     ```
+
+3. **Frontend to Vercel**
+   - Connect GitHub repo to Vercel
+   - Set environment variables:
+     ```
+     VITE_API_BASE_URL=https://your-render-app.onrender.com/api
+     VITE_IMAGE_BASE_URL=https://your-render-app.onrender.com
+     ```
+
+4. **Database Seeding**
 ```bash
-git clone <repository-url>
-cd ecommerce-backend
+   cd scripts
+   npm install
+   MONGODB_URI=your-atlas-uri npm run upload
+   ```
+
+📖 **Detailed instructions**: See [PRODUCTION_SETUP.md](./PRODUCTION_SETUP.md)
+
+## 🎯 Features
+
+- **Product Catalog**: Browse products by category with advanced filtering
+- **Shopping Cart**: Add/remove items with quantity management
+- **User Authentication**: Secure login and registration
+- **Order Management**: Complete checkout process
+- **Admin Dashboard**: Manage products, orders, and users
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Dark Mode**: Toggle between light and dark themes
+- **Image Gallery**: Multiple images per product with zoom
+- **Search & Filter**: Advanced product search and filtering
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18** with TypeScript
+- **Vite** for build tooling
+- **Tailwind CSS** for styling
+- **React Query** for state management
+- **React Router** for navigation
+- **Framer Motion** for animations
+
+### Backend
+- **Spring Boot 3.2** with Java 17
+- **Spring Data MongoDB** for database
+- **Spring Security** for authentication
+- **Maven** for dependency management
+- **Docker** for containerization
+
+### Database & Storage
+- **MongoDB Atlas** for cloud database
+- **Cloud Storage** for product images
+- **Static Files** for local development
+
+## 📁 Project Structure
+
+```
+ecommerce-project/
+├── backend/                 # Spring Boot backend
+│   ├── src/main/java/      # Java source code
+│   ├── src/main/resources/ # Configuration files
+│   ├── Products/           # Product images
+│   └── Dockerfile          # Docker configuration
+├── frontend/               # React frontend
+│   ├── src/               # Source code
+│   ├── public/            # Static assets
+│   ├── vercel.json        # Vercel configuration
+│   └── dist/              # Build output
+├── scripts/               # Utility scripts
+│   ├── upload-to-mongodb-atlas.js
+│   └── package.json
+├── docker-compose.prod.yml # Production Docker
+├── PRODUCTION_SETUP.md    # Deployment guide
+└── ecommerce.products.json # Sample data
 ```
 
-2. Start all services:
-```bash
-docker-compose up -d
-```
-
-This will start:
-- MongoDB on port 27017
-- Redis on port 6379
-- Spring Boot application on port 8080
-
-3. Access the application:
-- API Base URL: `http://localhost:8080/api`
-- Health Check: `http://localhost:8080/api/actuator/health`
-
-### Running Locally
-
-1. Start MongoDB and Redis:
-```bash
-# MongoDB
-mongod
-
-# Redis
-redis-server
-```
-
-2. Build and run the application:
-```bash
-mvn clean install
-mvn spring-boot:run
-```
-
-## API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/logout` - User logout
-
-### Products
-- `GET /api/products` - Get all products (paginated)
-- `GET /api/products/{id}` - Get product by ID
-- `GET /api/products/search?q={query}` - Search products
-- `GET /api/products/category/{category}` - Get products by category
-- `POST /api/products` - Create product (Admin only)
-- `PUT /api/products/{id}` - Update product (Admin only)
-- `DELETE /api/products/{id}` - Delete product (Admin only)
-
-### Cart
-- `GET /api/cart` - Get user's cart
-- `POST /api/cart/items?productId={id}&quantity={qty}` - Add item to cart
-- `PUT /api/cart/items/{productId}?quantity={qty}` - Update cart item
-- `DELETE /api/cart/items/{productId}` - Remove item from cart
-- `DELETE /api/cart` - Clear cart
-
-### Orders
-- `POST /api/orders` - Create order
-- `GET /api/orders` - Get user's orders
-- `GET /api/orders/{id}` - Get order by ID
-- `GET /api/orders/admin/all` - Get all orders (Admin only)
-- `PUT /api/orders/{id}/status` - Update order status (Admin only)
-
-### Users
-- `GET /api/users/profile` - Get user profile
-- `PUT /api/users/profile` - Update user profile
-
-## Configuration
+## 🔧 Configuration
 
 ### Environment Variables
 
-- `JWT_SECRET`: Secret key for JWT token generation
-- `GOOGLE_CLIENT_ID`: Google OAuth2 client ID
-- `GOOGLE_CLIENT_SECRET`: Google OAuth2 client secret
-- `SPRING_DATA_MONGODB_URI`: MongoDB connection string
-- `SPRING_DATA_REDIS_HOST`: Redis host
-- `SPRING_DATA_REDIS_PASSWORD`: Redis password
+#### Backend (Render)
+```env
+SPRING_DATA_MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ecommerce
+SPRING_DATA_MONGODB_DATABASE=ecommerce
+ALLOWED_ORIGINS=https://your-vercel-app.vercel.app
+PORT=8080
+```
 
-### Application Profiles
+#### Frontend (Vercel)
+```env
+VITE_API_BASE_URL=https://your-render-app.onrender.com/api
+VITE_IMAGE_BASE_URL=https://your-render-app.onrender.com
+VITE_APP_NAME=E-commerce Store
+VITE_APP_DESCRIPTION=Modern e-commerce platform
+```
 
-- `default`: Local development configuration
-- `docker`: Docker container configuration
+## 🚀 API Endpoints
 
-## Database Schema
+### Products
+- `GET /api/products` - Get all products with pagination
+- `GET /api/products/{id}` - Get product by ID
+- `GET /api/products/category/{category}` - Get products by category
+- `GET /api/products/featured` - Get featured products
+- `GET /api/products/verify` - System verification
 
-### Users Collection
-- User authentication and profile information
-- Role-based access control (USER, ADMIN, MODERATOR)
+### Health
+- `GET /api/health` - Health check endpoint
+
+## 🐳 Docker Support
+
+### Development
+```bash
+# Backend
+cd backend
+docker build -t ecommerce-backend .
+docker run -p 8080:8080 ecommerce-backend
+
+# Frontend
+cd frontend
+docker build -t ecommerce-frontend .
+docker run -p 3000:3000 ecommerce-frontend
+```
+
+### Production
+```bash
+docker-compose -f docker-compose.prod.yml up -d
+```
+
+## 📊 Database Schema
 
 ### Products Collection
-- Product information with specifications
-- Text search capabilities
-- Category and brand associations
-
-### Categories Collection
-- Hierarchical category structure
-- Parent-child relationships
-
-### Carts Collection
-- User shopping cart with items
-- Automatic total calculations
-
-### Orders Collection
-- Complete order information
-- Order status tracking
-- Payment and shipping details
-
-## Security
-
-- JWT-based authentication
-- Role-based authorization
-- Password encryption with BCrypt
-- CORS configuration
-- Input validation
-
-## Caching
-
-- Redis integration for session management
-- Product and user data caching
-- Configurable cache TTL
-
-## Monitoring
-
-- Spring Boot Actuator endpoints
-- Health checks
-- Metrics collection
-
-## Development
-
-### Building the Application
-```bash
-mvn clean package
+```json
+{
+  "_id": "ELEC001",
+  "name": "iPhone 15 Pro",
+  "brand": "Apple",
+  "price": 999.99,
+  "discountPrice": 590.75,
+  "category": "Electronics",
+  "subcategory": "Mobiles",
+  "images": ["/products/Electronics/iPhone+15+Pro/1.jpg"],
+  "description": "Latest iPhone with titanium design",
+  "stock": 50,
+  "rating": 4.8,
+  "reviewCount": 0,
+  "specs": {"Processor": "A17 Pro"},
+  "features": ["5G", "Face ID"],
+  "slug": "elec001",
+  "isNew": false,
+  "isFeatured": false,
+  "isOnSale": true,
+  "createdAt": 1754763566245,
+  "updatedAt": 1754763566245
+}
 ```
 
-### Running Tests
-```bash
-mvn test
-```
+## 🔍 Troubleshooting
 
-### Code Quality
-The project uses:
-- Lombok for reducing boilerplate code
-- Validation annotations for input validation
-- Proper exception handling
-- Logging with SLF4J
+### Common Issues
 
-## Contributing
+1. **CORS Errors**
+   - Check `ALLOWED_ORIGINS` in Render
+   - Verify frontend URL is included
+
+2. **Database Connection**
+   - Verify MongoDB Atlas connection string
+   - Check network access settings
+
+3. **Image Loading**
+   - Check image URLs and CORS settings
+   - Verify image files exist
+
+4. **Build Failures**
+   - Check environment variables
+   - Verify dependencies
+
+### Debug Steps
+
+1. **Backend Logs**: Check Render dashboard
+2. **Frontend Logs**: Check Vercel dashboard
+3. **Database**: Check MongoDB Atlas logs
+4. **API Testing**: Use Postman or curl
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- React team for the amazing framework
+- Spring Boot team for the robust backend
+- MongoDB for the flexible database
+- Vercel and Render for hosting platforms
+- Tailwind CSS for the utility-first CSS framework

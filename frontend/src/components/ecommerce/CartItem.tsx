@@ -3,6 +3,7 @@ import { Minus, Plus, Trash2, Heart } from 'lucide-react';
 import { Button, Badge } from '@/components/ui';
 import { PriceDisplay, RatingStars } from './';
 import { cn } from '@/utils/cn';
+import { getImageUrl, getProductImageUrl, handleImageError } from '@/config';
 import { CartItem as CartItemType } from '@/types';
 
 export interface CartItemProps {
@@ -37,12 +38,15 @@ export const CartItem: React.FC<CartItemProps> = ({
       <div className={cn('flex items-center space-x-3 p-3 border border-secondary-200 rounded-lg', className)}>
         {/* Image */}
         <div className="w-12 h-12 flex-shrink-0">
-          {item.imageUrl && !imageError ? (
+          {item.image && !imageError ? (
             <img
-              src={item.imageUrl}
-              alt={item.productName}
+              src={getImageUrl(item.image)}
+              alt={item.name}
               className="w-full h-full object-cover rounded-md"
-              onError={() => setImageError(true)}
+              onError={(e) => {
+                setImageError(true);
+                handleImageError(e, '200x200');
+              }}
             />
           ) : (
             <div className="w-full h-full bg-secondary-100 rounded-md flex items-center justify-center">
@@ -90,12 +94,15 @@ export const CartItem: React.FC<CartItemProps> = ({
     <div className={cn('flex items-center space-x-4 p-4 border border-secondary-200 rounded-lg', className)}>
       {/* Image */}
       <div className="w-20 h-20 flex-shrink-0">
-        {item.imageUrl && !imageError ? (
+        {item.image && !imageError ? (
           <img
-            src={item.imageUrl}
-            alt={item.productName}
+            src={getImageUrl(item.image)}
+            alt={item.name}
             className="w-full h-full object-cover rounded-lg"
-            onError={() => setImageError(true)}
+            onError={(e) => {
+              setImageError(true);
+              handleImageError(e, '400x400');
+            }}
           />
         ) : (
           <div className="w-full h-full bg-secondary-100 rounded-lg flex items-center justify-center">

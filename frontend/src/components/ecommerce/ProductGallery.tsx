@@ -3,22 +3,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Button } from '@/components';
 import { cn } from '@/utils/cn';
+import { getImageUrl, getProductImageUrl, getProductImageUrls, handleImageError } from '@/config';
 
 interface ProductGalleryProps {
   images: string[];
   alt: string;
   className?: string;
+  product?: any; // Optional product object for generating correct paths
 }
 
 export const ProductGallery: React.FC<ProductGalleryProps> = ({
   images,
   alt,
   className,
+  product,
 }) => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [isZoomed, setIsZoomed] = React.useState(false);
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   const containerRef = React.useRef<HTMLDivElement>(null);
+  
+  // Get all image URLs for this product
+  const imageUrls = React.useMemo(() => {
+    if (product) {
+      return getProductImageUrls(product);
+    }
+    return images.map(img => getImageUrl(img));
+  }, [product, images]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -31,11 +42,11 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
   };
 
   const nextImage = () => {
-    setSelectedIndex((prev) => (prev + 1) % images.length);
+    setSelectedIndex((prev) => (prev + 1) % imageUrls.length);
   };
 
   const previousImage = () => {
-    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+    setSelectedIndex((prev) => (prev - 1 + imageUrls.length) % imageUrls.length);
   };
 
   return (
@@ -67,16 +78,17 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
               }}
             >
               <img
-                src={images[selectedIndex]}
+                src={imageUrls[selectedIndex] || imageUrls[0]}
                 alt={`${alt} ${selectedIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
+                onError={(e) => handleImageError(e, '800x800')}
               />
             </div>
           </motion.div>
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        {images.length > 1 && (
+        {imageUrls.length > 1 && (
           <>
             <Button
               variant="secondary"
@@ -104,9 +116,9 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
       </div>
 
       {/* Thumbnails */}
-      {images.length > 1 && (
+      {imageUrls.length > 1 && (
         <div className="grid grid-cols-4 gap-4">
-          {images.map((image, index) => (
+          {imageUrls.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
@@ -118,9 +130,10 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
               )}
             >
               <img
-                src={image}
+                src={imageUrls[index] || imageUrls[0]}
                 alt={`${alt} thumbnail ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
+                onError={(e) => handleImageError(e, '200x200')}
               />
             </button>
           ))}

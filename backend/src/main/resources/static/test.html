@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .product-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .product-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .image-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+        .image-card:hover {
+            border-color: #007bff;
+        }
+        .image-card img {
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .image-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .console-log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛍️ E-commerce Image Test</h1>
+            <p>Testing product image loading from Spring Boot backend</p>
+        </div>
+
+        <div id="loading" class="loading">
+            <p>Loading product data...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="product-info">
+                <div class="product-name" id="productName"></div>
+                <div id="productDetails"></div>
+            </div>
+
+            <div class="images-container" id="imagesContainer">
+                <!-- Images will be loaded here -->
+            </div>
+
+            <div class="console-log" id="consoleLog">
+                <strong>Console Log:</strong><br>
+                <div id="logContent"></div>
+            </div>
+        </div>
+
+        <div id="error" style="display: none;" class="error">
+            <h3>❌ Error Loading Product Data</h3>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        // Console logging function
+        function logToPage(message) {
+            const logContent = document.getElementById('logContent');
+            const timestamp = new Date().toLocaleTimeString();
+            logContent.innerHTML += `[${timestamp}] ${message}<br>`;
+            logContent.scrollTop = logContent.scrollHeight;
+            console.log(message);
+        }
+
+        // Test image loading
+        function testImageLoading() {
+            logToPage('Starting image loading test...');
+            
+            fetch('/api/products?size=1')
+                .then(response => {
+                    logToPage(`API Response Status: ${response.status}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    logToPage(`API Response received: ${JSON.stringify(data, null, 2)}`);
+                    
+                    if (data.content && data.content.length > 0) {
+                        const product = data.content[0];
+                        displayProduct(product);
+                    } else {
+                        throw new Error('No products found in response');
+                    }
+                })
+                .catch(error => {
+                    logToPage(`❌ Error: ${error.message}`);
+                    showError(error.message);
+                });
+        }
+
+        // Display product information
+        function displayProduct(product) {
+            logToPage(`Displaying product: ${product.name}`);
+            
+            // Show product name
+            document.getElementById('productName').textContent = product.name;
+            
+            // Show product details
+            const details = document.getElementById('productDetails');
+            details.innerHTML = `
+                <p><strong>ID:</strong> ${product.id}</p>
+                <p><strong>Category:</strong> ${product.category}</p>
+                <p><strong>Price:</strong> $${product.price}</p>
+                <p><strong>Images:</strong> ${product.images ? product.images.length : 0} images</p>
+            `;
+
+            // Display images
+            if (product.images && product.images.length > 0) {
+                const imagesContainer = document.getElementById('imagesContainer');
+                imagesContainer.innerHTML = '';
+
+                product.images.forEach((imagePath, index) => {
+                    logToPage(`Loading image ${index + 1}: ${imagePath}`);
+                    
+                    const imageCard = document.createElement('div');
+                    imageCard.className = 'image-card';
+                    imageCard.innerHTML = `
+                        <div class="image-info">Image ${index + 1}</div>
+                        <img src="${imagePath}" alt="${product.name} - Image ${index + 1}" 
+                             onload="handleImageLoad(this, ${index + 1}, true)" 
+                             onerror="handleImageLoad(this, ${index + 1}, false)">
+                        <div class="image-info">Path: ${imagePath}</div>
+                        <div id="status-${index + 1}" class="status">Loading...</div>
+                    `;
+                    
+                    imagesContainer.appendChild(imageCard);
+                });
+            } else {
+                logToPage('⚠️ No images found for this product');
+                document.getElementById('imagesContainer').innerHTML = '<p>No images available for this product.</p>';
+            }
+
+            // Show content
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // Handle image load events
+        function handleImageLoad(img, imageNumber, success) {
+            const statusElement = document.getElementById(`status-${imageNumber}`);
+            
+            if (success) {
+                logToPage(`✅ Image ${imageNumber} loaded successfully`);
+                statusElement.textContent = 'Loaded';
+                statusElement.className = 'status success';
+            } else {
+                logToPage(`❌ Image ${imageNumber} failed to load: ${img.src}`);
+                statusElement.textContent = 'Failed';
+                statusElement.className = 'status error';
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('errorMessage').textContent = message;
+        }
+
+        // Start the test when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            logToPage('Page loaded, starting test...');
+            testImageLoading();
+        });
+    </script>
+</body>
+</html>

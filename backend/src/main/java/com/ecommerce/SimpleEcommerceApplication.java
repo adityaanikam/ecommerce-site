@@ -21,14 +21,6 @@ public class SimpleEcommerceApplication {
 		SpringApplication.run(SimpleEcommerceApplication.class, args);
 	}
 
-	@GetMapping("/api/health")
-	public Map<String, Object> health() {
-		Map<String, Object> response = new HashMap<>();
-		response.put("status", "UP");
-		response.put("message", "Simple E-commerce backend is running");
-		response.put("timestamp", System.currentTimeMillis());
-		return response;
-	}
 
 	@GetMapping("/api/categories")
 	public java.util.List<Map<String, Object>> categories() {

@@ -1,0 +1,16 @@
+{
+  "name": "ecommerce-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for e-commerce application",
+  "main": "upload-to-mongodb-atlas.js",
+  "scripts": {
+    "upload": "node upload-to-mongodb-atlas.js",
+    "upload:prod": "SPRING_DATA_MONGODB_URI=your-production-uri node upload-to-mongodb-atlas.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

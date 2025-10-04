@@ -1,3 +1,12 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build outputs
+dist/
+build/
+target/
+
 # Environment variables
 .env
 .env.local
@@ -5,84 +14,100 @@
 .env.test.local
 .env.production.local
 
-# Product images and data
-backend/Products/
-ecommerce.products.json
-
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-target/
-!target/*.jar
-
-# Maven
-.mvn/
-mvnw
-mvnw.cmd
-.mvn/wrapper/maven-wrapper.jar
-
-# IDE
-.idea/
-*.iws
-*.iml
-*.ipr
+# IDE files
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
 
-# OS
+# OS files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
 # Logs
 *.log
 logs/
 
-# Node modules (if any)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
 
-# Build outputs
-dist/
-build/
-out/
+# Coverage directory used by tools like istanbul
+coverage/
 
-# Temporary files
-*.tmp
-*.temp
-temp/
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Temporary folders
 tmp/
+temp/
 
-# Database
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local development
+data/
 *.db
 *.sqlite
-*.sqlite3
 
-# Docker
-.dockerignore
+# Scripts output
+scripts/output/
 
-# Spring Boot
-application-*.properties
-application-*.yml
-!application.yml
-!application-dev.yml
-!application-prod.yml
-!application-docker.yml
-
-# Backup files
-*.bak
-*.backup
-*_backup/
+# Production files
+docker-compose.override.yml

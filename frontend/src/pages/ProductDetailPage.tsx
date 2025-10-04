@@ -111,7 +111,7 @@ export const ProductDetailPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Product Images */}
           <div className="space-y-4">
-            <ProductGallery images={product.images} />
+            <ProductGallery images={product.images} product={product} />
           </div>
 
           {/* Product Info */}

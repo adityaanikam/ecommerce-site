@@ -4,6 +4,7 @@ import { Heart, Eye, ShoppingCart, Plus, Minus } from 'lucide-react';
 import { Button, Card, CardContent, Badge } from '@/components';
 import { Product } from '@/types/api';
 import { cn } from '@/utils/cn';
+import { getImageUrl, getProductImageUrl, getProductImageUrls, handleImageError } from '@/config';
 import { AddToCartAnimation } from './AddToCartAnimation';
 
 interface ProductCardProps {
@@ -31,6 +32,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const [quantity, setQuantity] = React.useState(1);
   const [isAddingToCart, setIsAddingToCart] = React.useState(false);
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  
+  // Get all image URLs for this product
+  const imageUrls = React.useMemo(() => getProductImageUrls(product), [product]);
 
   const handleQuantityChange = (delta: number) => {
     const newQuantity = Math.max(1, Math.min(quantity + delta, product.stock));
@@ -82,12 +86,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <div className="aspect-square bg-secondary-100 dark:bg-secondary-700 rounded-t-lg overflow-hidden overlay-gradient-bottom">
               <motion.img
                 key={currentImageIndex}
-                src={product.images[currentImageIndex]}
+                src={imageUrls[currentImageIndex] || imageUrls[0]}
                 alt={product.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
+                onError={(e) => handleImageError(e, '800x800')}
               />
 
               {/* Badges */}
@@ -139,9 +144,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               </div>
 
               {/* Image Navigation Dots */}
-              {product.images.length > 1 && (
+              {imageUrls.length > 1 && (
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                  {product.images.map((_, index) => (
+                  {imageUrls.map((_, index) => (
                     <button
                       key={index}
                       className={cn(
