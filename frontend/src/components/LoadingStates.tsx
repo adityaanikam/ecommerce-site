@@ -1,21 +1,21 @@
 import React from 'react';
-import { Skeleton, SkeletonText, SkeletonAvatar, SkeletonButton, SkeletonCard } from '@/components/ui';
+import { Skeleton } from '@/components/ui';
 
 // Product card skeleton
 export const ProductCardSkeleton: React.FC = () => (
-  <SkeletonCard className="p-4">
+  <div className="p-4 border border-secondary-200 rounded-lg">
     <div className="space-y-4">
       <Skeleton className="aspect-square w-full rounded-lg" />
       <div className="space-y-2">
-        <SkeletonText className="h-4 w-3/4" />
-        <SkeletonText className="h-3 w-1/2" />
+        <Skeleton className="h-4 w-3/4" />
+        <Skeleton className="h-3 w-1/2" />
         <div className="flex items-center justify-between">
-          <SkeletonText className="h-4 w-1/3" />
-          <SkeletonButton className="h-8 w-20" />
+          <Skeleton className="h-4 w-1/3" />
+          <Skeleton className="h-8 w-20" />
         </div>
       </div>
     </div>
-  </SkeletonCard>
+  </div>
 );
 
 // Product list skeleton
@@ -43,29 +43,29 @@ export const ProductDetailSkeleton: React.FC = () => (
     {/* Info section */}
     <div className="space-y-6">
       <div className="space-y-2">
-        <SkeletonText className="h-4 w-1/4" />
-        <SkeletonText className="h-8 w-3/4" />
-        <SkeletonText className="h-4 w-1/2" />
-        <SkeletonText className="h-6 w-1/3" />
+        <Skeleton className="h-4 w-1/4" />
+        <Skeleton className="h-8 w-3/4" />
+        <Skeleton className="h-4 w-1/2" />
+        <Skeleton className="h-6 w-1/3" />
       </div>
 
       <div className="space-y-2">
-        <SkeletonText className="h-4 w-full" />
-        <SkeletonText className="h-4 w-5/6" />
-        <SkeletonText className="h-4 w-4/6" />
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-5/6" />
+        <Skeleton className="h-4 w-4/6" />
       </div>
 
       <div className="space-y-3">
-        <SkeletonText className="h-5 w-1/3" />
+        <Skeleton className="h-5 w-1/3" />
         <div className="grid grid-cols-2 gap-2">
           {Array.from({ length: 6 }).map((_, i) => (
-            <SkeletonText key={i} className="h-3 w-full" />
+            <Skeleton key={i} className="h-3 w-full" />
           ))}
         </div>
       </div>
 
       <div className="space-y-3">
-        <SkeletonText className="h-5 w-1/4" />
+        <Skeleton className="h-5 w-1/4" />
         <div className="flex gap-2">
           {Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="w-10 h-10 rounded-full" />
@@ -74,21 +74,21 @@ export const ProductDetailSkeleton: React.FC = () => (
       </div>
 
       <div className="space-y-3">
-        <SkeletonText className="h-5 w-1/3" />
+        <Skeleton className="h-5 w-1/3" />
         <div className="flex items-center gap-4">
           <div className="flex items-center border rounded-lg">
-            <SkeletonButton className="h-8 w-8" />
-            <SkeletonText className="h-8 w-16" />
-            <SkeletonButton className="h-8 w-8" />
+            <Skeleton className="h-8 w-8" />
+            <Skeleton className="h-8 w-16" />
+            <Skeleton className="h-8 w-8" />
           </div>
-          <SkeletonText className="h-4 w-20" />
+          <Skeleton className="h-4 w-20" />
         </div>
       </div>
 
       <div className="flex gap-4">
-        <SkeletonButton className="h-12 flex-1" />
-        <SkeletonButton className="h-12 w-12" />
-        <SkeletonButton className="h-12 w-12" />
+        <Skeleton className="h-12 flex-1" />
+        <Skeleton className="h-12 w-12" />
+        <Skeleton className="h-12 w-12" />
       </div>
     </div>
   </div>
@@ -99,18 +99,18 @@ export const CartItemSkeleton: React.FC = () => (
   <div className="flex items-center gap-4 p-4 border border-secondary-200 dark:border-secondary-700 rounded-lg">
     <Skeleton className="w-16 h-16 rounded" />
     <div className="flex-1 space-y-2">
-      <SkeletonText className="h-4 w-3/4" />
-      <SkeletonText className="h-3 w-1/2" />
-      <SkeletonText className="h-3 w-1/3" />
+      <Skeleton className="h-4 w-3/4" />
+      <Skeleton className="h-3 w-1/2" />
+      <Skeleton className="h-3 w-1/3" />
     </div>
     <div className="flex items-center gap-2">
-      <SkeletonButton className="h-8 w-8" />
-      <SkeletonText className="h-8 w-16" />
-      <SkeletonButton className="h-8 w-8" />
+      <Skeleton className="h-8 w-8" />
+      <Skeleton className="h-8 w-16" />
+      <Skeleton className="h-8 w-8" />
     </div>
     <div className="text-right space-y-1">
-      <SkeletonText className="h-4 w-16" />
-      <SkeletonText className="h-3 w-12" />
+      <Skeleton className="h-4 w-16" />
+      <Skeleton className="h-3 w-12" />
     </div>
   </div>
 );
@@ -124,32 +124,32 @@ export const CartSkeleton: React.FC = () => (
       ))}
     </div>
     <div className="lg:col-span-1">
-      <SkeletonCard className="p-6">
+      <div className="p-6">
         <div className="space-y-4">
-          <SkeletonText className="h-6 w-1/3" />
+          <Skeleton className="h-6 w-1/3" />
           <div className="space-y-3">
             <div className="flex justify-between">
-              <SkeletonText className="h-4 w-20" />
-              <SkeletonText className="h-4 w-16" />
+              <Skeleton className="h-4 w-20" />
+              <Skeleton className="h-4 w-16" />
             </div>
             <div className="flex justify-between">
-              <SkeletonText className="h-4 w-20" />
-              <SkeletonText className="h-4 w-16" />
+              <Skeleton className="h-4 w-20" />
+              <Skeleton className="h-4 w-16" />
             </div>
             <div className="flex justify-between">
-              <SkeletonText className="h-4 w-20" />
-              <SkeletonText className="h-4 w-16" />
+              <Skeleton className="h-4 w-20" />
+              <Skeleton className="h-4 w-16" />
             </div>
           </div>
           <div className="border-t pt-4">
             <div className="flex justify-between">
-              <SkeletonText className="h-5 w-16" />
-              <SkeletonText className="h-5 w-20" />
+              <Skeleton className="h-5 w-16" />
+              <Skeleton className="h-5 w-20" />
             </div>
           </div>
-          <SkeletonButton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
         </div>
-      </SkeletonCard>
+      </div>
     </div>
   </div>
 );
@@ -159,13 +159,13 @@ export const OrderItemSkeleton: React.FC = () => (
   <div className="flex items-center gap-4 p-4 border border-secondary-200 dark:border-secondary-700 rounded-lg">
     <Skeleton className="w-16 h-16 rounded" />
     <div className="flex-1 space-y-2">
-      <SkeletonText className="h-4 w-3/4" />
-      <SkeletonText className="h-3 w-1/2" />
-      <SkeletonText className="h-3 w-1/3" />
+      <Skeleton className="h-4 w-3/4" />
+      <Skeleton className="h-3 w-1/2" />
+      <Skeleton className="h-3 w-1/3" />
     </div>
     <div className="text-right space-y-1">
-      <SkeletonText className="h-4 w-16" />
-      <SkeletonText className="h-3 w-12" />
+      <Skeleton className="h-4 w-16" />
+      <Skeleton className="h-3 w-12" />
     </div>
   </div>
 );
@@ -174,11 +174,11 @@ export const OrderItemSkeleton: React.FC = () => (
 export const OrderListSkeleton: React.FC<{ count?: number }> = ({ count = 5 }) => (
   <div className="space-y-4">
     {Array.from({ length: count }).map((_, i) => (
-      <SkeletonCard key={i} className="p-6">
+      <div key={i} className="p-6">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <SkeletonText className="h-5 w-32" />
-            <SkeletonText className="h-4 w-20" />
+            <Skeleton className="h-5 w-32" />
+            <Skeleton className="h-4 w-20" />
           </div>
           <div className="space-y-2">
             {Array.from({ length: 2 }).map((_, j) => (
@@ -186,11 +186,11 @@ export const OrderListSkeleton: React.FC<{ count?: number }> = ({ count = 5 }) =
             ))}
           </div>
           <div className="flex items-center justify-between pt-4 border-t">
-            <SkeletonText className="h-4 w-24" />
-            <SkeletonButton className="h-8 w-24" />
+            <Skeleton className="h-4 w-24" />
+            <Skeleton className="h-8 w-24" />
           </div>
         </div>
-      </SkeletonCard>
+      </div>
     ))}
   </div>
 );
@@ -199,36 +199,36 @@ export const OrderListSkeleton: React.FC<{ count?: number }> = ({ count = 5 }) =
 export const UserProfileSkeleton: React.FC = () => (
   <div className="space-y-6">
     <div className="flex items-center gap-4">
-      <SkeletonAvatar className="w-20 h-20" />
+      <Skeleton className="w-20 h-20" />
       <div className="space-y-2">
-        <SkeletonText className="h-6 w-48" />
-        <SkeletonText className="h-4 w-32" />
-        <SkeletonText className="h-4 w-24" />
+        <Skeleton className="h-6 w-48" />
+        <Skeleton className="h-4 w-32" />
+        <Skeleton className="h-4 w-24" />
       </div>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <SkeletonCard className="p-6">
+      <div className="p-6">
         <div className="space-y-4">
-          <SkeletonText className="h-5 w-1/3" />
+          <Skeleton className="h-5 w-1/3" />
           <div className="space-y-3">
-            <SkeletonText className="h-4 w-full" />
-            <SkeletonText className="h-4 w-5/6" />
-            <SkeletonText className="h-4 w-4/6" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-5/6" />
+            <Skeleton className="h-4 w-4/6" />
           </div>
         </div>
-      </SkeletonCard>
+      </div>
 
-      <SkeletonCard className="p-6">
+      <div className="p-6">
         <div className="space-y-4">
-          <SkeletonText className="h-5 w-1/3" />
+          <Skeleton className="h-5 w-1/3" />
           <div className="space-y-3">
-            <SkeletonText className="h-4 w-full" />
-            <SkeletonText className="h-4 w-5/6" />
-            <SkeletonText className="h-4 w-4/6" />
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-5/6" />
+            <Skeleton className="h-4 w-4/6" />
           </div>
         </div>
-      </SkeletonCard>
+      </div>
     </div>
   </div>
 );
@@ -242,7 +242,7 @@ export const TableSkeleton: React.FC<{ rows?: number; cols?: number }> = ({ rows
           <tr>
             {Array.from({ length: cols }).map((_, i) => (
               <th key={i} className="px-6 py-3 text-left">
-                <SkeletonText className="h-4 w-20" />
+                <Skeleton className="h-4 w-20" />
               </th>
             ))}
           </tr>
@@ -252,7 +252,7 @@ export const TableSkeleton: React.FC<{ rows?: number; cols?: number }> = ({ rows
             <tr key={i}>
               {Array.from({ length: cols }).map((_, j) => (
                 <td key={j} className="px-6 py-4">
-                  <SkeletonText className="h-4 w-16" />
+                  <Skeleton className="h-4 w-16" />
                 </td>
               ))}
             </tr>
@@ -267,19 +267,19 @@ export const TableSkeleton: React.FC<{ rows?: number; cols?: number }> = ({ rows
 export const PageSkeleton: React.FC = () => (
   <div className="space-y-6">
     <div className="space-y-2">
-      <SkeletonText className="h-8 w-1/3" />
-      <SkeletonText className="h-4 w-1/2" />
+      <Skeleton className="h-8 w-1/3" />
+      <Skeleton className="h-4 w-1/2" />
     </div>
-    <SkeletonCard className="p-6">
+    <div className="p-6">
       <div className="space-y-4">
-        <SkeletonText className="h-6 w-1/4" />
+        <Skeleton className="h-6 w-1/4" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <SkeletonText className="h-4 w-full" />
-          <SkeletonText className="h-4 w-full" />
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-full" />
         </div>
-        <SkeletonText className="h-4 w-3/4" />
+        <Skeleton className="h-4 w-3/4" />
       </div>
-    </SkeletonCard>
+    </div>
   </div>
 );
 
@@ -295,3 +295,4 @@ export default {
   TableSkeleton,
   PageSkeleton,
 };
+

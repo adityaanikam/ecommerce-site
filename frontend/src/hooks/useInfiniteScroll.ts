@@ -49,6 +49,7 @@ export const useInfiniteScroll = <T>(
   } = useInfiniteQuery({
     queryKey,
     queryFn,
+    initialPageParam: 0,
     getNextPageParam: (lastPage) => {
       return lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined;
     },
@@ -142,6 +143,7 @@ export const useInfiniteScrollManual = <T>(
   } = useInfiniteQuery({
     queryKey,
     queryFn,
+    initialPageParam: 0,
     getNextPageParam: (lastPage) => {
       return lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined;
     },
@@ -192,6 +194,7 @@ export const useScrollInfinite = <T>(
   } = useInfiniteQuery({
     queryKey,
     queryFn,
+    initialPageParam: 0,
     getNextPageParam: (lastPage) => {
       return lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined;
     },

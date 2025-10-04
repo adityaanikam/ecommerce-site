@@ -15,7 +15,7 @@ export const useUserOrders = (params: { page: number; limit: number; filters?: O
       return response.data;
     },
     staleTime: 2 * 60 * 1000, // 2 minutes
-    keepPreviousData: true,
+    placeholderData: (previousData) => previousData,
   });
 };
 
@@ -261,7 +261,7 @@ export const useAllOrders = (params: {
       return response.data;
     },
     staleTime: 2 * 60 * 1000, // 2 minutes
-    keepPreviousData: true,
+    placeholderData: (previousData) => previousData,
   });
 };
 

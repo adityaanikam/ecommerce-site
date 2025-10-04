@@ -103,6 +103,7 @@ export const useAdvancedSearch = (params: SearchParams) => {
 export const useInfiniteSearch = (params: Omit<SearchParams, 'page'>) => {
   return useInfiniteQuery({
     queryKey: ['search', 'infinite', params],
+    initialPageParam: 1,
     queryFn: async ({ pageParam = 1 }): Promise<SearchResult> => {
       const searchParams = new URLSearchParams();
       

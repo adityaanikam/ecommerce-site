@@ -15,7 +15,7 @@ export const useProducts = (params: ProductSearchParams) => {
       return response.data;
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
-    keepPreviousData: true,
+    placeholderData: (previousData) => previousData,
   });
 };
 

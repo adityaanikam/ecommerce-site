@@ -8,6 +8,7 @@ export interface User {
   firstName: string;
   lastName: string;
   role: UserRole;
+  roles?: UserRole[]; // For backward compatibility
   avatar?: string;
   phone?: string;
   address?: Address;
@@ -124,6 +125,148 @@ export interface PaymentStatus {
   amount: number;
   currency: string;
   createdAt: string;
+}
+
+
+// Additional missing types
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  image?: string;
+  parentId?: string;
+  children?: Category[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Review {
+  id: string;
+  productId: string;
+  userId: string;
+  userName: string;
+  rating: number;
+  title: string;
+  comment: string;
+  helpful: number;
+  verified: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Wishlist {
+  id: string;
+  userId: string;
+  name: string;
+  items: WishlistItem[];
+  isPublic: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface WishlistItem {
+  id: string;
+  productId: string;
+  addedAt: string;
+}
+
+export interface ComparisonProduct {
+  id: string;
+  name: string;
+  brand: string;
+  price: number;
+  rating: number;
+  stock: number;
+  sku: string;
+  specifications: Record<string, string>;
+  features: string[];
+  images: string[];
+  category: string;
+  subcategory: string;
+}
+
+export interface ProductListResponse {
+  content: Product[];
+  pageable: {
+    pageNumber: number;
+    pageSize: number;
+    sort: {
+      sorted: boolean;
+      unsorted: boolean;
+      empty: boolean;
+    };
+    offset: number;
+    paged: boolean;
+    unpaged: boolean;
+  };
+  totalElements: number;
+  totalPages: number;
+  last: boolean;
+  first: boolean;
+  numberOfElements: number;
+  size: number;
+  number: number;
+  sort: {
+    sorted: boolean;
+    unsorted: boolean;
+    empty: boolean;
+  };
+  empty: boolean;
+}
+
+export interface OrderListResponse {
+  content: Order[];
+  pageable: {
+    pageNumber: number;
+    pageSize: number;
+    sort: {
+      sorted: boolean;
+      unsorted: boolean;
+      empty: boolean;
+    };
+    offset: number;
+    paged: boolean;
+    unpaged: boolean;
+  };
+  totalElements: number;
+  totalPages: number;
+  last: boolean;
+  first: boolean;
+  numberOfElements: number;
+  size: number;
+  number: number;
+  sort: {
+    sorted: boolean;
+    unsorted: boolean;
+    empty: boolean;
+  };
+  empty: boolean;
+}
+
+export interface RecommendationRequest {
+  productId: string;
+  userId?: string;
+  limit?: number;
+}
+
+export interface RecommendationResponse {
+  products: Product[];
+  total: number;
+}
+
+export interface OrderFilters {
+  status?: OrderStatus[];
+  dateFrom?: string;
+  dateTo?: string;
+  minAmount?: number;
+  maxAmount?: number;
+}
+
+export interface UpdateReviewRequest {
+  rating?: number;
+  title?: string;
+  comment?: string;
 }
 
 // Common utility types
