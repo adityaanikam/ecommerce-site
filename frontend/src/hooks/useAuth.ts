@@ -19,6 +19,31 @@ export const useCurrentUser = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for login
 export const useLogin = () => {
   const queryClient = useQueryClient();
@@ -45,6 +70,31 @@ export const useLogin = () => {
       showError(getErrorMessage(error));
     },
   });
+};
+
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
 };
 
 // Hook for register
@@ -75,6 +125,31 @@ export const useRegister = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for logout
 export const useLogout = () => {
   const queryClient = useQueryClient();
@@ -103,6 +178,31 @@ export const useLogout = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for updating profile
 export const useUpdateProfile = () => {
   const queryClient = useQueryClient();
@@ -123,6 +223,31 @@ export const useUpdateProfile = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for changing password
 export const useChangePassword = () => {
   const { showSuccess, showError } = useNotifications();
@@ -136,6 +261,31 @@ export const useChangePassword = () => {
       showError(getErrorMessage(error));
     },
   });
+};
+
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
 };
 
 // Hook for forgot password
@@ -153,6 +303,31 @@ export const useForgotPassword = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for reset password
 export const useResetPassword = () => {
   const { showSuccess, showError } = useNotifications();
@@ -166,6 +341,31 @@ export const useResetPassword = () => {
       showError(getErrorMessage(error));
     },
   });
+};
+
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
 };
 
 // Hook for Google OAuth
@@ -196,6 +396,31 @@ export const useGoogleAuth = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for email verification
 export const useVerifyEmail = () => {
   const { showSuccess, showError } = useNotifications();
@@ -211,6 +436,31 @@ export const useVerifyEmail = () => {
   });
 };
 
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
+};
+
 // Hook for resending verification email
 export const useResendVerificationEmail = () => {
   const { showSuccess, showError } = useNotifications();
@@ -224,6 +474,31 @@ export const useResendVerificationEmail = () => {
       showError(getErrorMessage(error));
     },
   });
+};
+
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
 };
 
 // Hook for deleting account
@@ -245,4 +520,29 @@ export const useDeleteAccount = () => {
       showError(getErrorMessage(error));
     },
   });
+};
+
+// Main useAuth hook that combines all auth functionality
+export const useAuth = () => {
+  const currentUser = useCurrentUser();
+  const login = useLogin();
+  const register = useRegister();
+  const logout = useLogout();
+  const refreshToken = useRefreshToken();
+  const changePassword = useChangePassword();
+  const updateProfile = useUpdateProfile();
+  const deleteAccount = useDeleteAccount();
+
+  return {
+    user: currentUser.data,
+    isLoading: currentUser.isLoading,
+    isAuthenticated: !!currentUser.data,
+    login: login.mutate,
+    register: register.mutate,
+    logout: logout.mutate,
+    refreshToken: refreshToken.mutate,
+    changePassword: changePassword.mutate,
+    updateProfile: updateProfile.mutate,
+    deleteAccount: deleteAccount.mutate,
+  };
 };

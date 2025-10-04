@@ -1,6 +1,9 @@
 // Re-export all types
 export * from './api';
 
+// Import types for use in this file
+import { Product, ProductCategory, Cart, CartItem, Order, OrderItem, OrderStatus, Address } from './api';
+
 // Auth types
 export interface User {
   id: string;

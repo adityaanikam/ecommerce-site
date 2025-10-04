@@ -58,6 +58,7 @@ export interface Product {
     count: number;
   };
   rating?: number; // For backward compatibility
+  reviewCount?: number;
   sku?: string;
   slug?: string;
   isFeatured?: boolean;
@@ -98,6 +99,7 @@ export interface Cart {
 // Order Types
 export interface Order {
   id: string;
+  orderNumber: string;
   userId: string;
   items: OrderItem[];
   status: OrderStatus;
@@ -169,8 +171,12 @@ export interface UserDto {
   firstName: string;
   lastName: string;
   role: string;
+  roles: string[];
   avatar?: string;
   phone?: string;
+  phoneNumber?: string;
+  dateOfBirth?: string;
+  gender?: string;
   address?: Address;
   createdAt: string;
   updatedAt: string;
