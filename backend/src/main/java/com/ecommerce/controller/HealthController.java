@@ -13,13 +13,27 @@ import java.util.Map;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
 public class HealthController {
 
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @GetMapping("/health")
+    @GetMapping("/")
+    public ResponseEntity<Map<String, Object>> getRoot() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "E-commerce Backend API");
+        response.put("status", "running");
+        response.put("version", "1.0.0");
+        response.put("endpoints", Map.of(
+            "health", "/api/health",
+            "products", "/api/products",
+            "images", "/products/**"
+        ));
+        response.put("timestamp", System.currentTimeMillis());
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/api/health")
     public ResponseEntity<Map<String, Object>> getHealth() {
         Map<String, Object> health = new HashMap<>();
         
