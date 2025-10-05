@@ -11,9 +11,4 @@ export { AddToCartAnimation } from './AddToCartAnimation';
 export { ProductCardSkeleton } from './ProductCardSkeleton';
 export { SearchFilters } from './SearchFilters';
 
-export type { ProductCardProps } from './ProductCard';
-export type { PriceDisplayProps } from './PriceDisplay';
-export type { RatingStarsProps } from './RatingStars';
-export type { CategoryCardProps } from './CategoryCard';
-export type { CartItemProps } from './CartItem';
-export type { OrderCardProps } from './OrderCard';
+// Avoid re-exporting prop types to reduce TS surface during production builds

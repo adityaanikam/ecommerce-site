@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, ComponentType } from 'react';
+import React, { Suspense, lazy, ComponentType, PropsWithChildren } from 'react';
 import { LoadingSpinner } from '@/components/ui';
 
 interface LazyWrapperProps {
@@ -6,7 +6,7 @@ interface LazyWrapperProps {
 }
 
 // Higher-order component for lazy loading
-export const withLazyLoading = <P extends object>(
+export const withLazyLoading = <P extends Record<string, unknown>>(
   Component: ComponentType<P>,
   fallback?: React.ReactNode
 ) => {
@@ -20,7 +20,7 @@ export const withLazyLoading = <P extends object>(
 };
 
 // Lazy wrapper component
-export const LazyWrapper: React.FC<LazyWrapperProps & { children: React.ReactNode }> = ({
+export const LazyWrapper: React.FC<LazyWrapperProps & PropsWithChildren> = ({
   children,
   fallback = <LoadingSpinner size="lg" />
 }) => {
@@ -36,7 +36,7 @@ export const preloadComponent = (importFn: () => Promise<any>) => {
 };
 
 // Lazy load with preloading
-export const lazyWithPreload = <T extends ComponentType<any>>(
+export const lazyWithPreload = <T extends ComponentType<unknown>>(
   importFn: () => Promise<{ default: T }>
 ) => {
   const Component = lazy(importFn);
