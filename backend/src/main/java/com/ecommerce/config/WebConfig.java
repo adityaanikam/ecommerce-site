@@ -21,7 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
             .allowedOrigins(allowedOrigins)
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             .allowedHeaders("*")
-            .allowCredentials(true)
+            .allowCredentials(false) // Set to false to avoid CORS issues
             .maxAge(3600);
     }
 

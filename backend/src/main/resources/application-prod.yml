@@ -24,7 +24,7 @@ server:
 # CORS configuration for Vercel frontend
 app:
   cors:
-    allowed-origins: ${FRONTEND_URL:https://your-vercel-app.vercel.app}
+    allowed-origins: ${FRONTEND_URL:http://localhost:3000,https://your-vercel-app.vercel.app}
     max-age: 3600
   images:
     base-path: /app/Products
