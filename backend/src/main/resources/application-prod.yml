@@ -1,5 +1,9 @@
 # Production Configuration for Render + Vercel
 spring:
+  # Disable security for API access
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  
   # Production database configuration
   data:
     mongodb:
@@ -22,6 +26,8 @@ app:
   cors:
     allowed-origins: ${FRONTEND_URL:https://your-vercel-app.vercel.app}
     max-age: 3600
+  images:
+    base-path: /app/Products
 
 # Logging configuration for production
 logging:
