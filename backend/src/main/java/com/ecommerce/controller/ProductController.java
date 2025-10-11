@@ -20,7 +20,7 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "${app.cors.allowed-origins}", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:3000", "https://ecommerce-site-five-phi.vercel.app"}, allowCredentials = "false")
 public class ProductController {
     private final ProductService productService;
     private final MongoTemplate mongoTemplate;

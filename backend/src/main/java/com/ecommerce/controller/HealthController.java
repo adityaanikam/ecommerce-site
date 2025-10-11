@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "https://ecommerce-site-five-phi.vercel.app"})
 public class HealthController {
 
     @GetMapping("/")
@@ -24,6 +25,15 @@ public class HealthController {
         Map<String, Object> response = new HashMap<>();
         response.put("status", "UP");
         response.put("timestamp", System.currentTimeMillis());
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/api/test")
+    public ResponseEntity<Map<String, Object>> testApi() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "Backend API is working!");
+        response.put("timestamp", System.currentTimeMillis());
+        response.put("cors", "Enabled for Vercel frontend");
         return ResponseEntity.ok(response);
     }
 }
