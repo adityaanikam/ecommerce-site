@@ -37,4 +37,16 @@ public class HealthController {
         response.put("cors", "Enabled for Vercel frontend");
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/api/debug")
+    public ResponseEntity<Map<String, Object>> debugInfo() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("backend", "Running successfully");
+        response.put("timestamp", System.currentTimeMillis());
+        response.put("cors_origins", new String[]{"http://localhost:3000", "https://ecommerce-site-five-phi.vercel.app"});
+        response.put("api_base", "https://ecommerce-backend-51pg.onrender.com/api");
+        response.put("products_endpoint", "https://ecommerce-backend-51pg.onrender.com/api/products");
+        response.put("frontend_url", "https://ecommerce-site-five-phi.vercel.app");
+        return ResponseEntity.ok(response);
+    }
 }
