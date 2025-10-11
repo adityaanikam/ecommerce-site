@@ -1,8 +1,5 @@
 # Production Configuration for Render + Vercel
 spring:
-  profiles:
-    active: prod
-  
   # Production database configuration
   data:
     mongodb:
