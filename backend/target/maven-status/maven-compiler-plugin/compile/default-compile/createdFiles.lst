@@ -3,11 +3,11 @@ com\ecommerce\model\Product$ProductBuilder.class
 com\ecommerce\service\ProductService.class
 com\ecommerce\config\FashionProducts.class
 com\ecommerce\repository\ProductRepository.class
+com\ecommerce\config\DataInitializer$1.class
 com\ecommerce\SimpleEcommerceApplication.class
 com\ecommerce\config\HomeAndGardenProducts.class
 com\ecommerce\validation\PriceValidator.class
 com\ecommerce\config\DataInitializer.class
-com\ecommerce\config\WebConfig$2.class
 com\ecommerce\model\Product.class
 com\ecommerce\validation\FileValidator.class
 com\ecommerce\config\SecurityConfig.class
@@ -26,7 +26,7 @@ com\ecommerce\validation\PhoneNumberValidator.class
 com\ecommerce\controller\CategoryController.class
 com\ecommerce\config\ProductData.class
 com\ecommerce\validation\ValidPassword.class
+com\ecommerce\controller\DebugController.class
 com\ecommerce\validation\ValidFile.class
-com\ecommerce\config\WebConfig$1.class
 com\ecommerce\validation\ValidEmail.class
 com\ecommerce\validation\ValidPrice.class

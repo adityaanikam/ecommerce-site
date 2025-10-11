@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 
 @RestController
 @RequestMapping("/api/images")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 public class ImageController {
 
     private static final String PRODUCTS_BASE_PATH = "C:\\Users\\adity\\IdeaProjects\\ecommerece project\\backend\\Products\\";
@@ -61,18 +61,12 @@ public class ImageController {
     private String getContentType(String fileName) {
         String extension = fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();
         
-        switch (extension) {
-            case "jpg":
-            case "jpeg":
-                return "image/jpeg";
-            case "png":
-                return "image/png";
-            case "webp":
-                return "image/webp";
-            case "gif":
-                return "image/gif";
-            default:
-                return "application/octet-stream";
-        }
+        return switch (extension) {
+            case "jpg", "jpeg" -> "image/jpeg";
+            case "png" -> "image/png";
+            case "webp" -> "image/webp";
+            case "gif" -> "image/gif";
+            default -> "application/octet-stream";
+        };
     }
 }

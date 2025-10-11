@@ -9,6 +9,11 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -34,77 +39,39 @@ public class DataInitializer implements CommandLineRunner {
     private void seedProducts() {
         List<Product> allProducts = new ArrayList<>();
         
-        // Add Electronics Products (50 products)
-        List<Product> electronicsProducts = ElectronicsProducts.getProducts();
-        allProducts.addAll(electronicsProducts);
-        System.out.println("Added " + electronicsProducts.size() + " electronics products");
-        
-        // Add Fashion Products (35 products)
-        List<Product> fashionProducts = FashionProducts.getProducts();
-        allProducts.addAll(fashionProducts);
-        System.out.println("Added " + fashionProducts.size() + " fashion products");
-        
-        // Add Extra Fashion Products (15 products)
-        List<Product> fashionExtraProducts = FashionProductsExtra.getProducts();
-        allProducts.addAll(fashionExtraProducts);
-        System.out.println("Added " + fashionExtraProducts.size() + " extra fashion products");
-        
-        // Add Home & Garden Products (25 products)
-        List<Product> homeProducts = HomeAndGardenProducts.getProducts();
-        allProducts.addAll(homeProducts);
-        System.out.println("Added " + homeProducts.size() + " home & garden products");
-        
-        // Add Sports Products (25 products)
-        List<Product> sportsProducts = SportsProducts.getProducts();
-        allProducts.addAll(sportsProducts);
-        System.out.println("Added " + sportsProducts.size() + " sports products");
-        
-        // Fix image paths for all products
-        System.out.println("Fixing image paths for all products...");
-        for (Product product : allProducts) {
-            String category = product.getCategory();
-            String name = product.getName();
+        try {
+            // Read products from JSON file with GitHub URLs
+            System.out.println("Loading products from JSON file with GitHub image URLs...");
+            allProducts = loadProductsFromJson();
+            System.out.println("Loaded " + allProducts.size() + " products from JSON");
+        } catch (Exception e) {
+            System.err.println("Failed to load products from JSON, falling back to hardcoded classes: " + e.getMessage());
             
-            // Generate correct image paths based on actual files
-            List<String> imagePaths = new ArrayList<>();
+            // Fallback to hardcoded classes if JSON loading fails
+            List<Product> electronicsProducts = ElectronicsProducts.getProducts();
+            allProducts.addAll(electronicsProducts);
+            System.out.println("Added " + electronicsProducts.size() + " electronics products");
             
-            // Use correct extensions based on actual files
-            String[] extensions;
-            if ("Electronics".equals(category)) {
-                // Check specific products that use webp
-                if (name.contains("AirPods") || name.contains("iPhone 13") || name.contains("iPhone 14") || 
-                    name.contains("Bluetooth Speaker") || name.contains("MagSafe") || name.contains("OnePlus") ||
-                    name.contains("Oppo") || name.contains("Poco") || name.contains("RAVPower")) {
-                    extensions = new String[]{"webp", "webp", "webp"};
-                } else {
-                    extensions = new String[]{"jpg", "jpg", "jpg"};
-                }
-            } else if ("Fashion".equals(category)) {
-                // Check specific products that use webp
-                if (name.contains("Black Crew Neck") || name.contains("Black Jeans") || name.contains("Blue Dress Shirt") ||
-                    name.contains("Canvas Belt") || name.contains("Cargo Shorts") || name.contains("Checkered Shirt") ||
-                    name.contains("Compression Shirt") || name.contains("Dress Pants") || name.contains("Gray Tee") ||
-                    name.contains("Khaki Chinos") || name.contains("Leather Belt") || name.contains("Linen Blazer") ||
-                    name.contains("Linen Pants") || name.contains("Linen Shorts") || name.contains("Navy Tee") ||
-                    name.contains("Oxford Shirt") || name.contains("Regular Fit Jeans") || name.contains("Running Shorts") ||
-                    name.contains("Slim Fit Jeans") || name.contains("Striped Linen Shirt") || name.contains("Striped Tee") ||
-                    name.contains("Track Pants") || name.contains("White Dress Shirt") || name.contains("White Linen Shirt") ||
-                    name.contains("Yoga Pants")) {
-                    extensions = new String[]{"webp", "webp", "webp"};
-                } else {
-                    extensions = new String[]{"jpg", "jpg", "jpg"};
-                }
-            } else {
-                extensions = new String[]{"jpg", "jpg", "jpg"}; // Default to jpg
-            }
+            List<Product> fashionProducts = FashionProducts.getProducts();
+            allProducts.addAll(fashionProducts);
+            System.out.println("Added " + fashionProducts.size() + " fashion products");
             
-            for (int i = 0; i < 3; i++) {
-                imagePaths.add("/products/" + category + "/" + name + "/" + (i + 1) + "." + extensions[i]);
-            }
+            List<Product> fashionExtraProducts = FashionProductsExtra.getProducts();
+            allProducts.addAll(fashionExtraProducts);
+            System.out.println("Added " + fashionExtraProducts.size() + " extra fashion products");
             
-            // Update product with correct image paths
-            product.setImages(imagePaths);
+            List<Product> homeProducts = HomeAndGardenProducts.getProducts();
+            allProducts.addAll(homeProducts);
+            System.out.println("Added " + homeProducts.size() + " home & garden products");
+            
+            List<Product> sportsProducts = SportsProducts.getProducts();
+            allProducts.addAll(sportsProducts);
+            System.out.println("Added " + sportsProducts.size() + " sports products");
         }
+        
+        // Note: Image URLs are now stored as full GitHub URLs in the product data
+        // No need to modify image paths - they come from JSON with complete GitHub URLs
+        System.out.println("Using GitHub-hosted image URLs (no path modification needed)...");
 
         // Set featured, new, and sale flags
         Random random = new Random();
@@ -157,6 +124,43 @@ public class DataInitializer implements CommandLineRunner {
         System.out.println("Fashion: " + fashionCount);
         System.out.println("Home & Garden: " + homeCount);
         System.out.println("Sports: " + sportsCount);
+    }
+    
+    private List<Product> loadProductsFromJson() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        
+        // Try to find the JSON file in the project root
+        File jsonFile = new File("ecommerce.products.json");
+        if (!jsonFile.exists()) {
+            // Try relative to the backend directory
+            jsonFile = new File("../ecommerce.products.json");
+        }
+        if (!jsonFile.exists()) {
+            // Try in the current working directory
+            jsonFile = new File(System.getProperty("user.dir") + "/ecommerce.products.json");
+        }
+        
+        if (!jsonFile.exists()) {
+            throw new IOException("ecommerce.products.json file not found. Please ensure the file exists in the project root.");
+        }
+        
+        System.out.println("Loading products from: " + jsonFile.getAbsolutePath());
+        
+        try (FileReader reader = new FileReader(jsonFile)) {
+            List<Product> products = mapper.readValue(reader, new TypeReference<List<Product>>() {});
+            System.out.println("Successfully loaded " + products.size() + " products from JSON");
+            
+            // Log first few products to verify GitHub URLs
+            for (int i = 0; i < Math.min(3, products.size()); i++) {
+                Product product = products.get(i);
+                System.out.println("Sample product " + (i + 1) + ": " + product.getName());
+                if (product.getImages() != null && !product.getImages().isEmpty()) {
+                    System.out.println("  First image URL: " + product.getImages().get(0));
+                }
+            }
+            
+            return products;
+        }
     }
     
     private void updateProductDiscounts() {

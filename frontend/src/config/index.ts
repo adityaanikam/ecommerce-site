@@ -2,6 +2,9 @@
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
 export const IMAGE_BASE_URL = import.meta.env.VITE_IMAGE_BASE_URL || 'http://localhost:8080';
 
+// Note: Product images are now hosted on GitHub and come as full URLs from the API
+// Format: https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/...
+
 // Production configuration
 export const IS_PRODUCTION = import.meta.env.PROD;
 export const APP_NAME = import.meta.env.VITE_APP_NAME || 'E-commerce Store';
@@ -37,6 +40,11 @@ export const getImageUrl = (path: string): string => {
     return `${IMAGE_BASE_URL}/placeholder.jpg`;
   }
   
+  // Convert GitHub URLs to local images to avoid CORB issues
+  if (path.includes('raw.githubusercontent.com')) {
+    return convertGitHubUrlToLocal(path);
+  }
+  
   // If path is already a full URL, return as is
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
@@ -50,6 +58,39 @@ export const getImageUrl = (path: string): string => {
   // Otherwise, treat as relative path
   return `${IMAGE_BASE_URL}/${path}`;
 };
+
+/**
+ * Convert GitHub raw URL to local image path
+ * @param githubUrl - The GitHub raw URL
+ * @returns The local image path
+ */
+function convertGitHubUrlToLocal(githubUrl: string): string {
+  try {
+    // Extract path from GitHub URL
+    // Example: https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Airpods%20Pro%202/1.webp
+    const url = new URL(githubUrl);
+    const pathParts = url.pathname.split('/');
+    
+    // Find the Products directory index
+    const productsIndex = pathParts.findIndex(part => part === 'Products');
+    if (productsIndex === -1) {
+      console.warn('Invalid GitHub URL format:', githubUrl);
+      return githubUrl;
+    }
+    
+    // Extract category, product name, and image name
+    const category = pathParts[productsIndex + 1];
+    const productName = pathParts[productsIndex + 2];
+    const imageName = pathParts[productsIndex + 3];
+    
+    // Construct local path (no encoding needed for local files)
+    const localPath = `/images/products/${category}/${productName}/${imageName}`;
+    return localPath;
+  } catch (error) {
+    console.warn('Error converting GitHub URL to local path:', error);
+    return githubUrl;
+  }
+}
 
 // Special function to generate correct image paths for products
 export const getProductImageUrl = (product: any, imageIndex: number = 0): string => {

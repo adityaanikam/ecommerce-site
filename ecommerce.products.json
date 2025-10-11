@@ -8,9 +8,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/iPhone+15+Pro/1.jpg",
-      "/products/Electronics/iPhone+15+Pro/2.jpg",
-      "/products/Electronics/iPhone+15+Pro/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B15%2BPro/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B15%2BPro/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B15%2BPro/3.jpg"
     ],
     "description": "Latest iPhone with titanium design and A17 Pro chip. Features a stunning 48MP camera system and advanced computational photography.",
     "stock": 50,
@@ -42,9 +42,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Samsung+Galaxy+S24/1.jpg",
-      "/products/Electronics/Samsung+Galaxy+S24/2.jpg",
-      "/products/Electronics/Samsung+Galaxy+S24/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BGalaxy%2BS24/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BGalaxy%2BS24/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BGalaxy%2BS24/3.jpg"
     ],
     "description": "Premium Android flagship with advanced AI features and a stunning Dynamic AMOLED display. Exceptional camera system and all-day battery life.",
     "stock": 45,
@@ -76,9 +76,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/iPhone+14/1.webp",
-      "/products/Electronics/iPhone+14/2.webp",
-      "/products/Electronics/iPhone+14/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B14/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B14/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B14/3.webp"
     ],
     "description": "Powerful iPhone with A15 Bionic chip and advanced dual-camera system. Features all-day battery life and Ceramic Shield front cover.",
     "stock": 60,
@@ -110,9 +110,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/iPhone+13/1.webp",
-      "/products/Electronics/iPhone+13/2.webp",
-      "/products/Electronics/iPhone+13/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B13/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B13/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B13/3.webp"
     ],
     "description": "Feature-rich iPhone with A15 Bionic chip and impressive camera capabilities. Great value for performance and quality.",
     "stock": 55,
@@ -144,9 +144,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Samsung+Galaxy+A54/1.jpg",
-      "/products/Electronics/Samsung+Galaxy+A54/2.jpg",
-      "/products/Electronics/Samsung+Galaxy+A54/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BGalaxy%2BA54/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BGalaxy%2BA54/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BGalaxy%2BA54/3.jpg"
     ],
     "description": "Mid-range smartphone with excellent features and great camera performance. Perfect balance of features and value.",
     "stock": 70,
@@ -178,9 +178,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Xiaomi+14/1.jpg",
-      "/products/Electronics/Xiaomi+14/2.jpg",
-      "/products/Electronics/Xiaomi+14/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Xiaomi%2B14/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Xiaomi%2B14/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Xiaomi%2B14/3.jpg"
     ],
     "description": "Flagship phone with Leica optics and powerful Snapdragon processor. Premium build quality and excellent performance.",
     "stock": 40,
@@ -212,9 +212,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/OnePlus+11/1.webp",
-      "/products/Electronics/OnePlus+11/2.jpg",
-      "/products/Electronics/OnePlus+11/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/OnePlus%2B11/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/OnePlus%2B11/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/OnePlus%2B11/3.jpg"
     ],
     "description": "Flagship killer with Hasselblad cameras and lightning-fast charging. Smooth performance and premium design.",
     "stock": 45,
@@ -246,9 +246,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Realme+GT+5/1.jpg",
-      "/products/Electronics/Realme+GT+5/2.jpg",
-      "/products/Electronics/Realme+GT+5/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Realme%2BGT%2B5/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Realme%2BGT%2B5/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Realme%2BGT%2B5/3.jpg"
     ],
     "description": "Performance-focused phone with gaming features and fast charging. Great value for high-end specs.",
     "stock": 50,
@@ -280,9 +280,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Google+Pixel+8/1.jpg",
-      "/products/Electronics/Google+Pixel+8/2.jpg",
-      "/products/Electronics/Google+Pixel+8/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Google%2BPixel%2B8/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Google%2BPixel%2B8/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Google%2BPixel%2B8/3.jpg"
     ],
     "description": "Pure Android experience with exceptional computational photography. Powered by Google Tensor G3 chip.",
     "stock": 40,
@@ -314,9 +314,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Honor+Magic+6/1.jpg",
-      "/products/Electronics/Honor+Magic+6/2.jpg",
-      "/products/Electronics/Honor+Magic+6/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Honor%2BMagic%2B6/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Honor%2BMagic%2B6/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Honor%2BMagic%2B6/3.jpg"
     ],
     "description": "Flagship smartphone with powerful camera system and sleek design. Features advanced AI capabilities.",
     "stock": 35,
@@ -348,9 +348,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Oppo+Reno+11/1.webp",
-      "/products/Electronics/Oppo+Reno+11/2.webp",
-      "/products/Electronics/Oppo+Reno+11/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Oppo%2BReno%2B11/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Oppo%2BReno%2B11/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Oppo%2BReno%2B11/3.webp"
     ],
     "description": "Stylish mid-range phone with excellent camera capabilities and fast charging. Great value proposition.",
     "stock": 50,
@@ -382,9 +382,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Poco+X6/1.webp",
-      "/products/Electronics/Poco+X6/2.webp",
-      "/products/Electronics/Poco+X6/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Poco%2BX6/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Poco%2BX6/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Poco%2BX6/3.webp"
     ],
     "description": "Budget gaming phone with high refresh rate display and powerful processor. Excellent performance for the price.",
     "stock": 65,
@@ -416,9 +416,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Redmi+Note+13/1.jpg",
-      "/products/Electronics/Redmi+Note+13/2.jpg",
-      "/products/Electronics/Redmi+Note+13/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Redmi%2BNote%2B13/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Redmi%2BNote%2B13/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Redmi%2BNote%2B13/3.jpg"
     ],
     "description": "Feature-packed budget phone with great camera and battery life. Perfect for everyday use.",
     "stock": 80,
@@ -450,9 +450,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Samsung+A55/1.jpg",
-      "/products/Electronics/Samsung+A55/2.jpg",
-      "/products/Electronics/Samsung+A55/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BA55/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BA55/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BA55/3.jpg"
     ],
     "description": "Mid-range phone with excellent features and build quality. Great all-around performance.",
     "stock": 70,
@@ -484,9 +484,9 @@
     "category": "Electronics",
     "subcategory": "Mobiles",
     "images": [
-      "/products/Electronics/Realme+GT+6/1.jpg",
-      "/products/Electronics/Realme+GT+6/2.jpg",
-      "/products/Electronics/Realme+GT+6/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Realme%2BGT%2B6/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Realme%2BGT%2B6/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Realme%2BGT%2B6/3.jpg"
     ],
     "description": "High-performance phone with gaming features and fast charging. Excellent value for money.",
     "stock": 55,
@@ -518,9 +518,9 @@
     "category": "Electronics",
     "subcategory": "Tablets",
     "images": [
-      "/products/Electronics/iPad+Pro+11/1.jpg",
-      "/products/Electronics/iPad+Pro+11/2.jpg",
-      "/products/Electronics/iPad+Pro+11/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPad%2BPro%2B11/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPad%2BPro%2B11/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPad%2BPro%2B11/3.jpg"
     ],
     "description": "Powerful tablet with M2 chip and stunning Liquid Retina display. Perfect for creativity and productivity.",
     "stock": 30,
@@ -552,9 +552,9 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "images": [
-      "/products/Electronics/Surface+Laptop+5/1.jpg",
-      "/products/Electronics/Surface+Laptop+5/2.jpg",
-      "/products/Electronics/Surface+Laptop+5/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Surface%2BLaptop%2B5/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Surface%2BLaptop%2B5/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Surface%2BLaptop%2B5/3.jpg"
     ],
     "description": "Premium laptop with touchscreen and all-day battery life. Perfect blend of style and performance.",
     "stock": 25,
@@ -586,9 +586,9 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "images": [
-      "/products/Electronics/MacBook+Air+M2/1.jpg",
-      "/products/Electronics/MacBook+Air+M2/2.jpg",
-      "/products/Electronics/MacBook+Air+M2/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/MacBook%2BAir%2BM2/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/MacBook%2BAir%2BM2/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/MacBook%2BAir%2BM2/3.jpg"
     ],
     "description": "Ultra-thin laptop with powerful M2 chip and stunning Retina display. Amazing performance and battery life.",
     "stock": 20,
@@ -620,9 +620,9 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "images": [
-      "/products/Electronics/Dell+XPS+13/1.jpg",
-      "/products/Electronics/Dell+XPS+13/2.jpg",
-      "/products/Electronics/Dell+XPS+13/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Dell%2BXPS%2B13/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Dell%2BXPS%2B13/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Dell%2BXPS%2B13/3.jpg"
     ],
     "description": "Premium ultrabook with InfinityEdge display and powerful performance. Perfect for professionals.",
     "stock": 15,
@@ -654,9 +654,9 @@
     "category": "Electronics",
     "subcategory": "Laptops",
     "images": [
-      "/products/Electronics/HP+Pavilion/1.jpg",
-      "/products/Electronics/HP+Pavilion/2.jpg",
-      "/products/Electronics/HP+Pavilion/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/HP%2BPavilion/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/HP%2BPavilion/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/HP%2BPavilion/3.jpg"
     ],
     "description": "Versatile laptop for everyday computing needs. Great performance at an affordable price.",
     "stock": 30,
@@ -688,9 +688,9 @@
     "category": "Electronics",
     "subcategory": "Audio",
     "images": [
-      "/products/Electronics/Sony+WH-1000XM5/1.jpg",
-      "/products/Electronics/Sony+WH-1000XM5/2.jpg",
-      "/products/Electronics/Sony+WH-1000XM5/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Sony%2BWH-1000XM5/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Sony%2BWH-1000XM5/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Sony%2BWH-1000XM5/3.jpg"
     ],
     "description": "Industry-leading noise cancelling headphones with exceptional sound quality. Premium comfort and features.",
     "stock": 40,
@@ -722,9 +722,9 @@
     "category": "Electronics",
     "subcategory": "Audio",
     "images": [
-      "/products/Electronics/AirPods+Pro+2/1.webp",
-      "/products/Electronics/AirPods+Pro+2/2.webp",
-      "/products/Electronics/AirPods+Pro+2/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/AirPods%2BPro%2B2/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/AirPods%2BPro%2B2/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/AirPods%2BPro%2B2/3.webp"
     ],
     "description": "Premium wireless earbuds with active noise cancellation and spatial audio. Amazing sound quality and comfort.",
     "stock": 50,
@@ -756,9 +756,9 @@
     "category": "Electronics",
     "subcategory": "Audio",
     "images": [
-      "/products/Electronics/Sony+WH-CH720N/1.jpg",
-      "/products/Electronics/Sony+WH-CH720N/2.jpg",
-      "/products/Electronics/Sony+WH-CH720N/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Sony%2BWH-CH720N/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Sony%2BWH-CH720N/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Sony%2BWH-CH720N/3.jpg"
     ],
     "description": "Mid-range noise cancelling headphones with great sound quality. Excellent value for money.",
     "stock": 60,
@@ -790,9 +790,9 @@
     "category": "Electronics",
     "subcategory": "Audio",
     "images": [
-      "/products/Electronics/JBL+Tune+760NC/1.jpg",
-      "/products/Electronics/JBL+Tune+760NC/2.jpg",
-      "/products/Electronics/JBL+Tune+760NC/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/JBL%2BTune%2B760NC/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/JBL%2BTune%2B760NC/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/JBL%2BTune%2B760NC/3.jpg"
     ],
     "description": "Wireless headphones with active noise cancellation and JBL Pure Bass sound.",
     "stock": 70,
@@ -824,9 +824,9 @@
     "category": "Electronics",
     "subcategory": "Audio",
     "images": [
-      "/products/Electronics/Beats+Solo+3/1.jpg",
-      "/products/Electronics/Beats+Solo+3/2.jpg",
-      "/products/Electronics/Beats+Solo+3/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Beats%2BSolo%2B3/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Beats%2BSolo%2B3/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Beats%2BSolo%2B3/3.jpg"
     ],
     "description": "Wireless on-ear headphones with Apple W1 chip. Great sound and seamless connectivity.",
     "stock": 45,
@@ -858,9 +858,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Anker+PowerCore+26800/1.jpg",
-      "/products/Electronics/Anker+PowerCore+26800/2.jpg",
-      "/products/Electronics/Anker+PowerCore+26800/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Anker%2BPowerCore%2B26800/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Anker%2BPowerCore%2B26800/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Anker%2BPowerCore%2B26800/3.jpg"
     ],
     "description": "High-capacity power bank with fast charging support. Perfect for multiple device charging.",
     "stock": 100,
@@ -892,9 +892,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/RAVPower+20000mAh/1.webp",
-      "/products/Electronics/RAVPower+20000mAh/2.webp",
-      "/products/Electronics/RAVPower+20000mAh/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/RAVPower%2B20000mAh/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/RAVPower%2B20000mAh/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/RAVPower%2B20000mAh/3.webp"
     ],
     "description": "Compact power bank with PD fast charging. Great for travel and everyday use.",
     "stock": 80,
@@ -926,9 +926,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Baseus+Power+Bank/1.jpg",
-      "/products/Electronics/Baseus+Power+Bank/2.jpg",
-      "/products/Electronics/Baseus+Power+Bank/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Baseus%2BPower%2BBank/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Baseus%2BPower%2BBank/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Baseus%2BPower%2BBank/3.jpg"
     ],
     "description": "Slim power bank with wireless charging capability. Perfect for modern devices.",
     "stock": 90,
@@ -960,9 +960,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/iPhone+15+Case/1.jpg",
-      "/products/Electronics/iPhone+15+Case/2.jpg",
-      "/products/Electronics/iPhone+15+Case/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B15%2BCase/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B15%2BCase/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/iPhone%2B15%2BCase/3.jpg"
     ],
     "description": "Official silicone case with MagSafe support. Perfect protection for your iPhone.",
     "stock": 120,
@@ -994,9 +994,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Samsung+S24+Screen+Protector/1.jpg",
-      "/products/Electronics/Samsung+S24+Screen+Protector/2.jpg",
-      "/products/Electronics/Samsung+S24+Screen+Protector/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BS24%2BScreen%2BProtector/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BS24%2BScreen%2BProtector/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Samsung%2BS24%2BScreen%2BProtector/3.jpg"
     ],
     "description": "Tempered glass screen protector with easy installation. Maximum protection for your screen.",
     "stock": 150,
@@ -1028,9 +1028,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/USB-C+Hub/1.jpg",
-      "/products/Electronics/USB-C+Hub/2.jpg",
-      "/products/Electronics/USB-C+Hub/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/USB-C%2BHub/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/USB-C%2BHub/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/USB-C%2BHub/3.jpg"
     ],
     "description": "7-in-1 USB-C hub with HDMI, USB ports, and card reader. Perfect for laptops.",
     "stock": 60,
@@ -1062,9 +1062,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Lightning+Cable/1.jpg",
-      "/products/Electronics/Lightning+Cable/2.jpg",
-      "/products/Electronics/Lightning+Cable/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Lightning%2BCable/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Lightning%2BCable/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Lightning%2BCable/3.jpg"
     ],
     "description": "Official MFi-certified Lightning to USB-C cable. Fast charging support.",
     "stock": 100,
@@ -1096,9 +1096,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/MagSafe+Charger/1.webp",
-      "/products/Electronics/MagSafe+Charger/2.webp",
-      "/products/Electronics/MagSafe+Charger/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/MagSafe%2BCharger/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/MagSafe%2BCharger/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/MagSafe%2BCharger/3.webp"
     ],
     "description": "Official MagSafe wireless charger for iPhone. Fast and convenient charging.",
     "stock": 70,
@@ -1130,9 +1130,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Ring+Light/1.jpg",
-      "/products/Electronics/Ring+Light/2.jpg",
-      "/products/Electronics/Ring+Light/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Ring%2BLight/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Ring%2BLight/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Ring%2BLight/3.jpg"
     ],
     "description": "10-inch LED ring light with phone holder. Perfect for content creation.",
     "stock": 45,
@@ -1164,9 +1164,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Phone+Tripod/1.jpg",
-      "/products/Electronics/Phone+Tripod/2.jpg",
-      "/products/Electronics/Phone+Tripod/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BTripod/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BTripod/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BTripod/3.jpg"
     ],
     "description": "Flexible phone tripod with remote. Great for photos and videos.",
     "stock": 80,
@@ -1198,9 +1198,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Bluetooth+Speaker/1.webp",
-      "/products/Electronics/Bluetooth+Speaker/2.webp",
-      "/products/Electronics/Bluetooth+Speaker/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Bluetooth%2BSpeaker/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Bluetooth%2BSpeaker/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Bluetooth%2BSpeaker/3.webp"
     ],
     "description": "Portable waterproof Bluetooth speaker. Great sound in a compact size.",
     "stock": 55,
@@ -1232,9 +1232,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Car+Charger/1.jpg",
-      "/products/Electronics/Car+Charger/2.jpg",
-      "/products/Electronics/Car+Charger/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Car%2BCharger/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Car%2BCharger/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Car%2BCharger/3.jpg"
     ],
     "description": "Dual-port car charger with PowerIQ technology. Fast charging on the go.",
     "stock": 90,
@@ -1266,9 +1266,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Phone+Stand/1.jpg",
-      "/products/Electronics/Phone+Stand/2.jpg",
-      "/products/Electronics/Phone+Stand/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BStand/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BStand/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BStand/3.jpg"
     ],
     "description": "Adjustable phone stand for desk. Perfect angle for video calls.",
     "stock": 110,
@@ -1300,9 +1300,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Power+Strip/1.jpg",
-      "/products/Electronics/Power+Strip/2.jpg",
-      "/products/Electronics/Power+Strip/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Power%2BStrip/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Power%2BStrip/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Power%2BStrip/3.jpg"
     ],
     "description": "Surge protector power strip with USB ports. Protection for all devices.",
     "stock": 65,
@@ -1334,9 +1334,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Wall+Mount/1.jpg",
-      "/products/Electronics/Wall+Mount/2.jpg",
-      "/products/Electronics/Wall+Mount/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Wall%2BMount/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Wall%2BMount/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Wall%2BMount/3.jpg"
     ],
     "description": "TV wall mount bracket with full motion. Easy installation and sturdy.",
     "stock": 40,
@@ -1368,9 +1368,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Cable+Organizer/1.jpg",
-      "/products/Electronics/Cable+Organizer/2.jpg",
-      "/products/Electronics/Cable+Organizer/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Cable%2BOrganizer/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Cable%2BOrganizer/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Cable%2BOrganizer/3.jpg"
     ],
     "description": "Cable management sleeve system. Keep your desk neat and tidy.",
     "stock": 85,
@@ -1402,9 +1402,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Smart+Plug/1.jpg",
-      "/products/Electronics/Smart+Plug/2.jpg",
-      "/products/Electronics/Smart+Plug/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Smart%2BPlug/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Smart%2BPlug/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Smart%2BPlug/3.jpg"
     ],
     "description": "WiFi smart plug with energy monitoring. Control devices with your phone.",
     "stock": 75,
@@ -1436,9 +1436,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Keyboard/1.jpg",
-      "/products/Electronics/Keyboard/2.jpg",
-      "/products/Electronics/Keyboard/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Keyboard/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Keyboard/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Keyboard/3.jpg"
     ],
     "description": "Wireless keyboard with long battery life. Comfortable typing experience.",
     "stock": 50,
@@ -1470,9 +1470,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Mouse/1.jpg",
-      "/products/Electronics/Mouse/2.jpg",
-      "/products/Electronics/Mouse/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Mouse/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Mouse/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Mouse/3.jpg"
     ],
     "description": "Wireless mouse with ergonomic design. Precise tracking and comfort.",
     "stock": 60,
@@ -1504,9 +1504,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Hard+Drive/1.jpg",
-      "/products/Electronics/Hard+Drive/2.jpg",
-      "/products/Electronics/Hard+Drive/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Hard%2BDrive/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Hard%2BDrive/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Hard%2BDrive/3.jpg"
     ],
     "description": "2TB portable hard drive. Fast data transfer and reliable storage.",
     "stock": 40,
@@ -1538,9 +1538,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Memory+Card/1.jpg",
-      "/products/Electronics/Memory+Card/2.jpg",
-      "/products/Electronics/Memory+Card/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Memory%2BCard/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Memory%2BCard/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Memory%2BCard/3.jpg"
     ],
     "description": "128GB microSD card with adapter. Fast read and write speeds.",
     "stock": 95,
@@ -1572,9 +1572,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Phone+Grip/1.jpg",
-      "/products/Electronics/Phone+Grip/2.jpg",
-      "/products/Electronics/Phone+Grip/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BGrip/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BGrip/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Phone%2BGrip/3.jpg"
     ],
     "description": "Phone grip and stand in one. Customizable designs available.",
     "stock": 120,
@@ -1606,9 +1606,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Webcam/1.jpg",
-      "/products/Electronics/Webcam/2.jpg",
-      "/products/Electronics/Webcam/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Webcam/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Webcam/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Webcam/3.jpg"
     ],
     "description": "1080p webcam with microphone. Perfect for video calls and streaming.",
     "stock": 35,
@@ -1640,9 +1640,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/USB+Hub/1.jpg",
-      "/products/Electronics/USB+Hub/2.jpg",
-      "/products/Electronics/USB+Hub/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/USB%2BHub/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/USB%2BHub/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/USB%2BHub/3.jpg"
     ],
     "description": "4-port USB 3.0 hub. Expand your connectivity options.",
     "stock": 70,
@@ -1674,9 +1674,9 @@
     "category": "Electronics",
     "subcategory": "Accessories",
     "images": [
-      "/products/Electronics/Cable+Ties/1.jpg",
-      "/products/Electronics/Cable+Ties/2.jpg",
-      "/products/Electronics/Cable+Ties/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Cable%2BTies/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Cable%2BTies/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Cable%2BTies/3.jpg"
     ],
     "description": "Reusable cable ties for organization. Keep cables neat and tidy.",
     "stock": 100,
@@ -1708,9 +1708,9 @@
     "category": "Fashion",
     "subcategory": "T-shirts",
     "images": [
-      "/products/Fashion/Basic+White+Tee/1.jpg",
-      "/products/Fashion/Basic+White+Tee/2.jpg",
-      "/products/Fashion/Basic+White+Tee/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Basic%2BWhite%2BTee/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Basic%2BWhite%2BTee/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Basic%2BWhite%2BTee/3.jpg"
     ],
     "description": "Premium cotton crew neck t-shirt. Classic fit with excellent comfort and durability.",
     "stock": 100,
@@ -1742,9 +1742,9 @@
     "category": "Fashion",
     "subcategory": "T-shirts",
     "images": [
-      "/products/Fashion/Black+Crew+Neck/1.webp",
-      "/products/Fashion/Black+Crew+Neck/2.webp",
-      "/products/Fashion/Black+Crew+Neck/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Black%2BCrew%2BNeck/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Black%2BCrew%2BNeck/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Black%2BCrew%2BNeck/3.webp"
     ],
     "description": "Versatile black t-shirt made from soft cotton. Perfect for everyday wear.",
     "stock": 100,
@@ -1776,9 +1776,9 @@
     "category": "Fashion",
     "subcategory": "T-shirts",
     "images": [
-      "/products/Fashion/Navy+Tee/1.webp",
-      "/products/Fashion/Navy+Tee/2.webp",
-      "/products/Fashion/Navy+Tee/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Navy%2BTee/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Navy%2BTee/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Navy%2BTee/3.webp"
     ],
     "description": "Classic navy t-shirt in premium cotton. Essential wardrobe staple.",
     "stock": 90,
@@ -1810,9 +1810,9 @@
     "category": "Fashion",
     "subcategory": "T-shirts",
     "images": [
-      "/products/Fashion/Gray+Tee/1.webp",
-      "/products/Fashion/Gray+Tee/2.webp",
-      "/products/Fashion/Gray+Tee/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Gray%2BTee/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Gray%2BTee/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Gray%2BTee/3.webp"
     ],
     "description": "Soft gray t-shirt perfect for layering or wearing alone.",
     "stock": 85,
@@ -1844,9 +1844,9 @@
     "category": "Fashion",
     "subcategory": "T-shirts",
     "images": [
-      "/products/Fashion/Striped+Tee/1.webp",
-      "/products/Fashion/Striped+Tee/2.webp",
-      "/products/Fashion/Striped+Tee/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Striped%2BTee/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Striped%2BTee/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Striped%2BTee/3.webp"
     ],
     "description": "Classic striped t-shirt with modern fit. Great casual style.",
     "stock": 75,
@@ -1878,9 +1878,9 @@
     "category": "Fashion",
     "subcategory": "Formal",
     "images": [
-      "/products/Fashion/White+Dress+Shirt/1.webp",
-      "/products/Fashion/White+Dress+Shirt/2.webp",
-      "/products/Fashion/White+Dress+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/White%2BDress%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/White%2BDress%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/White%2BDress%2BShirt/3.webp"
     ],
     "description": "Crisp white dress shirt in premium cotton. Perfect for business and formal occasions.",
     "stock": 50,
@@ -1912,9 +1912,9 @@
     "category": "Fashion",
     "subcategory": "Formal",
     "images": [
-      "/products/Fashion/Blue+Dress+Shirt/1.webp",
-      "/products/Fashion/Blue+Dress+Shirt/2.webp",
-      "/products/Fashion/Blue+Dress+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Blue%2BDress%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Blue%2BDress%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Blue%2BDress%2BShirt/3.webp"
     ],
     "description": "Classic blue dress shirt with wrinkle-resistant fabric. Professional and stylish.",
     "stock": 45,
@@ -1946,9 +1946,9 @@
     "category": "Fashion",
     "subcategory": "Formal",
     "images": [
-      "/products/Fashion/Checkered+Shirt/1.webp",
-      "/products/Fashion/Checkered+Shirt/2.webp",
-      "/products/Fashion/Checkered+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Checkered%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Checkered%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Checkered%2BShirt/3.webp"
     ],
     "description": "Subtle checkered pattern dress shirt. Versatile for office or casual wear.",
     "stock": 40,
@@ -1980,9 +1980,9 @@
     "category": "Fashion",
     "subcategory": "Formal",
     "images": [
-      "/products/Fashion/Oxford+Shirt/1.webp",
-      "/products/Fashion/Oxford+Shirt/2.webp",
-      "/products/Fashion/Oxford+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Oxford%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Oxford%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Oxford%2BShirt/3.webp"
     ],
     "description": "Premium Oxford cloth button-down shirt. Timeless style and comfort.",
     "stock": 35,
@@ -2014,9 +2014,9 @@
     "category": "Fashion",
     "subcategory": "Formal",
     "images": [
-      "/products/Fashion/Dress+Pants/1.webp",
-      "/products/Fashion/Dress+Pants/2.webp",
-      "/products/Fashion/Dress+Pants/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Dress%2BPants/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Dress%2BPants/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Dress%2BPants/3.webp"
     ],
     "description": "Classic black dress pants with perfect drape. Essential formal wear.",
     "stock": 40,
@@ -2048,9 +2048,9 @@
     "category": "Fashion",
     "subcategory": "Casual",
     "images": [
-      "/products/Fashion/Slim+Fit+Jeans/1.webp",
-      "/products/Fashion/Slim+Fit+Jeans/2.webp",
-      "/products/Fashion/Slim+Fit+Jeans/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Slim%2BFit%2BJeans/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Slim%2BFit%2BJeans/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Slim%2BFit%2BJeans/3.webp"
     ],
     "description": "Classic blue slim fit jeans. Comfortable stretch denim with perfect fit.",
     "stock": 75,
@@ -2082,9 +2082,9 @@
     "category": "Fashion",
     "subcategory": "Casual",
     "images": [
-      "/products/Fashion/Regular+Fit+Jeans/1.webp",
-      "/products/Fashion/Regular+Fit+Jeans/2.webp",
-      "/products/Fashion/Regular+Fit+Jeans/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Regular%2BFit%2BJeans/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Regular%2BFit%2BJeans/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Regular%2BFit%2BJeans/3.webp"
     ],
     "description": "Comfortable regular fit jeans in classic wash. Perfect everyday denim.",
     "stock": 70,
@@ -2116,9 +2116,9 @@
     "category": "Fashion",
     "subcategory": "Casual",
     "images": [
-      "/products/Fashion/Black+Jeans/1.webp",
-      "/products/Fashion/Black+Jeans/2.webp",
-      "/products/Fashion/Black+Jeans/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Black%2BJeans/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Black%2BJeans/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Black%2BJeans/3.webp"
     ],
     "description": "Versatile black jeans in comfortable stretch fabric. Great for any occasion.",
     "stock": 65,
@@ -2150,9 +2150,9 @@
     "category": "Fashion",
     "subcategory": "Casual",
     "images": [
-      "/products/Fashion/Khaki+Chinos/1.webp",
-      "/products/Fashion/Khaki+Chinos/2.webp",
-      "/products/Fashion/Khaki+Chinos/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Khaki%2BChinos/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Khaki%2BChinos/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Khaki%2BChinos/3.webp"
     ],
     "description": "Classic khaki chinos in comfortable cotton. Perfect smart casual pants.",
     "stock": 60,
@@ -2184,9 +2184,9 @@
     "category": "Fashion",
     "subcategory": "Casual",
     "images": [
-      "/products/Fashion/Cargo+Shorts/1.webp",
-      "/products/Fashion/Cargo+Shorts/2.webp",
-      "/products/Fashion/Cargo+Shorts/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Cargo%2BShorts/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Cargo%2BShorts/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Cargo%2BShorts/3.webp"
     ],
     "description": "Practical cargo shorts with multiple pockets. Perfect for summer activities.",
     "stock": 80,
@@ -2218,9 +2218,9 @@
     "category": "Fashion",
     "subcategory": "Accessories",
     "images": [
-      "/products/Fashion/Leather+Belt/1.webp",
-      "/products/Fashion/Leather+Belt/2.webp",
-      "/products/Fashion/Leather+Belt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Leather%2BBelt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Leather%2BBelt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Leather%2BBelt/3.webp"
     ],
     "description": "Genuine leather belt with classic buckle. Perfect for both casual and formal wear.",
     "stock": 60,
@@ -2252,9 +2252,9 @@
     "category": "Fashion",
     "subcategory": "Accessories",
     "images": [
-      "/products/Fashion/Canvas+Belt/1.webp",
-      "/products/Fashion/Canvas+Belt/2.webp",
-      "/products/Fashion/Canvas+Belt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Canvas%2BBelt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Canvas%2BBelt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Canvas%2BBelt/3.webp"
     ],
     "description": "Casual canvas belt with metal buckle. Great for casual outfits.",
     "stock": 70,
@@ -2286,9 +2286,9 @@
     "category": "Fashion",
     "subcategory": "Accessories",
     "images": [
-      "/products/Fashion/Baseball+Cap/1.jpg",
-      "/products/Fashion/Baseball+Cap/2.jpg",
-      "/products/Fashion/Baseball+Cap/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Baseball%2BCap/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Baseball%2BCap/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Baseball%2BCap/3.jpg"
     ],
     "description": "Classic baseball cap in cotton twill. Adjustable fit for comfort.",
     "stock": 90,
@@ -2320,9 +2320,9 @@
     "category": "Fashion",
     "subcategory": "Accessories",
     "images": [
-      "/products/Fashion/Beanie/1.jpg",
-      "/products/Fashion/Beanie/2.jpg",
-      "/products/Fashion/Beanie/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Beanie/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Beanie/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Beanie/3.jpg"
     ],
     "description": "Warm knit beanie in soft acrylic. Perfect for cold weather.",
     "stock": 85,
@@ -2354,9 +2354,9 @@
     "category": "Fashion",
     "subcategory": "Accessories",
     "images": [
-      "/products/Fashion/Backpack/1.jpg",
-      "/products/Fashion/Backpack/2.jpg",
-      "/products/Fashion/Backpack/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Backpack/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Backpack/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Backpack/3.jpg"
     ],
     "description": "Stylish and practical backpack with laptop compartment. Perfect for daily use.",
     "stock": 55,
@@ -2388,9 +2388,9 @@
     "category": "Fashion",
     "subcategory": "Linen",
     "images": [
-      "/products/Fashion/White+Linen+Shirt/1.webp",
-      "/products/Fashion/White+Linen+Shirt/2.webp",
-      "/products/Fashion/White+Linen+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/White%2BLinen%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/White%2BLinen%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/White%2BLinen%2BShirt/3.webp"
     ],
     "description": "Pure linen shirt in classic white. Perfect for summer comfort.",
     "stock": 40,
@@ -2422,9 +2422,9 @@
     "category": "Fashion",
     "subcategory": "Linen",
     "images": [
-      "/products/Fashion/Linen+Pants/1.webp",
-      "/products/Fashion/Linen+Pants/2.webp",
-      "/products/Fashion/Linen+Pants/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BPants/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BPants/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BPants/3.webp"
     ],
     "description": "Comfortable linen pants with drawstring. Perfect summer casual wear.",
     "stock": 45,
@@ -2456,9 +2456,9 @@
     "category": "Fashion",
     "subcategory": "Linen",
     "images": [
-      "/products/Fashion/Linen+Shorts/1.webp",
-      "/products/Fashion/Linen+Shorts/2.webp",
-      "/products/Fashion/Linen+Shorts/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BShorts/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BShorts/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BShorts/3.webp"
     ],
     "description": "Casual linen shorts for ultimate summer comfort. Perfect beach wear.",
     "stock": 50,
@@ -2490,9 +2490,9 @@
     "category": "Fashion",
     "subcategory": "Linen",
     "images": [
-      "/products/Fashion/Striped+Linen+Shirt/1.webp",
-      "/products/Fashion/Striped+Linen+Shirt/2.webp",
-      "/products/Fashion/Striped+Linen+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Striped%2BLinen%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Striped%2BLinen%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Striped%2BLinen%2BShirt/3.webp"
     ],
     "description": "Striped linen shirt with modern fit. Perfect smart casual look.",
     "stock": 35,
@@ -2524,9 +2524,9 @@
     "category": "Fashion",
     "subcategory": "Linen",
     "images": [
-      "/products/Fashion/Linen+Blazer/1.webp",
-      "/products/Fashion/Linen+Blazer/2.webp",
-      "/products/Fashion/Linen+Blazer/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BBlazer/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BBlazer/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Linen%2BBlazer/3.webp"
     ],
     "description": "Unstructured linen blazer. Perfect for summer formal occasions.",
     "stock": 30,
@@ -2558,9 +2558,9 @@
     "category": "Fashion",
     "subcategory": "Activewear",
     "images": [
-      "/products/Fashion/Track+Pants/1.webp",
-      "/products/Fashion/Track+Pants/2.webp",
-      "/products/Fashion/Track+Pants/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Track%2BPants/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Track%2BPants/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Track%2BPants/3.webp"
     ],
     "description": "Comfortable track pants with zip pockets. Perfect for workouts and casual wear.",
     "stock": 60,
@@ -2592,9 +2592,9 @@
     "category": "Fashion",
     "subcategory": "Activewear",
     "images": [
-      "/products/Fashion/Athletic+Tee/1.jpg",
-      "/products/Fashion/Athletic+Tee/2.jpg",
-      "/products/Fashion/Athletic+Tee/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Athletic%2BTee/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Athletic%2BTee/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Athletic%2BTee/3.jpg"
     ],
     "description": "Lightweight athletic t-shirt. Perfect for high-intensity workouts.",
     "stock": 70,
@@ -2626,9 +2626,9 @@
     "category": "Fashion",
     "subcategory": "Activewear",
     "images": [
-      "/products/Fashion/Compression+Shirt/1.webp",
-      "/products/Fashion/Compression+Shirt/2.webp",
-      "/products/Fashion/Compression+Shirt/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Compression%2BShirt/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Compression%2BShirt/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Compression%2BShirt/3.webp"
     ],
     "description": "Long sleeve compression shirt. Great for all sports activities.",
     "stock": 55,
@@ -2660,9 +2660,9 @@
     "category": "Fashion",
     "subcategory": "Activewear",
     "images": [
-      "/products/Fashion/Running+Shorts/1.webp",
-      "/products/Fashion/Running+Shorts/2.webp",
-      "/products/Fashion/Running+Shorts/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Running%2BShorts/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Running%2BShorts/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Running%2BShorts/3.webp"
     ],
     "description": "Lightweight running shorts with built-in liner. Perfect for runners.",
     "stock": 65,
@@ -2694,9 +2694,9 @@
     "category": "Fashion",
     "subcategory": "Activewear",
     "images": [
-      "/products/Fashion/Yoga+Pants/1.webp",
-      "/products/Fashion/Yoga+Pants/2.webp",
-      "/products/Fashion/Yoga+Pants/3.webp"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Yoga%2BPants/1.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Yoga%2BPants/2.webp",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Fashion/Yoga%2BPants/3.webp"
     ],
     "description": "High-waisted yoga pants with pockets. Perfect for yoga and everyday wear.",
     "stock": 75,
@@ -2728,9 +2728,9 @@
     "category": "Home & Garden",
     "subcategory": "Curtains",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Blackout+Curtains/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Blackout+Curtains/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Blackout+Curtains/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Blackout%2BCurtains/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Blackout%2BCurtains/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Blackout%2BCurtains/3.jpg"
     ],
     "description": "100% blackout curtains with thermal insulation. Perfect for bedroom and living room.",
     "stock": 40,
@@ -2762,9 +2762,9 @@
     "category": "Home & Garden",
     "subcategory": "Curtains",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Sheer+Curtains/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Sheer+Curtains/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Sheer+Curtains/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Sheer%2BCurtains/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Sheer%2BCurtains/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Sheer%2BCurtains/3.jpg"
     ],
     "description": "Light and airy sheer curtains. Perfect for letting in natural light while maintaining privacy.",
     "stock": 50,
@@ -2796,9 +2796,9 @@
     "category": "Home & Garden",
     "subcategory": "Curtains",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Thermal+Curtains/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Thermal+Curtains/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Thermal+Curtains/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Thermal%2BCurtains/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Thermal%2BCurtains/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Thermal%2BCurtains/3.jpg"
     ],
     "description": "Energy-efficient thermal curtains. Help maintain room temperature and reduce energy costs.",
     "stock": 35,
@@ -2830,9 +2830,9 @@
     "category": "Home & Garden",
     "subcategory": "Curtains",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Room+Divider/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Room+Divider/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Room+Divider/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Room%2BDivider/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Room%2BDivider/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Room%2BDivider/3.jpg"
     ],
     "description": "Elegant room divider curtain. Perfect for creating separate spaces in open areas.",
     "stock": 30,
@@ -2864,9 +2864,9 @@
     "category": "Home & Garden",
     "subcategory": "Curtains",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Window+Valance/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Window+Valance/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Window+Valance/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Window%2BValance/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Window%2BValance/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Window%2BValance/3.jpg"
     ],
     "description": "Decorative window valance. Adds style and elegance to any window treatment.",
     "stock": 45,
@@ -2898,9 +2898,9 @@
     "category": "Home & Garden",
     "subcategory": "Curtains",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Curtain+Rods/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Curtain+Rods/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Curtain+Rods/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Curtain%2BRods/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Curtain%2BRods/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Curtain%2BRods/3.jpg"
     ],
     "description": "Adjustable curtain rods with decorative finials. Easy installation and sturdy construction.",
     "stock": 60,
@@ -2932,9 +2932,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Monstera+Deliciosa/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Monstera+Deliciosa/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Monstera+Deliciosa/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Monstera%2BDeliciosa/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Monstera%2BDeliciosa/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Monstera%2BDeliciosa/3.jpg"
     ],
     "description": "Popular indoor plant with unique split leaves. Easy to care for and air-purifying.",
     "stock": 30,
@@ -2966,9 +2966,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Snake+Plant/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Snake+Plant/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Snake+Plant/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Snake%2BPlant/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Snake%2BPlant/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Snake%2BPlant/3.jpg"
     ],
     "description": "Low-maintenance indoor plant. Perfect for air purification and modern decor.",
     "stock": 40,
@@ -3000,9 +3000,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Peace+Lily/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Peace+Lily/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Peace+Lily/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Peace%2BLily/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Peace%2BLily/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Peace%2BLily/3.jpg"
     ],
     "description": "Beautiful flowering plant that helps clean indoor air. Easy to care for.",
     "stock": 35,
@@ -3034,9 +3034,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Pothos/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Pothos/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Pothos/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Pothos/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Pothos/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Pothos/3.jpg"
     ],
     "description": "Trailing vine plant perfect for hanging baskets. Very easy to grow.",
     "stock": 45,
@@ -3068,9 +3068,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Rubber+Plant/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Rubber+Plant/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Rubber+Plant/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Rubber%2BPlant/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Rubber%2BPlant/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Rubber%2BPlant/3.jpg"
     ],
     "description": "Statement plant with large, glossy leaves. Great for adding height to room decor.",
     "stock": 25,
@@ -3102,9 +3102,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/ZZ+Plant/1.jpg",
-      "http://localhost:8080/products/Home & Garden/ZZ+Plant/2.jpg",
-      "http://localhost:8080/products/Home & Garden/ZZ+Plant/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/ZZ%2BPlant/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/ZZ%2BPlant/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/ZZ%2BPlant/3.jpg"
     ],
     "description": "Nearly indestructible plant perfect for beginners. Tolerates low light conditions.",
     "stock": 35,
@@ -3136,9 +3136,9 @@
     "category": "Home & Garden",
     "subcategory": "Plants",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Spider+Plant/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Spider+Plant/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Spider+Plant/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Spider%2BPlant/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Spider%2BPlant/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Spider%2BPlant/3.jpg"
     ],
     "description": "Classic hanging plant that produces babies. Great air purifier.",
     "stock": 40,
@@ -3170,9 +3170,9 @@
     "category": "Home & Garden",
     "subcategory": "Furniture",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Coffee+Table/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Coffee+Table/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Coffee+Table/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Coffee%2BTable/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Coffee%2BTable/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Coffee%2BTable/3.jpg"
     ],
     "description": "Modern coffee table with storage shelf. Perfect centerpiece for any living room.",
     "stock": 20,
@@ -3204,9 +3204,9 @@
     "category": "Home & Garden",
     "subcategory": "Furniture",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Side+Table/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Side+Table/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Side+Table/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Side%2BTable/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Side%2BTable/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Side%2BTable/3.jpg"
     ],
     "description": "Compact side table with drawer. Great for small spaces and storage.",
     "stock": 25,
@@ -3238,9 +3238,9 @@
     "category": "Home & Garden",
     "subcategory": "Furniture",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Floor+Lamp/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Floor+Lamp/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Floor+Lamp/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Floor%2BLamp/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Floor%2BLamp/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Floor%2BLamp/3.jpg"
     ],
     "description": "Modern floor lamp with adjustable head. Perfect for reading and ambient lighting.",
     "stock": 30,
@@ -3272,9 +3272,9 @@
     "category": "Home & Garden",
     "subcategory": "Furniture",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Table+Lamp/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Table+Lamp/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Table+Lamp/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Table%2BLamp/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Table%2BLamp/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Table%2BLamp/3.jpg"
     ],
     "description": "Stylish table lamp with fabric shade. Great for bedside or desk lighting.",
     "stock": 35,
@@ -3306,9 +3306,9 @@
     "category": "Home & Garden",
     "subcategory": "Furniture",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Throw+Pillow/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Throw+Pillow/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Throw+Pillow/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Throw%2BPillow/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Throw%2BPillow/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Throw%2BPillow/3.jpg"
     ],
     "description": "Decorative throw pillow with removable cover. Adds comfort and style to any room.",
     "stock": 50,
@@ -3340,9 +3340,9 @@
     "category": "Home & Garden",
     "subcategory": "Furniture",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Area+Rug/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Area+Rug/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Area+Rug/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Area%2BRug/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Area%2BRug/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Area%2BRug/3.jpg"
     ],
     "description": "Soft area rug with modern pattern. Perfect for defining spaces and adding warmth.",
     "stock": 15,
@@ -3374,9 +3374,9 @@
     "category": "Home & Garden",
     "subcategory": "Decor",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Wall+Clock/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Wall+Clock/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Wall+Clock/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Wall%2BClock/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Wall%2BClock/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Wall%2BClock/3.jpg"
     ],
     "description": "Modern wall clock with silent mechanism. Perfect blend of function and style.",
     "stock": 40,
@@ -3408,9 +3408,9 @@
     "category": "Home & Garden",
     "subcategory": "Decor",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Picture+Frame/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Picture+Frame/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Picture+Frame/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Picture%2BFrame/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Picture%2BFrame/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Picture%2BFrame/3.jpg"
     ],
     "description": "Classic picture frame in brushed metal finish. Perfect for photos and artwork.",
     "stock": 45,
@@ -3442,9 +3442,9 @@
     "category": "Home & Garden",
     "subcategory": "Decor",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Vase/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Vase/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Vase/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Vase/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Vase/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Vase/3.jpg"
     ],
     "description": "Ceramic vase with modern design. Perfect for fresh or artificial flowers.",
     "stock": 35,
@@ -3476,9 +3476,9 @@
     "category": "Home & Garden",
     "subcategory": "Decor",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Candle+Holder/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Candle+Holder/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Candle+Holder/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Candle%2BHolder/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Candle%2BHolder/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Candle%2BHolder/3.jpg"
     ],
     "description": "Glass candle holder with metallic finish. Creates beautiful ambient lighting.",
     "stock": 50,
@@ -3510,9 +3510,9 @@
     "category": "Home & Garden",
     "subcategory": "Decor",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Wall+Art/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Wall+Art/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Wall+Art/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Wall%2BArt/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Wall%2BArt/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Wall%2BArt/3.jpg"
     ],
     "description": "Abstract wall art print in modern style. Makes a bold statement in any room.",
     "stock": 25,
@@ -3544,9 +3544,9 @@
     "category": "Home & Garden",
     "subcategory": "Decor",
     "images": [
-      "http://localhost:8080/products/Home & Garden/Mirror/1.jpg",
-      "http://localhost:8080/products/Home & Garden/Mirror/2.jpg",
-      "http://localhost:8080/products/Home & Garden/Mirror/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Mirror/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Mirror/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Home%20%26%20Garden/Mirror/3.jpg"
     ],
     "description": "Decorative wall mirror with elegant frame. Adds light and space to any room.",
     "stock": 20,
@@ -3578,9 +3578,9 @@
     "category": "Sports",
     "subcategory": "Gym Equipment",
     "images": [
-      "http://localhost:8080/products/Sports/Adjustable+Dumbbells/1.jpg",
-      "http://localhost:8080/products/Sports/Adjustable+Dumbbells/2.jpg",
-      "http://localhost:8080/products/Sports/Adjustable+Dumbbells/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Adjustable%2BDumbbells/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Adjustable%2BDumbbells/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Adjustable%2BDumbbells/3.jpg"
     ],
     "description": "Space-saving adjustable dumbbells from 5-52.5 lbs. Perfect for home gym.",
     "stock": 25,
@@ -3612,9 +3612,9 @@
     "category": "Sports",
     "subcategory": "Gym Equipment",
     "images": [
-      "http://localhost:8080/products/Sports/Resistance+Bands+Set/1.jpg",
-      "http://localhost:8080/products/Sports/Resistance+Bands+Set/2.jpg",
-      "http://localhost:8080/products/Sports/Resistance+Bands+Set/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Resistance%2BBands%2BSet/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Resistance%2BBands%2BSet/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Resistance%2BBands%2BSet/3.jpg"
     ],
     "description": "Set of 5 resistance bands with different resistance levels. Perfect for strength training and rehabilitation.",
     "stock": 100,
@@ -3646,9 +3646,9 @@
     "category": "Sports",
     "subcategory": "Gym Equipment",
     "images": [
-      "http://localhost:8080/products/Sports/Kettlebell+20lb/1.jpg",
-      "http://localhost:8080/products/Sports/Kettlebell+20lb/2.jpg",
-      "http://localhost:8080/products/Sports/Kettlebell+20lb/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Kettlebell%2B20lb/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Kettlebell%2B20lb/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Kettlebell%2B20lb/3.jpg"
     ],
     "description": "Cast iron kettlebell with comfortable grip. Perfect for full-body workouts.",
     "stock": 40,
@@ -3680,9 +3680,9 @@
     "category": "Sports",
     "subcategory": "Gym Equipment",
     "images": [
-      "http://localhost:8080/products/Sports/Pull-up+Bar/1.jpg",
-      "http://localhost:8080/products/Sports/Pull-up+Bar/2.jpg",
-      "http://localhost:8080/products/Sports/Pull-up+Bar/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Pull-up%2BBar/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Pull-up%2BBar/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Pull-up%2BBar/3.jpg"
     ],
     "description": "Doorway pull-up bar with multiple grip positions. Easy installation and removal.",
     "stock": 50,
@@ -3714,9 +3714,9 @@
     "category": "Sports",
     "subcategory": "Gym Equipment",
     "images": [
-      "http://localhost:8080/products/Sports/Ab+Wheel/1.jpg",
-      "http://localhost:8080/products/Sports/Ab+Wheel/2.jpg",
-      "http://localhost:8080/products/Sports/Ab+Wheel/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Ab%2BWheel/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Ab%2BWheel/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Ab%2BWheel/3.jpg"
     ],
     "description": "Dual-wheel ab roller with comfortable grips. Great for core strengthening.",
     "stock": 60,
@@ -3748,9 +3748,9 @@
     "category": "Sports",
     "subcategory": "Yoga",
     "images": [
-      "http://localhost:8080/products/Sports/Yoga+Mat/1.jpg",
-      "http://localhost:8080/products/Sports/Yoga+Mat/2.jpg",
-      "http://localhost:8080/products/Sports/Yoga+Mat/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BMat/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BMat/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BMat/3.jpg"
     ],
     "description": "Premium yoga mat with alignment lines. Non-slip and eco-friendly material.",
     "stock": 80,
@@ -3782,9 +3782,9 @@
     "category": "Sports",
     "subcategory": "Yoga",
     "images": [
-      "http://localhost:8080/products/Sports/Yoga+Blocks/1.jpg",
-      "http://localhost:8080/products/Sports/Yoga+Blocks/2.jpg",
-      "http://localhost:8080/products/Sports/Yoga+Blocks/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BBlocks/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BBlocks/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BBlocks/3.jpg"
     ],
     "description": "Set of 2 high-density foam yoga blocks. Perfect for support and stability.",
     "stock": 70,
@@ -3816,9 +3816,9 @@
     "category": "Sports",
     "subcategory": "Yoga",
     "images": [
-      "http://localhost:8080/products/Sports/Yoga+Strap/1.jpg",
-      "http://localhost:8080/products/Sports/Yoga+Strap/2.jpg",
-      "http://localhost:8080/products/Sports/Yoga+Strap/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BStrap/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BStrap/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Yoga%2BStrap/3.jpg"
     ],
     "description": "Cotton yoga strap with D-ring buckle. Great for stretching and flexibility.",
     "stock": 90,
@@ -3850,9 +3850,9 @@
     "category": "Sports",
     "subcategory": "Yoga",
     "images": [
-      "http://localhost:8080/products/Sports/Balance+Ball/1.jpg",
-      "http://localhost:8080/products/Sports/Balance+Ball/2.jpg",
-      "http://localhost:8080/products/Sports/Balance+Ball/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Balance%2BBall/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Balance%2BBall/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Balance%2BBall/3.jpg"
     ],
     "description": "Anti-burst exercise ball with pump. Perfect for yoga and core training.",
     "stock": 55,
@@ -3884,9 +3884,9 @@
     "category": "Sports",
     "subcategory": "Yoga",
     "images": [
-      "http://localhost:8080/products/Sports/Meditation+Cushion/1.jpg",
-      "http://localhost:8080/products/Sports/Meditation+Cushion/2.jpg",
-      "http://localhost:8080/products/Sports/Meditation+Cushion/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Meditation%2BCushion/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Meditation%2BCushion/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Meditation%2BCushion/3.jpg"
     ],
     "description": "Comfortable meditation cushion with carry handle. Perfect height for proper posture.",
     "stock": 40,
@@ -3918,9 +3918,9 @@
     "category": "Sports",
     "subcategory": "Apparel",
     "images": [
-      "http://localhost:8080/products/Sports/Athletic+Shirt/1.jpg",
-      "http://localhost:8080/products/Sports/Athletic+Shirt/2.jpg",
-      "http://localhost:8080/products/Sports/Athletic+Shirt/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Athletic%2BShirt/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Athletic%2BShirt/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Athletic%2BShirt/3.jpg"
     ],
     "description": "Moisture-wicking athletic t-shirt. Perfect for workouts and running.",
     "stock": 75,
@@ -3952,9 +3952,9 @@
     "category": "Sports",
     "subcategory": "Apparel",
     "images": [
-      "http://localhost:8080/products/Sports/Gym+Shorts/1.jpg",
-      "http://localhost:8080/products/Sports/Gym+Shorts/2.jpg",
-      "http://localhost:8080/products/Sports/Gym+Shorts/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BShorts/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BShorts/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BShorts/3.jpg"
     ],
     "description": "Quick-dry gym shorts with pockets. Comfortable and functional.",
     "stock": 70,
@@ -3986,9 +3986,9 @@
     "category": "Sports",
     "subcategory": "Apparel",
     "images": [
-      "http://localhost:8080/products/Sports/Compression+Leggings/1.jpg",
-      "http://localhost:8080/products/Sports/Compression+Leggings/2.jpg",
-      "http://localhost:8080/products/Sports/Compression+Leggings/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Compression%2BLeggings/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Compression%2BLeggings/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Compression%2BLeggings/3.jpg"
     ],
     "description": "High-waisted compression leggings. Perfect for all types of workouts.",
     "stock": 65,
@@ -4020,9 +4020,9 @@
     "category": "Sports",
     "subcategory": "Apparel",
     "images": [
-      "http://localhost:8080/products/Sports/Sports+Bra/1.jpg",
-      "http://localhost:8080/products/Sports/Sports+Bra/2.jpg",
-      "http://localhost:8080/products/Sports/Sports+Bra/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Sports%2BBra/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Sports%2BBra/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Sports%2BBra/3.jpg"
     ],
     "description": "Medium support sports bra. Comfortable and moisture-wicking.",
     "stock": 60,
@@ -4054,9 +4054,9 @@
     "category": "Sports",
     "subcategory": "Apparel",
     "images": [
-      "http://localhost:8080/products/Sports/Tank+Top/1.jpg",
-      "http://localhost:8080/products/Sports/Tank+Top/2.jpg",
-      "http://localhost:8080/products/Sports/Tank+Top/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Tank%2BTop/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Tank%2BTop/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Tank%2BTop/3.jpg"
     ],
     "description": "Breathable athletic tank top. Perfect for high-intensity workouts.",
     "stock": 80,
@@ -4088,9 +4088,9 @@
     "category": "Sports",
     "subcategory": "Accessories",
     "images": [
-      "http://localhost:8080/products/Sports/Water+Bottle/1.jpg",
-      "http://localhost:8080/products/Sports/Water+Bottle/2.jpg",
-      "http://localhost:8080/products/Sports/Water+Bottle/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Water%2BBottle/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Water%2BBottle/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Water%2BBottle/3.jpg"
     ],
     "description": "BPA-free water bottle with time markers. Helps track daily water intake.",
     "stock": 100,
@@ -4122,9 +4122,9 @@
     "category": "Sports",
     "subcategory": "Accessories",
     "images": [
-      "http://localhost:8080/products/Sports/Gym+Bag/1.jpg",
-      "http://localhost:8080/products/Sports/Gym+Bag/2.jpg",
-      "http://localhost:8080/products/Sports/Gym+Bag/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BBag/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BBag/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BBag/3.jpg"
     ],
     "description": "Spacious gym bag with shoe compartment. Perfect for gym and travel.",
     "stock": 45,
@@ -4156,9 +4156,9 @@
     "category": "Sports",
     "subcategory": "Accessories",
     "images": [
-      "http://localhost:8080/products/Sports/Gym+Towel/1.jpg",
-      "http://localhost:8080/products/Sports/Gym+Towel/2.jpg",
-      "http://localhost:8080/products/Sports/Gym+Towel/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BTowel/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BTowel/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Gym%2BTowel/3.jpg"
     ],
     "description": "Quick-dry microfiber gym towel. Perfect size for workouts.",
     "stock": 120,
@@ -4190,9 +4190,9 @@
     "category": "Sports",
     "subcategory": "Accessories",
     "images": [
-      "http://localhost:8080/products/Sports/Lifting+Gloves/1.jpg",
-      "http://localhost:8080/products/Sports/Lifting+Gloves/2.jpg",
-      "http://localhost:8080/products/Sports/Lifting+Gloves/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Lifting%2BGloves/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Lifting%2BGloves/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Lifting%2BGloves/3.jpg"
     ],
     "description": "Padded weight lifting gloves. Provides grip and hand protection.",
     "stock": 85,
@@ -4224,9 +4224,9 @@
     "category": "Sports",
     "subcategory": "Accessories",
     "images": [
-      "http://localhost:8080/products/Sports/Knee+Sleeves/1.jpg",
-      "http://localhost:8080/products/Sports/Knee+Sleeves/2.jpg",
-      "http://localhost:8080/products/Sports/Knee+Sleeves/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Knee%2BSleeves/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Knee%2BSleeves/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Knee%2BSleeves/3.jpg"
     ],
     "description": "Compression knee sleeves for support. Perfect for squats and running.",
     "stock": 70,
@@ -4258,9 +4258,9 @@
     "category": "Sports",
     "subcategory": "Recovery",
     "images": [
-      "http://localhost:8080/products/Sports/Foam+Roller/1.jpg",
-      "http://localhost:8080/products/Sports/Foam+Roller/2.jpg",
-      "http://localhost:8080/products/Sports/Foam+Roller/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Foam%2BRoller/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Foam%2BRoller/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Foam%2BRoller/3.jpg"
     ],
     "description": "High-density foam roller for muscle recovery. Perfect for post-workout.",
     "stock": 45,
@@ -4292,9 +4292,9 @@
     "category": "Sports",
     "subcategory": "Recovery",
     "images": [
-      "http://localhost:8080/products/Sports/Massage+Ball/1.jpg",
-      "http://localhost:8080/products/Sports/Massage+Ball/2.jpg",
-      "http://localhost:8080/products/Sports/Massage+Ball/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Massage%2BBall/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Massage%2BBall/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Massage%2BBall/3.jpg"
     ],
     "description": "Deep tissue massage ball. Perfect for targeting specific muscle groups.",
     "stock": 60,
@@ -4326,9 +4326,9 @@
     "category": "Sports",
     "subcategory": "Recovery",
     "images": [
-      "http://localhost:8080/products/Sports/Compression+Socks/1.jpg",
-      "http://localhost:8080/products/Sports/Compression+Socks/2.jpg",
-      "http://localhost:8080/products/Sports/Compression+Socks/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Compression%2BSocks/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Compression%2BSocks/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Compression%2BSocks/3.jpg"
     ],
     "description": "Graduated compression socks for improved circulation. Perfect for recovery and travel.",
     "stock": 80,
@@ -4360,9 +4360,9 @@
     "category": "Sports",
     "subcategory": "Recovery",
     "images": [
-      "http://localhost:8080/products/Sports/Ice+Pack/1.jpg",
-      "http://localhost:8080/products/Sports/Ice+Pack/2.jpg",
-      "http://localhost:8080/products/Sports/Ice+Pack/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Ice%2BPack/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Ice%2BPack/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Ice%2BPack/3.jpg"
     ],
     "description": "Reusable ice pack with compression wrap. Perfect for injury recovery.",
     "stock": 90,
@@ -4394,9 +4394,9 @@
     "category": "Sports",
     "subcategory": "Recovery",
     "images": [
-      "http://localhost:8080/products/Sports/Recovery+Bands/1.jpg",
-      "http://localhost:8080/products/Sports/Recovery+Bands/2.jpg",
-      "http://localhost:8080/products/Sports/Recovery+Bands/3.jpg"
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Recovery%2BBands/1.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Recovery%2BBands/2.jpg",
+      "https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/http%3A//localhost%3A8080/Sports/Recovery%2BBands/3.jpg"
     ],
     "description": "Light resistance bands for recovery exercises. Perfect for rehabilitation.",
     "stock": 75,

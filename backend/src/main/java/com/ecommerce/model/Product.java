@@ -166,4 +166,64 @@ public class Product {
     public void setUpdatedAt(long updatedAt) {
         this.updatedAt = updatedAt;
     }
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+    
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+    
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+    
+    public void setReviewCount(int reviewCount) {
+        this.reviewCount = reviewCount;
+    }
+    
+    public void setSpecs(Map<String, String> specs) {
+        this.specs = specs;
+    }
+    
+    public void setFeatures(List<String> features) {
+        this.features = features;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+    
+    public void setSize(String size) {
+        this.size = size;
+    }
+    
+    public void setMaterial(String material) {
+        this.material = material;
+    }
 }
