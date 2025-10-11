@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 public class ImageController {
 
-    private static final String PRODUCTS_BASE_PATH = "C:\\Users\\adity\\IdeaProjects\\ecommerece project\\backend\\Products\\";
+    private static final String PRODUCTS_BASE_PATH = "/app/Products/";
 
     @GetMapping("/test")
     public ResponseEntity<String> testEndpoint() {
