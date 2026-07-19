@@ -1,7 +1,6 @@
-# Use OpenJDK 17 as base image
-FROM openjdk:17-jdk-slim
+# Build stage
+FROM eclipse-temurin:17-jdk-jammy AS build
 
-# Set working directory
 WORKDIR /app
 
 # Copy Maven wrapper and pom.xml
@@ -21,6 +20,14 @@ COPY src ./src
 # Build the application
 RUN ./mvnw clean package -DskipTests
 
+# Runtime stage
+FROM eclipse-temurin:17-jre-jammy
+
+WORKDIR /app
+
+# Copy the built jar from the build stage
+COPY --from=build /app/target/ecommerce-backend-1.0.0.jar app.jar
+
 # Create directory for product images
 RUN mkdir -p /app/Products
 
@@ -34,4 +41,4 @@ EXPOSE 8080
 ENV SPRING_PROFILES_ACTIVE=prod
 
 # Run the application
-CMD ["java", "-jar", "target/ecommerce-backend-1.0.0.jar"]
+CMD ["java", "-jar", "app.jar"]
