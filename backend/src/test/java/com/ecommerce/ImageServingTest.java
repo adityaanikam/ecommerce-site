@@ -34,7 +34,7 @@ public class ImageServingTest {
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
         // Test the API endpoint
-        mockMvc.perform(get("/api/images/product/Electronics/Airpods+Pro+2/1.webp"))
+        mockMvc.perform(get("/images/product/Electronics/Airpods+Pro+2/1.webp"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("image/webp"));
     }

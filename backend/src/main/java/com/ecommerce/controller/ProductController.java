@@ -18,7 +18,7 @@ import java.util.Optional;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/products")
 @RequiredArgsConstructor
 @CrossOrigin(origins = {"http://localhost:3000", "https://ecommerce-site-five-phi.vercel.app"}, allowCredentials = "false")
 public class ProductController {

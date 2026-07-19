@@ -14,7 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @RestController
-@RequestMapping("/api/images")
+@RequestMapping("/images")
 @CrossOrigin(origins = {"http://localhost:3000", "https://ecommerce-site-five-phi.vercel.app"})
 public class ImageController {
 

@@ -29,7 +29,7 @@ public class HealthController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/api/test")
+    @GetMapping("/test")
     public ResponseEntity<Map<String, Object>> testApi() {
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Backend API is working!");
@@ -38,7 +38,7 @@ public class HealthController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/api/debug")
+    @GetMapping("/debug")
     public ResponseEntity<Map<String, Object>> debugInfo() {
         Map<String, Object> response = new HashMap<>();
         response.put("backend", "Running successfully");
