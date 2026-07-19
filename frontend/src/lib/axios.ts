@@ -6,7 +6,12 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  withCredentials: true,
+  // The backend's CORS config explicitly sets allowCredentials(false) — these endpoints
+  // are public GETs with no cookie/session auth. Sending withCredentials: true here
+  // mismatches that, and browsers silently block the whole response when a credentialed
+  // request doesn't get Access-Control-Allow-Credentials back, surfacing as a bare
+  // "Network Error" with no useful status code.
+  withCredentials: false,
 });
 
 // Add a request interceptor
