@@ -50,6 +50,12 @@ export const getImageUrl = (path: string): string => {
     return path;
   }
   
+  // Local static assets (copied into frontend/public/images) are served from this
+  // app's own origin, not the backend — must not be prefixed with IMAGE_BASE_URL.
+  if (path.startsWith('/images/')) {
+    return path;
+  }
+
   // If path starts with '/', it's a relative path from the base URL
   if (path.startsWith('/')) {
     return `${IMAGE_BASE_URL}${path}`;
@@ -68,29 +74,38 @@ function convertGitHubUrlToLocal(githubUrl: string): string {
   try {
     // Extract path from GitHub URL
     // Example: https://raw.githubusercontent.com/adityaanikam/ecommerce-site/main/backend/Products/Electronics/Airpods%20Pro%202/1.webp
+    // Note: some seed data incorrectly encodes spaces as "%2B" (a literal '+') instead of "%20",
+    // so we normalize both before re-encoding for the actual local file request.
     const url = new URL(githubUrl);
     const pathParts = url.pathname.split('/');
-    
+    const decodePart = (part: string) => decodeURIComponent(part).replace(/\+/g, ' ');
+
     // Find the Products directory index
     const productsIndex = pathParts.findIndex(part => part === 'Products');
     if (productsIndex === -1) {
       console.warn('Invalid GitHub URL format:', githubUrl);
       return githubUrl;
     }
-    
+
     // Extract category, product name, and image name
-    const category = pathParts[productsIndex + 1];
-    const productName = pathParts[productsIndex + 2];
-    const imageName = pathParts[productsIndex + 3];
-    
-    // Construct local path (no encoding needed for local files)
-    const localPath = `/images/products/${category}/${productName}/${imageName}`;
+    const category = decodePart(pathParts[productsIndex + 1]);
+    const productName = decodePart(pathParts[productsIndex + 2]);
+    const imageName = decodePart(pathParts[productsIndex + 3]);
+
+    // Construct local path, properly encoding each segment for the request
+    const localPath = `/images/products/${encodeURIComponent(category)}/${encodeURIComponent(productName)}/${encodeURIComponent(imageName)}`;
     return localPath;
   } catch (error) {
     console.warn('Error converting GitHub URL to local path:', error);
     return githubUrl;
   }
 }
+
+// Builds a same-origin local image path (files are copied into frontend/public/images/products
+// to avoid CORB/CORS issues loading images cross-origin from the backend or GitHub).
+const getLocalProductImagePath = (category: string, name: string, fileName: string): string => {
+  return `/images/products/${encodeURIComponent(category)}/${encodeURIComponent(name)}/${fileName}`;
+};
 
 // Special function to generate correct image paths for products
 export const getProductImageUrl = (product: any, imageIndex: number = 0): string => {
@@ -112,9 +127,9 @@ export const getProductImageUrl = (product: any, imageIndex: number = 0): string
       ext = 'webp';
     }
     
-    return getImageUrl(`/products/${category}/${name}/${imageIndex + 1}.${ext}`);
+    return getLocalProductImagePath(category, name, `${imageIndex + 1}.${ext}`);
   }
-  
+
   // For other categories, use database images if available and not placeholders
   if (product.images && product.images.length > 0 && !product.images[0].includes('placehold.co')) {
     return getImageUrl(product.images[imageIndex] || product.images[0]);
@@ -139,7 +154,7 @@ export const getProductImageUrl = (product: any, imageIndex: number = 0): string
     ext = 'webp';
   }
   
-  return getImageUrl(`/products/${category}/${name}/${imageIndex + 1}.${ext}`);
+  return getLocalProductImagePath(category, name, `${imageIndex + 1}.${ext}`);
 };
 
 // Function to get all image URLs for a product
@@ -164,7 +179,7 @@ export const getProductImageUrls = (product: any): string[] => {
         ext = 'webp';
       }
       
-      urls.push(getImageUrl(`/products/${category}/${name}/${i + 1}.${ext}`));
+      urls.push(getLocalProductImagePath(category, name, `${i + 1}.${ext}`));
     }
     return urls;
   }
@@ -195,7 +210,7 @@ export const getProductImageUrls = (product: any): string[] => {
       ext = 'webp';
     }
     
-    urls.push(getImageUrl(`/products/${category}/${name}/${i + 1}.${ext}`));
+    urls.push(getLocalProductImagePath(category, name, `${i + 1}.${ext}`));
   }
   
   return urls;

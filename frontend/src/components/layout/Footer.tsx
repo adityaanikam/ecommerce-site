@@ -1,21 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ShoppingBag, Instagram, Twitter, Facebook } from 'lucide-react';
 import { Container } from '@/components';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-secondary-900 border-t border-secondary-200 dark:border-secondary-800">
+    <footer className="bg-secondary-50 dark:bg-secondary-900 border-t border-secondary-200 dark:border-secondary-800">
       <Container>
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div>
-              <h3 className="text-lg font-semibold text-secondary-900 dark:text-white mb-4">
-                E-Commerce Store
-              </h3>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 shadow-sm">
+                  <ShoppingBag className="h-4 w-4 text-white" />
+                </span>
+                <h3 className="text-lg font-bold bg-gradient-to-r from-primary-600 to-primary-400 dark:from-primary-400 dark:to-primary-200 bg-clip-text text-transparent">
+                  EcoShop
+                </h3>
+              </div>
               <p className="text-secondary-600 dark:text-secondary-400 text-sm">
                 Your one-stop shop for all your needs. Quality products, great prices, and excellent service.
               </p>
+              <div className="flex items-center gap-3 mt-5">
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-200/60 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:bg-primary-600 hover:text-white transition-colors"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Twitter"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-200/60 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:bg-primary-600 hover:text-white transition-colors"
+                >
+                  <Twitter className="h-4 w-4" />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-200/60 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-400 hover:bg-primary-600 hover:text-white transition-colors"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+              </div>
             </div>
 
             {/* Quick Links */}
@@ -108,7 +137,7 @@ export const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-secondary-200 dark:border-secondary-800">
             <p className="text-center text-sm text-secondary-600 dark:text-secondary-400">
-              © {new Date().getFullYear()} E-Commerce Store. All rights reserved.
+              © {new Date().getFullYear()} EcoShop. All rights reserved.
             </p>
           </div>
         </div>

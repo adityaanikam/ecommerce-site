@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Heart, Sun, Moon, Menu, X, Search } from 'lucide-react';
+import { ShoppingCart, ShoppingBag, Heart, Sun, Moon, Menu, X, Search } from 'lucide-react';
 import { Button, Container, Input, Badge } from '@/components';
 import '@/styles/header.css';
 import { CartDrawer } from '@/components/ecommerce';
@@ -42,9 +42,14 @@ export const Header: React.FC = () => {
             {/* Logo */}
             <Link
               to="/"
-              className={`logo ${isScrolled ? 'scale-90' : 'scale-100'}`}
+              className={`logo flex items-center gap-2 ${isScrolled ? 'scale-90' : 'scale-100'}`}
             >
-              EcoShop
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 shadow-md shadow-primary-500/30">
+                <ShoppingBag className="h-5 w-5 text-white" />
+              </span>
+              <span className="bg-gradient-to-r from-primary-600 to-primary-400 dark:from-primary-400 dark:to-primary-200 bg-clip-text text-transparent">
+                EcoShop
+              </span>
             </Link>
 
             {/* Desktop Navigation */}

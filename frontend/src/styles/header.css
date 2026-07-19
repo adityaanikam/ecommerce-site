@@ -30,9 +30,19 @@
 
   /* Navigation Links */
   .nav-link {
-    @apply text-secondary-600 dark:text-secondary-400;
+    @apply relative text-secondary-600 dark:text-secondary-400 font-medium;
     @apply hover:text-secondary-900 dark:hover:text-secondary-100;
     @apply transition-colors;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 rounded-full bg-primary-500;
+    @apply transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   /* Mobile Menu */
