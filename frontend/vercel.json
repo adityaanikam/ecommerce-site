@@ -5,11 +5,15 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://your-render-app.onrender.com/api/$1"
+      "destination": "https://ecommerce-backend-51pg.onrender.com/api/$1"
+    },
+    {
+      "source": "/((?!assets/|images/).*)",
+      "destination": "/index.html"
     }
   ],
   "env": {
-    "VITE_API_BASE_URL": "https://your-render-app.onrender.com/api",
-    "VITE_IMAGE_BASE_URL": "https://your-render-app.onrender.com"
+    "VITE_API_BASE_URL": "https://ecommerce-backend-51pg.onrender.com/api",
+    "VITE_IMAGE_BASE_URL": "https://ecommerce-backend-51pg.onrender.com"
   }
 }
