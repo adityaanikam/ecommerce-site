@@ -63,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     return () => clearInterval(interval);
   }, [isHovered, product.images.length]);
 
-  const hasDiscount = product.discountPrice !== undefined;
+  const hasDiscount = !!product.discountPrice && product.discountPrice > 0 && product.discountPrice < product.price;
   const discountPercentage = hasDiscount
     ? Math.round(((product.price - product.discountPrice!) / product.price) * 100)
     : 0;
