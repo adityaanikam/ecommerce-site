@@ -101,10 +101,15 @@ function convertGitHubUrlToLocal(githubUrl: string): string {
   }
 }
 
+// Product names in the database sometimes carry characters (e.g. a trailing `"` for
+// inches, as in `iPad Pro 11"`) that are illegal in Windows folder names, so they can
+// never match the actual asset folder on disk. Strip them before building the path.
+const sanitizeForFilesystem = (segment: string): string => segment.replace(/["*:<>?|]/g, '').trim();
+
 // Builds a same-origin local image path (files are copied into frontend/public/images/products
 // to avoid CORB/CORS issues loading images cross-origin from the backend or GitHub).
 const getLocalProductImagePath = (category: string, name: string, fileName: string): string => {
-  return `/images/products/${encodeURIComponent(category)}/${encodeURIComponent(name)}/${fileName}`;
+  return `/images/products/${encodeURIComponent(sanitizeForFilesystem(category))}/${encodeURIComponent(sanitizeForFilesystem(name))}/${fileName}`;
 };
 
 // Special function to generate correct image paths for products
@@ -232,20 +237,23 @@ export const getFallbackImageUrl = (size: string = '800x800'): string => {
  */
 export const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>, size: string = '800x800') => {
   const target = event.currentTarget;
-  // Try alternative extensions for Sports products
   const currentSrc = target.src;
-  if (currentSrc.includes('/Sports/')) {
-    // Try switching between jpg and webp
+
+  // Local product images are generated with a best-guess extension (jpg/webp) since the
+  // live database doesn't reliably reflect what each product's actual files are. If the
+  // guess was wrong, try the other extension once before giving up on a placeholder.
+  if (currentSrc.includes('/images/products/') && !target.dataset.extRetried) {
+    target.dataset.extRetried = 'true';
     if (currentSrc.includes('.jpg')) {
       target.src = currentSrc.replace('.jpg', '.webp');
+      return;
     } else if (currentSrc.includes('.webp')) {
       target.src = currentSrc.replace('.webp', '.jpg');
-    } else {
-      target.src = getFallbackImageUrl(size);
+      return;
     }
-  } else {
-    target.src = getFallbackImageUrl(size);
   }
+
+  target.src = getFallbackImageUrl(size);
 };
 
 // Local Storage Keys
