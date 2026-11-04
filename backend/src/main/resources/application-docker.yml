@@ -17,7 +17,7 @@ spring:
     redis:
       host: ${SPRING_DATA_REDIS_HOST:redis}
       port: ${SPRING_DATA_REDIS_PORT:6379}
-      password: ${SPRING_DATA_REDIS_PASSWORD:redis123}
+      password: ${SPRING_DATA_REDIS_PASSWORD:}
       timeout: 2000ms
       lettuce:
         pool:
@@ -33,7 +33,7 @@ spring:
 
 # JWT Configuration
 jwt:
-  secret: ${JWT_SECRET:mySecretKey123456789012345678901234567890}
+  secret: ${JWT_SECRET:}
   expiration: 86400000 # 24 hours in milliseconds
 
 # Logging Configuration

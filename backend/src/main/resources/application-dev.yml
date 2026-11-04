@@ -21,7 +21,9 @@ server:
     context-path: /api
 
 jwt:
-  secret: your_dev_jwt_secret_key
+  # No default. Nothing in this module reads it, but a committed value that
+  # looks like a secret invites someone to copy it into somewhere that does.
+  secret: ${JWT_SECRET:}
   expiration: 86400000
   refresh-token:
     expiration: 604800000

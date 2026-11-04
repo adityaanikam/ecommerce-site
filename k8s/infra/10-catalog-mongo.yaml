@@ -1,0 +1,89 @@
+# MongoDB for catalog-service.
+#
+# A StatefulSet rather than a Deployment: it has a stable name and its own
+# PersistentVolumeClaim, and it must not be rescheduled onto a fresh empty volume
+# the way a Deployment's pod happily would be.
+#
+# Single replica. That is adequate for a demo and inadequate for production, where
+# this would be a replica set, or more sensibly a managed database rather than a
+# pod. Note that MongoDB transactions need a replica set, which is one reason
+# catalog-service's consumer uses an inbox table instead of a transaction.
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: catalog-mongo
+  namespace: ecommerce
+  labels:
+    app: catalog-mongo
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  serviceName: catalog-mongo
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog-mongo
+  template:
+    metadata:
+      labels:
+        app: catalog-mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:7.0
+          ports:
+            - name: mongo
+              containerPort: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: CATALOG_MONGO_USERNAME
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: CATALOG_MONGO_PASSWORD
+            - name: MONGO_INITDB_DATABASE
+              value: catalog
+          volumeMounts:
+            - name: data
+              mountPath: /data/db
+          readinessProbe:
+            exec:
+              command: ["mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            exec:
+              command: ["mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+            initialDelaySeconds: 30
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 1Gi
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog-mongo
+  namespace: ecommerce
+spec:
+  type: ClusterIP
+  selector:
+    app: catalog-mongo
+  ports:
+    - name: mongo
+      port: 27017
+      targetPort: mongo

@@ -1,0 +1,160 @@
+# Stateless, so it scales horizontally. Two replicas also exercise the
+# Kafka consumer group: both join group catalog-service, the partitions are
+# shared between them, and the inbox table is what keeps a rebalance from
+# applying the same OrderPlaced twice.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-service
+  namespace: ecommerce
+  labels:
+    app: catalog-service
+    app.kubernetes.io/name: catalog-service
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: catalog-service
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: catalog-service
+        app.kubernetes.io/name: catalog-service
+        app.kubernetes.io/part-of: ecommerce
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8081"
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        runAsGroup: 1001
+      containers:
+        - name: catalog-service
+          image: ecommerce/catalog-service:latest
+          # Change to Always once images are pushed to a registry with real tags.
+          # IfNotPresent is what lets a locally built image be used in kind or
+          # minikube without a registry at all.
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8081
+          env:
+            - name: SERVER_PORT
+              value: "8081"
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: REDIS_HOST
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: REDIS_PORT
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: KAFKA_BOOTSTRAP_SERVERS
+            - name: KAFKA_ORDER_PLACED_TOPIC
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: KAFKA_ORDER_PLACED_TOPIC
+            - name: CATALOG_IMAGES_BASE_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: CATALOG_IMAGES_BASE_PATH
+            - name: CATALOG_MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: CATALOG_MONGO_USERNAME
+            - name: CATALOG_MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: CATALOG_MONGO_PASSWORD
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: REDIS_PASSWORD
+            - name: CATALOG_MONGODB_URI
+              value: "mongodb://$(CATALOG_MONGO_USERNAME):$(CATALOG_MONGO_PASSWORD)@catalog-mongo:27017/catalog?authSource=admin"
+          # Three different probes because they answer three different questions.
+          #
+          # startup: "has it finished booting?" A JVM with Flyway migrations can take
+          # 30 seconds, and without this the liveness probe would kill it mid-start
+          # and loop for ever.
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 5
+            failureThreshold: 30
+          # liveness: "is it wedged?" Only a restart fixes this, so it points at
+          # liveness and NOT at readiness. Pointing it at readiness would restart a
+          # healthy service whenever its database blipped, turning a brief dependency
+          # outage into a restart loop.
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          # readiness: "should it get traffic right now?" This one does include the
+          # dependency checks, so a service whose database is unreachable is taken
+          # out of the Service's endpoints instead of returning errors.
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 512Mi
+            limits:
+              # No CPU limit on purpose: CPU is compressible, and a limit mostly
+              # causes throttling during JIT warm-up and GC. Memory is not
+              # compressible, so that one is capped.
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            capabilities:
+              drop:
+                - ALL
+      # Long enough for in-flight requests to finish; the services are configured
+      # with server.shutdown=graceful.
+      terminationGracePeriodSeconds: 40
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog-service
+  namespace: ecommerce
+  labels:
+    app: catalog-service
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  type: ClusterIP
+  selector:
+    app: catalog-service
+  ports:
+    - name: http
+      port: 8081
+      targetPort: http
