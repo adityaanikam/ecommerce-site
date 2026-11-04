@@ -1,0 +1,138 @@
+# Stateless: the only state is in PostgreSQL, and tokens are verified by
+# signature rather than looked up, so any replica can serve any request.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+  namespace: ecommerce
+  labels:
+    app: auth-service
+    app.kubernetes.io/name: auth-service
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auth-service
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: auth-service
+        app.kubernetes.io/name: auth-service
+        app.kubernetes.io/part-of: ecommerce
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8082"
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        runAsGroup: 1001
+      containers:
+        - name: auth-service
+          image: ecommerce/auth-service:latest
+          # Change to Always once images are pushed to a registry with real tags.
+          # IfNotPresent is what lets a locally built image be used in kind or
+          # minikube without a registry at all.
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8082
+          env:
+            - name: SERVER_PORT
+              value: "8082"
+            - name: AUTH_POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: AUTH_POSTGRES_DB
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: JWT_SECRET
+            - name: AUTH_DATASOURCE_URL
+              value: "jdbc:postgresql://auth-postgres:5432/$(AUTH_POSTGRES_DB)"
+            - name: AUTH_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: AUTH_POSTGRES_USER
+            - name: AUTH_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: AUTH_POSTGRES_PASSWORD
+          # Three different probes because they answer three different questions.
+          #
+          # startup: "has it finished booting?" A JVM with Flyway migrations can take
+          # 30 seconds, and without this the liveness probe would kill it mid-start
+          # and loop for ever.
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 5
+            failureThreshold: 30
+          # liveness: "is it wedged?" Only a restart fixes this, so it points at
+          # liveness and NOT at readiness. Pointing it at readiness would restart a
+          # healthy service whenever its database blipped, turning a brief dependency
+          # outage into a restart loop.
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          # readiness: "should it get traffic right now?" This one does include the
+          # dependency checks, so a service whose database is unreachable is taken
+          # out of the Service's endpoints instead of returning errors.
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 512Mi
+            limits:
+              # No CPU limit on purpose: CPU is compressible, and a limit mostly
+              # causes throttling during JIT warm-up and GC. Memory is not
+              # compressible, so that one is capped.
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            capabilities:
+              drop:
+                - ALL
+      # Long enough for in-flight requests to finish; the services are configured
+      # with server.shutdown=graceful.
+      terminationGracePeriodSeconds: 40
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service
+  namespace: ecommerce
+  labels:
+    app: auth-service
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  type: ClusterIP
+  selector:
+    app: auth-service
+  ports:
+    - name: http
+      port: 8082
+      targetPort: http
