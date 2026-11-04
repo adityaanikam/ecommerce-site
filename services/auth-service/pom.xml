@@ -21,6 +21,18 @@
         <java.version>17</java.version>
         <jjwt.version>0.12.3</jjwt.version>
         <testcontainers.version>1.21.3</testcontainers.version>
+        <!--
+            docker-java, which Testcontainers uses, asks the daemon for API version
+            1.32 by default. Docker 25 and newer refuse anything below 1.40, so on a
+            current daemon Testcontainers reports "Could not find a valid Docker
+            environment" and every integration test SKIPS. The build stays green
+            while proving nothing, which is worse than failing.
+
+            Pinning the API version here makes `mvn verify` run the integration
+            tests on a modern daemon without any extra flags. Override it on an
+            older daemon with -Ddocker.api.version=1.41 or similar.
+        -->
+        <docker.api.version>1.44</docker.api.version>
     </properties>
 
     <dependencies>
@@ -159,7 +171,21 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <api.version>${docker.api.version}</api.version>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <api.version>${docker.api.version}</api.version>
+                    </systemPropertyVariables>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
