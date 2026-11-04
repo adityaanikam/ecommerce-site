@@ -3,8 +3,8 @@
 # Every password and secret comes from .env, which is git-ignored. See .env.example.
 # Nothing in this file has a baked-in credential: a missing variable makes compose
 # fail loudly rather than silently starting with a known-weak default, which is what
-# the previous version of this file did with password123 / redis123 and a JWT secret
-# committed in plain text.
+# the previous version of this file did: it shipped a Mongo password, a Redis
+# password and a JWT secret committed in plain text.
 
 name: ecommerce
 
