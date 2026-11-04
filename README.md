@@ -1,264 +1,279 @@
-# E-commerce Application
+# ecommerce-site
 
-A modern, full-stack e-commerce application built with React, TypeScript, Spring Boot, and MongoDB.
+A small e-commerce system, split from a single Spring Boot application into four
+services behind an API gateway, with a React frontend.
 
-## 🚀 Quick Start
+- **Audit of the original code**, measured rather than assumed: [`docs/AUDIT.md`](docs/AUDIT.md)
+- **Why it is shaped this way**: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- **What works, what was run, what is not done**: [`docs/STATUS.md`](docs/STATUS.md)
 
-### Prerequisites
-- Node.js 18+ and npm
-- Java 17+
-- MongoDB (local or Atlas)
-- Maven 3.6+
+---
 
-### Local Development
+## Architecture
 
-1. **Clone and setup**
-   ```bash
-   git clone <repository-url>
-   cd ecommerce-project
-   ```
+```
+                         browser (React + Vite)
+                                  │
+                                  │  https, one base URL: VITE_API_BASE_URL
+                                  ▼
+                     ┌────────────────────────────┐
+                     │        api-gateway         │   :8080
+                     │  Spring Cloud Gateway      │
+                     │                            │
+                     │  • CORS, from one env var  │
+                     │  • verifies the JWT        │
+                     │  • sets X-User-Id / Roles  │
+                     │    (and strips any the     │
+                     │     client tried to send)  │
+                     │  • stamps X-Correlation-Id │
+                     │  • strips the /api prefix  │
+                     └───┬──────────┬─────────┬───┘
+            /api/products│          │         │/api/orders
+          /api/categories│  /api/auth│        │
+             /api/images │  /api/users        │
+                         ▼          ▼         ▼
+          ┌──────────────────┐ ┌──────────┐ ┌──────────────────┐
+          │ catalog-service  │ │   auth   │ │  order-service   │
+          │      :8081       │ │  :8082   │ │      :8083       │
+          │                  │ │          │ │                  │
+          │ products         │ │ users    │ │ orders           │
+          │ categories       │ │ roles    │ │ order_items      │
+          │ images           │ │ refresh  │ │ outbox_events    │
+          │ stock (owner)    │ │  tokens  │ │ idempotency_keys │
+          └────┬────────┬────┘ └────┬─────┘ └────┬────────┬────┘
+               │        │           │            │        │
+               ▼        ▼           ▼            ▼        ▼
+        ┌──────────┐ ┌───────┐ ┌──────────┐ ┌──────────┐ │
+        │ MongoDB  │ │ Redis │ │ Postgres │ │ Postgres │ │
+        │ catalog  │ │ cache │ │   auth   │ │  orders  │ │
+        │  :27017  │ │ :6379 │ │  :5433   │ │  :5434   │ │
+        └──────────┘ └───────┘ └──────────┘ └──────────┘ │
+                                                          │
+          ▲                                               │
+          │                                               ▼
+          │            ┌─────────────────────┐   ┌──────────────────┐
+          │            │       Kafka         │   │ outbox publisher │
+          └────────────┤   KRaft, 1 node     │◄──┤  every 1s, from  │
+   consumes            │   topic:            │   │  the outbox table│
+   OrderPlaced,        │   order-placed      │   └──────────────────┘
+   decrements stock    │       :9092         │
+   once per event id   └─────────────────────┘
 
-2. **Start MongoDB** (if using local)
-   ```bash
-   mongod --dbpath ./data/db
-   ```
+                     ┌─────────────────────┐
+                     │     Prometheus      │  :9090
+                     │  scrapes all four   │
+                     └─────────────────────┘
+```
 
-3. **Backend**
-   ```bash
-   cd backend
-   mvn spring-boot:run
-   ```
+Two paths matter:
 
-4. **Frontend**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
+**Placing an order (synchronous, then asynchronous).** order-service calls
+catalog-service over HTTP for the real price and stock, because the basket comes
+from the browser and its prices cannot be trusted. That call has a timeout, a
+retry and a circuit breaker. The order, its lines, an `OrderPlaced` event and the
+idempotency record then commit in **one transaction**. A scheduled publisher sends
+the event to Kafka, and catalog-service decrements stock when it arrives.
 
-5. **Verify Setup**
-   - Backend: `http://localhost:8080/api/products/verify`
-   - Frontend: `http://localhost:3000`
+**Nothing reads another service's database.** Ever.
 
-## 🏗️ Production Deployment
+---
 
-### Architecture
-- **Frontend**: Vercel (React + TypeScript)
-- **Backend**: Render (Dockerized Spring Boot)
-- **Database**: MongoDB Atlas (Cloud)
-- **Images**: Cloud Storage or Render Static Files
+## Running it locally
 
-### Quick Deploy Steps
+You need Docker and Docker Compose. Nothing else: the services build inside Docker.
 
-1. **MongoDB Atlas Setup**
-   - Create cluster at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-   - Get connection string
-   - Configure network access
-
-2. **Backend to Render**
-   - Connect GitHub repo to Render
-   - Set environment variables:
-     ```
-     MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ecommerce
-     ALLOWED_ORIGINS=https://your-vercel-app.vercel.app
-     ```
-
-3. **Frontend to Vercel**
-   - Connect GitHub repo to Vercel
-   - Set environment variables:
-     ```
-     VITE_API_BASE_URL=https://your-render-app.onrender.com/api
-     VITE_IMAGE_BASE_URL=https://your-render-app.onrender.com
-     ```
-
-4. **Database Seeding**
 ```bash
-   cd scripts
-   npm install
-   MONGODB_URI=your-atlas-uri npm run upload
-   ```
-
-📖 **Detailed instructions**: See [PRODUCTION_SETUP.md](./PRODUCTION_SETUP.md)
-
-## 🎯 Features
-
-- **Product Catalog**: Browse products by category with advanced filtering
-- **Shopping Cart**: Add/remove items with quantity management
-- **User Authentication**: Secure login and registration
-- **Order Management**: Complete checkout process
-- **Admin Dashboard**: Manage products, orders, and users
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Dark Mode**: Toggle between light and dark themes
-- **Image Gallery**: Multiple images per product with zoom
-- **Search & Filter**: Advanced product search and filtering
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React 18** with TypeScript
-- **Vite** for build tooling
-- **Tailwind CSS** for styling
-- **React Query** for state management
-- **React Router** for navigation
-- **Framer Motion** for animations
-
-### Backend
-- **Spring Boot 3.2** with Java 17
-- **Spring Data MongoDB** for database
-- **Spring Security** for authentication
-- **Maven** for dependency management
-- **Docker** for containerization
-
-### Database & Storage
-- **MongoDB Atlas** for cloud database
-- **Cloud Storage** for product images
-- **Static Files** for local development
-
-## 📁 Project Structure
-
-```
-ecommerce-project/
-├── backend/                 # Spring Boot backend
-│   ├── src/main/java/      # Java source code
-│   ├── src/main/resources/ # Configuration files
-│   ├── Products/           # Product images
-│   └── Dockerfile          # Docker configuration
-├── frontend/               # React frontend
-│   ├── src/               # Source code
-│   ├── public/            # Static assets
-│   ├── vercel.json        # Vercel configuration
-│   └── dist/              # Build output
-├── scripts/               # Utility scripts
-│   ├── upload-to-mongodb-atlas.js
-│   └── package.json
-├── docker-compose.prod.yml # Production Docker
-├── PRODUCTION_SETUP.md    # Deployment guide
-└── ecommerce.products.json # Sample data
+cp .env.example .env
 ```
 
-## 🔧 Configuration
+Fill in `.env`. Generate the secrets rather than inventing them:
 
-### Environment Variables
-
-#### Backend (Render)
-```env
-SPRING_DATA_MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ecommerce
-SPRING_DATA_MONGODB_DATABASE=ecommerce
-ALLOWED_ORIGINS=https://your-vercel-app.vercel.app
-PORT=8080
-```
-
-#### Frontend (Vercel)
-```env
-VITE_API_BASE_URL=https://your-render-app.onrender.com/api
-VITE_IMAGE_BASE_URL=https://your-render-app.onrender.com
-VITE_APP_NAME=E-commerce Store
-VITE_APP_DESCRIPTION=Modern e-commerce platform
-```
-
-## 🚀 API Endpoints
-
-### Products
-- `GET /api/products` - Get all products with pagination
-- `GET /api/products/{id}` - Get product by ID
-- `GET /api/products/category/{category}` - Get products by category
-- `GET /api/products/featured` - Get featured products
-- `GET /api/products/verify` - System verification
-
-### Health
-- `GET /api/health` - Health check endpoint
-
-## 🐳 Docker Support
-
-### Development
 ```bash
-# Backend
-cd backend
-docker build -t ecommerce-backend .
-docker run -p 8080:8080 ecommerce-backend
-
-# Frontend
-cd frontend
-docker build -t ecommerce-frontend .
-docker run -p 3000:3000 ecommerce-frontend
+printf 'JWT_SECRET=%s\n' "$(openssl rand -hex 32)" >> .env
 ```
 
-### Production
+Then bring everything up:
+
 ```bash
-docker-compose -f docker-compose.prod.yml up -d
+docker compose up -d --build
 ```
 
-## 📊 Database Schema
+The first build takes a few minutes. When it settles, all ten containers report
+healthy:
 
-### Products Collection
-```json
-{
-  "_id": "ELEC001",
-  "name": "iPhone 15 Pro",
-  "brand": "Apple",
-  "price": 999.99,
-  "discountPrice": 590.75,
-  "category": "Electronics",
-  "subcategory": "Mobiles",
-  "images": ["/products/Electronics/iPhone+15+Pro/1.jpg"],
-  "description": "Latest iPhone with titanium design",
-  "stock": 50,
-  "rating": 4.8,
-  "reviewCount": 0,
-  "specs": {"Processor": "A17 Pro"},
-  "features": ["5G", "Face ID"],
-  "slug": "elec001",
-  "isNew": false,
-  "isFeatured": false,
-  "isOnSale": true,
-  "createdAt": 1754763566245,
-  "updatedAt": 1754763566245
-}
+```bash
+docker compose ps
 ```
 
-## 🔍 Troubleshooting
+Check it works end to end. This registers a user, logs in, places an order, waits
+for stock to drop, and replays the request to prove no duplicate is created:
 
-### Common Issues
+```bash
+./scripts/smoke.sh --no-up
+```
 
-1. **CORS Errors**
-   - Check `ALLOWED_ORIGINS` in Render
-   - Verify frontend URL is included
+Tear it down, volumes and all:
 
-2. **Database Connection**
-   - Verify MongoDB Atlas connection string
-   - Check network access settings
+```bash
+docker compose down -v
+```
 
-3. **Image Loading**
-   - Check image URLs and CORS settings
-   - Verify image files exist
+### The frontend
 
-4. **Build Failures**
-   - Check environment variables
-   - Verify dependencies
+```bash
+cd frontend && npm ci
+```
 
-### Debug Steps
+```bash
+printf 'VITE_API_BASE_URL=http://localhost:8080/api\n' > frontend/.env.local
+```
 
-1. **Backend Logs**: Check Render dashboard
-2. **Frontend Logs**: Check Vercel dashboard
-3. **Database**: Check MongoDB Atlas logs
-4. **API Testing**: Use Postman or curl
+```bash
+cd frontend && npm run dev
+```
 
-## 🤝 Contributing
+It talks to the gateway and nothing else. `frontend/.env.example` has the details.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+---
 
-## 📄 License
+## Services and ports
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+| Service | Port | Purpose | Store |
+| --- | --- | --- | --- |
+| api-gateway | 8080 | The only thing a browser talks to | none |
+| catalog-service | 8081 | Products, categories, images, stock | MongoDB |
+| auth-service | 8082 | Register, login, refresh, current user | PostgreSQL |
+| order-service | 8083 | Orders, outbox, idempotency | PostgreSQL |
+| catalog-mongo | 27017 | catalog-service only | |
+| redis | 6379 | catalog-service cache only | |
+| auth-postgres | 5433 | auth-service only | |
+| order-postgres | 5434 | order-service only | |
+| kafka | 29092 | `order-placed` topic (9092 inside the network) | |
+| prometheus | 9090 | Scrapes all four services | |
 
-## 🙏 Acknowledgments
+Every service exposes the same endpoints:
 
-- React team for the amazing framework
-- Spring Boot team for the robust backend
-- MongoDB for the flexible database
-- Vercel and Render for hosting platforms
-- Tailwind CSS for the utility-first CSS framework
+| Path | What |
+| --- | --- |
+| `/actuator/health` | Overall health |
+| `/actuator/health/liveness` | Is it wedged? Excludes dependencies |
+| `/actuator/health/readiness` | Should it get traffic? Includes dependencies |
+| `/actuator/prometheus` | Metrics |
+
+order-service also has `/actuator/circuitbreakers`.
+
+### The API, through the gateway
+
+| Method | Path | Auth |
+| --- | --- | --- |
+| POST | `/api/auth/register` | public |
+| POST | `/api/auth/login` | public |
+| POST | `/api/auth/refresh` | public |
+| GET | `/api/auth/me` | required |
+| POST | `/api/auth/logout` | required |
+| GET | `/api/users/me` | required |
+| GET | `/api/products` | public |
+| GET | `/api/products/{id}` | public |
+| GET | `/api/products/featured`, `/new`, `/on-sale`, `/categories` | public |
+| GET | `/api/categories`, `/api/categories/{slug}`, `/api/categories/stats` | public |
+| GET | `/api/images/product/{category}/{name}/{file}` | public |
+| POST | `/api/orders` | required, accepts `Idempotency-Key` |
+| GET | `/api/orders`, `/api/orders/user`, `/api/orders/{id}` | required |
+
+Reads of the catalog are public; writes to anything are not.
+
+---
+
+## Environment variables
+
+Everything secret comes from `.env`, which is git-ignored. `.env.example` is the
+committed template. No service has a hardcoded credential, and the gateway and
+auth-service **refuse to start** without `JWT_SECRET` rather than falling back to
+a default.
+
+| Variable | Used by | Notes |
+| --- | --- | --- |
+| `JWT_SECRET` | api-gateway, auth-service | At least 32 bytes. auth signs, the gateway verifies, so they must match |
+| `GATEWAY_ALLOWED_ORIGINS` | api-gateway | Comma separated browser origins. No wildcard default |
+| `CATALOG_MONGO_USERNAME` / `_PASSWORD` | catalog-mongo, catalog-service | |
+| `REDIS_PASSWORD` | redis, catalog-service | |
+| `AUTH_POSTGRES_DB` / `_USER` / `_PASSWORD` | auth-postgres, auth-service | |
+| `ORDER_POSTGRES_DB` / `_USER` / `_PASSWORD` | order-postgres, order-service | |
+
+Frontend (`frontend/.env.local`):
+
+| Variable | Notes |
+| --- | --- |
+| `VITE_API_BASE_URL` | The gateway, including `/api`. Defaults to `http://localhost:8080/api` |
+| `VITE_IMAGE_BASE_URL` | Leave empty: product images are served from the app's own `public/` |
+
+Other variables with working defaults, so they only need setting to override:
+`SERVER_PORT`, `CATALOG_SERVICE_URL`, `AUTH_SERVICE_URL`, `ORDER_SERVICE_URL`,
+`KAFKA_BOOTSTRAP_SERVERS`, `CATALOG_CONNECT_TIMEOUT_MS`, `CATALOG_READ_TIMEOUT_MS`,
+`OUTBOX_POLL_INTERVAL_MS`, `JWT_ACCESS_TOKEN_TTL`, `JWT_REFRESH_TOKEN_TTL`,
+`CATALOG_SEED_ENABLED`, `CATALOG_IMAGES_BASE_PATH`.
+
+---
+
+## Building and testing
+
+Each service is a standalone Maven project with no parent aggregator, so it builds
+on its own:
+
+```bash
+cd services/catalog-service && mvn verify
+```
+
+`verify` rather than `test`, because the integration tests are bound to failsafe
+and they are the ones that prove the interesting parts. They use Testcontainers,
+so a Docker daemon is needed; if there is none, they skip with a clear message
+rather than failing.
+
+> On a Docker daemon older than 25, pass `-Ddocker.api.version=1.41`. The version
+> is pinned in the poms because docker-java otherwise asks for API 1.32, which
+> Docker 25+ rejects, and the integration tests then **skip silently** while the
+> build stays green.
+
+Everything at once:
+
+```bash
+for s in api-gateway catalog-service auth-service order-service; do (cd "services/$s" && mvn -q verify) || break; done
+```
+
+Frontend:
+
+```bash
+cd frontend && npm ci && npm run build
+```
+
+The existing `vitest` suite fails for reasons that predate this work and is not a
+CI gate. See `docs/STATUS.md` section 5.
+
+---
+
+## Kubernetes
+
+Manifests are in [`k8s/`](k8s/). They have **not been deployed**: no cluster was
+available. Read [`k8s/README.md`](k8s/README.md) before trusting them.
+
+---
+
+## Repository layout
+
+```
+services/
+  api-gateway/        Spring Cloud Gateway
+  catalog-service/    products, categories, images, stock     (MongoDB, Redis, Kafka consumer)
+  auth-service/       users and tokens                        (PostgreSQL, Flyway)
+  order-service/      orders and the outbox                   (PostgreSQL, Flyway, Kafka producer)
+backend/              the original monolith, untouched, still what Render deploys from main
+frontend/             React + TypeScript + Vite
+k8s/                  Kubernetes manifests (untested)
+prometheus/           scrape config and alert rules
+scripts/smoke.sh      end-to-end check against a running stack
+docs/                 AUDIT, ARCHITECTURE, STATUS
+docker-compose.yml    the whole stack
+```
+
+`backend/` is deliberately left alone. Render deploys it from `main`, and this
+branch does not touch `main`.
