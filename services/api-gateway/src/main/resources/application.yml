@@ -1,0 +1,112 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      # StripPrefix=1 removes the leading /api segment, because the services serve
+      # their routes at the root. That is what the monolith actually did too (see
+      # docs/AUDIT.md), so the gateway is where /api finally becomes real and the
+      # frontend gets one consistent base URL.
+      routes:
+        - id: catalog-products
+          uri: ${CATALOG_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/api/products/**
+          filters:
+            - StripPrefix=1
+
+        - id: catalog-categories
+          uri: ${CATALOG_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/api/categories/**
+          filters:
+            - StripPrefix=1
+
+        - id: catalog-images
+          uri: ${CATALOG_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/api/images/**
+          filters:
+            - StripPrefix=1
+
+        - id: auth
+          uri: ${AUTH_SERVICE_URL:http://localhost:8082}
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=1
+
+        - id: users
+          uri: ${AUTH_SERVICE_URL:http://localhost:8082}
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - StripPrefix=1
+
+        - id: orders
+          uri: ${ORDER_SERVICE_URL:http://localhost:8083}
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - StripPrefix=1
+
+      httpclient:
+        connect-timeout: 2000
+        response-timeout: 10s
+
+      # CORS is handled by CorsConfig's CorsWebFilter rather than by the gateway's
+      # own globalcors block, so that a 401 produced by the gateway itself still
+      # carries CORS headers and the browser can read the status instead of
+      # reporting an opaque network error.
+      default-filters:
+        # Both the gateway and each service set X-Correlation-Id, and the CORS filter
+        # and the services could both set the CORS headers, so without this the
+        # response carries each of them twice.
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials X-Correlation-Id
+
+server:
+  port: ${SERVER_PORT:8080}
+  shutdown: graceful
+
+gateway:
+  cors:
+    # Comma separated. No wildcard default: an unset variable allows local dev
+    # origins only, so a misconfigured deployment fails closed.
+    allowed-origins: ${GATEWAY_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
+    allow-credentials: ${GATEWAY_CORS_ALLOW_CREDENTIALS:false}
+    max-age: 3600
+
+jwt:
+  # No default on purpose. The gateway refuses to start without it.
+  secret: ${JWT_SECRET}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,gateway
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  metrics:
+    tags:
+      application: api-gateway
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [api-gateway] [%X{correlationId:-no-correlation-id}] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    com.ecommerce.gateway: INFO
