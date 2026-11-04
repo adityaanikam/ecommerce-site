@@ -1,71 +1,67 @@
+# Prometheus scrape configuration for the microservices stack.
+#
+# Two things were wrong with the previous version and are fixed here:
+#
+#  1. It scraped a single "backend:8080" target at /actuator/prometheus, and that
+#     path returned 404, because micrometer-registry-prometheus was never a
+#     dependency of the monolith. Nothing was ever collected. Every service now has
+#     the registry on its classpath and the endpoint exposed.
+#
+#  2. It carried a basic_auth block using ${PROMETHEUS_USER} and
+#     ${PROMETHEUS_PASSWORD}. Prometheus does not expand environment variables in a
+#     config file, so those were sent literally. The actuator endpoints are not
+#     published outside the compose network, so the block is simply removed rather
+#     than replaced with credentials that would have to live somewhere.
+
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
+  external_labels:
+    environment: local
 
-scrape_configs:
-  - job_name: 'spring-boot'
-    metrics_path: '/actuator/prometheus'
-    static_configs:
-      - targets: ['backend:8080']
-    basic_auth:
-      username: ${PROMETHEUS_USER}
-      password: ${PROMETHEUS_PASSWORD}
-
-  - job_name: 'nginx'
-    static_configs:
-      - targets: ['frontend:80']
-
-  - job_name: 'mongodb'
-    static_configs:
-      - targets: ['mongodb-exporter:9216']
-
-  - job_name: 'redis'
-    static_configs:
-      - targets: ['redis-exporter:9121']
-
-  - job_name: 'node-exporter'
-    static_configs:
-      - targets: ['node-exporter:9100']
+rule_files:
+  - 'alert.rules.yml'
 
 alerting:
   alertmanagers:
     - static_configs:
+        # No Alertmanager runs in docker-compose.yml. The block is kept so the rules
+        # have somewhere to go the moment one is added, and Prometheus tolerates the
+        # target being absent.
         - targets: ['alertmanager:9093']
-
-rule_files:
-  - 'alert.rules.yml'
-  scrape_interval: 15s
-  evaluation_interval: 15s
 
 scrape_configs:
-  - job_name: 'spring-actuator'
+  # Every Spring Boot service exposes the same endpoint on its own port. The
+  # "application" label comes from management.metrics.tags.application in each
+  # service, so queries can be grouped by service without relying on the job name.
+  - job_name: 'api-gateway'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['backend:8080']
-    basic_auth:
-      username: ${PROMETHEUS_USER}
-      password: ${PROMETHEUS_PASSWORD}
+      - targets: ['api-gateway:8080']
+        labels:
+          service: 'api-gateway'
 
-  - job_name: 'nginx'
+  - job_name: 'catalog-service'
+    metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['frontend:80']
+      - targets: ['catalog-service:8081']
+        labels:
+          service: 'catalog-service'
 
-  - job_name: 'mongodb'
+  - job_name: 'auth-service'
+    metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['mongodb-exporter:9216']
+      - targets: ['auth-service:8082']
+        labels:
+          service: 'auth-service'
 
-  - job_name: 'redis'
+  - job_name: 'order-service'
+    metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['redis-exporter:9121']
+      - targets: ['order-service:8083']
+        labels:
+          service: 'order-service'
 
-  - job_name: 'node-exporter'
+  - job_name: 'prometheus'
     static_configs:
-      - targets: ['node-exporter:9100']
-
-alerting:
-  alertmanagers:
-    - static_configs:
-        - targets: ['alertmanager:9093']
-
-rule_files:
-  - 'alert.rules.yml'
+      - targets: ['localhost:9090']

@@ -263,9 +263,33 @@ services:
       retries: 12
       start_period: 40s
 
+  # ----------------------------------------------------------------- monitoring
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: ecommerce-prometheus
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/alert.rules.yml:/etc/prometheus/alert.rules.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      - api-gateway
+      - catalog-service
+      - auth-service
+      - order-service
+    networks:
+      - ecommerce
+
 volumes:
   auth_postgres_data:
   order_postgres_data:
+  prometheus_data:
   catalog_mongo_data:
   redis_data:
   kafka_data:

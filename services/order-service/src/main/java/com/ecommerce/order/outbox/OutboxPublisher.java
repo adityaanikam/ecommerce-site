@@ -28,6 +28,7 @@ public class OutboxPublisher {
     private static final Logger log = LoggerFactory.getLogger(OutboxPublisher.class);
 
     private final OutboxBatchPublisher batchPublisher;
+    private final OutboxMetrics metrics;
 
     @Scheduled(fixedDelayString = "${order.outbox.poll-interval-ms:1000}")
     public void publishPending() {
@@ -36,6 +37,9 @@ public class OutboxPublisher {
             if (published > 0) {
                 log.info("Published {} outbox events", published);
             }
+            // Refreshed here rather than in the gauge callback, so a Prometheus
+            // scrape never triggers a COUNT against the orders database.
+            metrics.refresh();
         } catch (Exception e) {
             // Never let the scheduler's thread die on an exception, or publishing
             // stops silently and orders pile up unsent.
