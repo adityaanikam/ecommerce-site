@@ -1,0 +1,73 @@
+spring:
+  application:
+    name: catalog-service
+
+  data:
+    mongodb:
+      # Catalog owns this database and nothing else reads it.
+      uri: ${CATALOG_MONGODB_URI:mongodb://localhost:27017/catalog}
+      auto-index-creation: true
+    redis:
+      # spring.data.redis, not the spring.redis the monolith's YAML still used.
+      # That key was removed in Spring Boot 3, which is one reason the monolith's
+      # Redis configuration was quietly doing nothing.
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 2s
+      connect-timeout: 2s
+
+  cache:
+    type: redis
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: catalog-service
+      auto-offset-reset: earliest
+
+server:
+  # Routes are served at the root, as in the monolith. The gateway owns the /api
+  # prefix and strips it before forwarding, so there is no context path here.
+  port: ${SERVER_PORT:8081}
+  shutdown: graceful
+
+catalog:
+  images:
+    base-path: ${CATALOG_IMAGES_BASE_PATH:./Products}
+  seed:
+    enabled: ${CATALOG_SEED_ENABLED:true}
+  kafka:
+    order-placed-topic: ${KAFKA_ORDER_PLACED_TOPIC:order-placed}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  metrics:
+    tags:
+      application: catalog-service
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  pattern:
+    # Every log line carries the correlation id, so one request can be followed
+    # across the gateway and every service it touched.
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [catalog-service] [%X{correlationId:-no-correlation-id}] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    com.ecommerce.catalog: INFO

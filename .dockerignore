@@ -1,0 +1,9 @@
+.git
+.github
+.idea
+**/target
+**/node_modules
+frontend/dist
+docs
+k8s
+*.md
