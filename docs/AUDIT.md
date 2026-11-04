@@ -174,6 +174,41 @@ The static `/products/**` image handler returns 404 because `app.images.base-pat
 defaults to `./Products` relative to the process working directory, and
 `ImageController` hardcodes `/app/Products/` (a container path) regardless of profile.
 
+### 1.6a The committed seed JSON has never once loaded
+
+A correction to anything that assumes `ecommerce.products.json` is the data source.
+It is not, and never has been. From the boot log of the run above:
+
+```
+Loading products from JSON file with GitHub image URLs...
+Loading products from: /home/user/ecommerce-site/ecommerce.products.json
+Failed to load products from JSON, falling back to hardcoded classes:
+  Unrecognized field "_id" (class com.ecommerce.model.Product), not marked as ignorable
+Added 50 electronics products
+Added 20 fashion products
+Added 10 extra fashion products
+Added 25 home & garden products
+Added 25 sports products
+Successfully seeded 130 total products!
+```
+
+`DataInitializer` catches the failure and silently falls back to the hardcoded
+`ElectronicsProducts`, `FashionProducts`, `FashionProductsExtra`,
+`HomeAndGardenProducts` and `SportsProducts` classes. Those are what production has
+always actually served, which is why the seeded images are `placehold.co`
+placeholders rather than the GitHub raw URLs the JSON contains and the log claims.
+
+The JSON fails because it is a mongoexport dump: its keys are `_id`, `isFeatured`,
+`isNew`, `isOnSale` and `_class`, none of which match the model's properties, and
+the `ObjectMapper` is left at its default of rejecting unknown fields. So both
+`ecommerce.products.json` (150 KB) and `ecommerce.products.updated.json` (116 KB)
+are dead weight at the repository root, and `ProductData.java` (241 lines) is dead
+code that nothing calls at all.
+
+**Consequence for the migration:** catalog-service carries over the five hardcoded
+seed classes, which is what preserves current behaviour, and drops the JSON path
+entirely rather than carrying over a code path that has only ever thrown.
+
 ### 1.7 `DataInitializer` is destructive
 
 ```java
@@ -490,6 +525,7 @@ near-duplicate of the root compose file with paths (`./backend/mongo-init.js`,
 | No security/JWT/Redis/Prometheus on the classpath | auth-service, caching and metrics are all new code, not a port |
 | `/actuator/prometheus` 404 | Prometheus has never scraped this app; `prometheus.yml` needs real targets |
 | Six validators exist and are unused | Email, Password, PhoneNumber get reused by auth-service as instructed |
+| The seed JSON has never loaded | Carry over the five hardcoded seed classes, drop the dead JSON path |
 | Cart is client side, no items in `CreateOrderRequest` | order-service accepts items + addresses, and must re-price from catalog |
 | Two token keys in localStorage | Settle on one before wiring auth |
 | Frontend tests fail for pre-existing reasons | CI gates the frontend build, not that suite |
