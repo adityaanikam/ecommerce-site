@@ -24,7 +24,7 @@ type AuthAction =
 // Initial state
 const initialState: AuthState = {
   user: null,
-  token: localStorage.getItem('token'),
+  token: localStorage.getItem('accessToken'),
   refreshToken: localStorage.getItem('refreshToken'),
   isAuthenticated: false,
   isLoading: false,
@@ -99,7 +99,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // Initialize auth state on mount
   useEffect(() => {
     const initializeAuth = async () => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('accessToken');
       if (token) {
         try {
           dispatch({ type: 'AUTH_START' });
@@ -114,7 +114,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           });
         } catch (error) {
           dispatch({ type: 'AUTH_LOGOUT' });
-          localStorage.removeItem('token');
+          localStorage.removeItem('accessToken');
           localStorage.removeItem('refreshToken');
         }
       }
@@ -130,7 +130,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const response: AuthResponse = await authService.login(credentials);
       
       // Store tokens
-      localStorage.setItem('token', response.token);
+      localStorage.setItem('accessToken', response.accessToken);
       localStorage.setItem('refreshToken', response.refreshToken);
       
       // Get user details
@@ -140,7 +140,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         type: 'AUTH_SUCCESS',
         payload: {
           user,
-          token: response.token,
+          token: response.accessToken,
           refreshToken: response.refreshToken,
         },
       });
@@ -157,7 +157,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const response: AuthResponse = await authService.register(userData);
       
       // Store tokens
-      localStorage.setItem('token', response.token);
+      localStorage.setItem('accessToken', response.accessToken);
       localStorage.setItem('refreshToken', response.refreshToken);
       
       // Get user details
@@ -167,7 +167,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         type: 'AUTH_SUCCESS',
         payload: {
           user,
-          token: response.token,
+          token: response.accessToken,
           refreshToken: response.refreshToken,
         },
       });
@@ -186,7 +186,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       console.error('Logout API call failed:', error instanceof Error ? error.message : String(error));
     } finally {
       // Clear local storage and state
-      localStorage.removeItem('token');
+      localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
       dispatch({ type: 'AUTH_LOGOUT' });
     }
@@ -203,7 +203,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const response: AuthResponse = await authService.refreshToken(currentRefreshToken);
       
       // Update tokens
-      localStorage.setItem('token', response.token);
+      localStorage.setItem('accessToken', response.accessToken);
       localStorage.setItem('refreshToken', response.refreshToken);
       
       // Update state
@@ -211,7 +211,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         type: 'AUTH_SUCCESS',
         payload: {
           user: state.user!,
-          token: response.token,
+          token: response.accessToken,
           refreshToken: response.refreshToken,
         },
       });

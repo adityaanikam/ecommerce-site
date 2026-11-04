@@ -3,7 +3,9 @@ import { ApiResponse, ApiError } from '@/types';
 
 // Create axios instance
 const api: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
+  // VITE_API_BASE_URL, the same variable every other client here reads. This
+  // instance read VITE_API_URL, which nothing ever set.
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
@@ -14,7 +16,9 @@ const api: AxiosInstance = axios.create({
 api.interceptors.request.use(
   (config) => {
     // Add auth token to requests
-    const token = localStorage.getItem('token');
+    // One storage key across the whole app: this read 'token' while
+    // hooks/useAuth wrote 'accessToken', so whichever ran last won.
+    const token = localStorage.getItem('accessToken');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -58,17 +62,24 @@ api.interceptors.response.use(
       try {
         const refreshToken = localStorage.getItem('refreshToken');
         if (refreshToken) {
-          const response = await axios.post('/auth/refresh', { refreshToken });
-          const { token } = response.data.data;
+          // api, not the bare axios: the bare instance has no baseURL, so this
+          // posted to the frontend's own origin instead of the gateway.
+          const response = await api.post('/auth/refresh', { refreshToken });
+          const { accessToken, refreshToken: rotatedRefreshToken } = response.data.data;
           
-          localStorage.setItem('token', token);
-          originalRequest.headers.Authorization = `Bearer ${token}`;
+          localStorage.setItem('accessToken', accessToken);
+          // Refresh is rotating server side, so the old refresh token is now dead
+          // and the new one has to be stored or the next refresh fails.
+          if (rotatedRefreshToken) {
+            localStorage.setItem('refreshToken', rotatedRefreshToken);
+          }
+          originalRequest.headers.Authorization = `Bearer ${accessToken}`;
           
           return api(originalRequest);
         }
       } catch (refreshError) {
         // Refresh failed, redirect to login
-        localStorage.removeItem('token');
+        localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
         window.location.href = '/login';
         return Promise.reject(refreshError);

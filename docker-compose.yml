@@ -54,6 +54,31 @@ services:
       timeout: 5s
       retries: 10
 
+  # ---------------------------------------------------------------- auth database
+  # A separate PostgreSQL instance from order-service's, not just a separate schema.
+  # Database per service means a service cannot reach into another's tables even by
+  # accident, and the two can be scaled, backed up and migrated independently.
+  auth-postgres:
+    image: postgres:16-alpine
+    container_name: ecommerce-auth-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${AUTH_POSTGRES_DB:?set AUTH_POSTGRES_DB in .env}
+      POSTGRES_USER: ${AUTH_POSTGRES_USER:?set AUTH_POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${AUTH_POSTGRES_PASSWORD:?set AUTH_POSTGRES_PASSWORD in .env}
+    ports:
+      - "5433:5432"
+    volumes:
+      - auth_postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
   # -------------------------------------------------------------------- Kafka
   # Single node in KRaft mode: the broker is its own controller, so there is no
   # ZooKeeper to run. One node means one replica, which is fine for local work and
@@ -125,6 +150,32 @@ services:
       retries: 12
       start_period: 40s
 
+  # ---------------------------------------------------------------- auth service
+  auth-service:
+    build:
+      context: ./services/auth-service
+    container_name: ecommerce-auth-service
+    restart: unless-stopped
+    environment:
+      SERVER_PORT: 8082
+      AUTH_DATASOURCE_URL: jdbc:postgresql://auth-postgres:5432/${AUTH_POSTGRES_DB}
+      AUTH_DATASOURCE_USERNAME: ${AUTH_POSTGRES_USER}
+      AUTH_DATASOURCE_PASSWORD: ${AUTH_POSTGRES_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+    ports:
+      - "8082:8082"
+    depends_on:
+      auth-postgres:
+        condition: service_healthy
+    networks:
+      - ecommerce
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8082/actuator/health/readiness"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+
   # ----------------------------------------------------------------- the front door
   api-gateway:
     build:
@@ -134,12 +185,15 @@ services:
     environment:
       SERVER_PORT: 8080
       CATALOG_SERVICE_URL: http://catalog-service:8081
+      AUTH_SERVICE_URL: http://auth-service:8082
       GATEWAY_ALLOWED_ORIGINS: ${GATEWAY_ALLOWED_ORIGINS:?set GATEWAY_ALLOWED_ORIGINS in .env}
       JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
     ports:
       - "8080:8080"
     depends_on:
       catalog-service:
+        condition: service_healthy
+      auth-service:
         condition: service_healthy
     networks:
       - ecommerce
@@ -151,6 +205,7 @@ services:
       start_period: 40s
 
 volumes:
+  auth_postgres_data:
   catalog_mongo_data:
   redis_data:
   kafka_data:

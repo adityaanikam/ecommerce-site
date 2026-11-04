@@ -17,7 +17,13 @@ const axiosInstance = axios.create({
 // Add a request interceptor
 axiosInstance.interceptors.request.use(
   (config) => {
-    // Add any request headers here
+    // The gateway authenticates every protected route from this header, so it has to
+    // be here. Before the split this instance sent no Authorization at all, which was
+    // survivable only because every endpoint it reached was public.
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {

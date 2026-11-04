@@ -41,7 +41,10 @@ export interface RegisterRequest {
 
 export interface AuthResponse {
   user: User;
-  token: string;
+  // accessToken, matching what auth-service returns and what services/api already
+  // called it. This was "token" here, so the two halves of the app disagreed about
+  // the same response body.
+  accessToken: string;
   refreshToken: string;
   expiresIn: number;
 }
