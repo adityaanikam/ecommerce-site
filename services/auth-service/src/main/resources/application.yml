@@ -1,0 +1,74 @@
+spring:
+  application:
+    name: auth-service
+
+  datasource:
+    # auth-service owns this database. No other service has a connection string to
+    # it, and nothing else reads the users or refresh_tokens tables.
+    url: ${AUTH_DATASOURCE_URL:jdbc:postgresql://localhost:5433/authdb}
+    username: ${AUTH_DATASOURCE_USERNAME:auth}
+    password: ${AUTH_DATASOURCE_PASSWORD:}
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 3000
+
+  jpa:
+    # Flyway owns the schema. Hibernate must never touch it, or the migrations stop
+    # being the single description of what the database looks like.
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: false
+
+server:
+  port: ${SERVER_PORT:8082}
+  shutdown: graceful
+
+jwt:
+  # No default. The service refuses to start without it, rather than signing tokens
+  # with a secret that is public in Git.
+  secret: ${JWT_SECRET}
+  issuer: ecommerce-auth
+  # Short-lived access token, long-lived rotating refresh token. The access token is
+  # not checked against the database on each request, so its lifetime is how long a
+  # revocation takes to land.
+  access-token-ttl: ${JWT_ACCESS_TOKEN_TTL:PT15M}
+  refresh-token-ttl: ${JWT_REFRESH_TOKEN_TTL:P7D}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  metrics:
+    tags:
+      application: auth-service
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [auth-service] [%X{correlationId:-no-correlation-id}] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    com.ecommerce.auth: INFO
