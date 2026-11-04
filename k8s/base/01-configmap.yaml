@@ -1,0 +1,31 @@
+# Non-secret configuration shared by the services.
+#
+# Only things that are safe to read go here. Every password and the JWT secret live
+# in the Secret, which is a template with no real values in it.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecommerce-config
+  namespace: ecommerce
+  labels:
+    app.kubernetes.io/part-of: ecommerce
+data:
+  # Service discovery. In-cluster DNS, so a service is reached by its Service name.
+  CATALOG_SERVICE_URL: "http://catalog-service:8081"
+  AUTH_SERVICE_URL: "http://auth-service:8082"
+  ORDER_SERVICE_URL: "http://order-service:8083"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+
+  KAFKA_ORDER_PLACED_TOPIC: "order-placed"
+
+  # Browser origins allowed to call the gateway. Replace with the real frontend
+  # origin before deploying. There is deliberately no wildcard: an unset or wrong
+  # value fails closed rather than opening the API to everyone.
+  GATEWAY_ALLOWED_ORIGINS: "https://example.invalid"
+
+  CATALOG_IMAGES_BASE_PATH: "/app/Products"
+  OUTBOX_POLL_INTERVAL_MS: "1000"
+  CATALOG_CONNECT_TIMEOUT_MS: "1000"
+  CATALOG_READ_TIMEOUT_MS: "2000"

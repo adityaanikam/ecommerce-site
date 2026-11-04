@@ -1,0 +1,74 @@
+# Redis, used by catalog-service as a cache only.
+#
+# A Deployment rather than a StatefulSet, and no persistent volume, because
+# everything in here is a cache: losing it costs a few slower requests while it
+# refills, not data. That is also why catalog-service degrades to MongoDB when
+# Redis is unreachable rather than failing.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: ecommerce
+  labels:
+    app: redis
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7.2-alpine
+          command:
+            - redis-server
+            - --save
+            - ""
+            - --appendonly
+            - "no"
+            - --requirepass
+            - $(REDIS_PASSWORD)
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: REDIS_PASSWORD
+          ports:
+            - name: redis
+              containerPort: 6379
+          readinessProbe:
+            exec:
+              command: ["sh", "-c", "redis-cli -a \"$REDIS_PASSWORD\" ping"]
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: redis
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  namespace: ecommerce
+spec:
+  type: ClusterIP
+  selector:
+    app: redis
+  ports:
+    - name: redis
+      port: 6379
+      targetPort: redis

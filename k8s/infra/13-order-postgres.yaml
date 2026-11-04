@@ -1,0 +1,93 @@
+# PostgreSQL for order-service.
+#
+# A separate instance from the other service's, not just a separate database on a
+# shared server. Database per service means neither can reach the other's tables
+# even by accident, and they can be backed up, migrated and scaled apart. In a real
+# deployment both of these would be managed databases rather than pods.
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: order-postgres
+  namespace: ecommerce
+  labels:
+    app: order-postgres
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  serviceName: order-postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-postgres
+  template:
+    metadata:
+      labels:
+        app: order-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          ports:
+            - name: postgres
+              containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: ORDER_POSTGRES_DB
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: ORDER_POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: ORDER_POSTGRES_PASSWORD
+            # The default data directory is the mount point itself, and some
+            # volume types put a lost+found in there, which makes initdb refuse to
+            # start. A subdirectory avoids that.
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+          readinessProbe:
+            exec:
+              command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""]
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            exec:
+              command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""]
+            initialDelaySeconds: 30
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 1Gi
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-postgres
+  namespace: ecommerce
+spec:
+  type: ClusterIP
+  selector:
+    app: order-postgres
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: postgres

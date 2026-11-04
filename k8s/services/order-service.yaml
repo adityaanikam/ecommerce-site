@@ -1,0 +1,164 @@
+# Two replicas are safe for the outbox publisher because the claim query
+# uses FOR UPDATE SKIP LOCKED, so each instance takes different rows rather
+# than both publishing the same event.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+  namespace: ecommerce
+  labels:
+    app: order-service
+    app.kubernetes.io/name: order-service
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: order-service
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: order-service
+        app.kubernetes.io/name: order-service
+        app.kubernetes.io/part-of: ecommerce
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8083"
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        runAsGroup: 1001
+      containers:
+        - name: order-service
+          image: ecommerce/order-service:latest
+          # Change to Always once images are pushed to a registry with real tags.
+          # IfNotPresent is what lets a locally built image be used in kind or
+          # minikube without a registry at all.
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8083
+          env:
+            - name: SERVER_PORT
+              value: "8083"
+            - name: CATALOG_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: CATALOG_SERVICE_URL
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: KAFKA_BOOTSTRAP_SERVERS
+            - name: KAFKA_ORDER_PLACED_TOPIC
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: KAFKA_ORDER_PLACED_TOPIC
+            - name: OUTBOX_POLL_INTERVAL_MS
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: OUTBOX_POLL_INTERVAL_MS
+            - name: CATALOG_CONNECT_TIMEOUT_MS
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: CATALOG_CONNECT_TIMEOUT_MS
+            - name: CATALOG_READ_TIMEOUT_MS
+              valueFrom:
+                configMapKeyRef:
+                  name: ecommerce-config
+                  key: CATALOG_READ_TIMEOUT_MS
+            - name: ORDER_POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: ORDER_POSTGRES_DB
+            - name: ORDER_DATASOURCE_URL
+              value: "jdbc:postgresql://order-postgres:5432/$(ORDER_POSTGRES_DB)"
+            - name: ORDER_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: ORDER_POSTGRES_USER
+            - name: ORDER_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecommerce-secrets
+                  key: ORDER_POSTGRES_PASSWORD
+          # Three different probes because they answer three different questions.
+          #
+          # startup: "has it finished booting?" A JVM with Flyway migrations can take
+          # 30 seconds, and without this the liveness probe would kill it mid-start
+          # and loop for ever.
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 5
+            failureThreshold: 30
+          # liveness: "is it wedged?" Only a restart fixes this, so it points at
+          # liveness and NOT at readiness. Pointing it at readiness would restart a
+          # healthy service whenever its database blipped, turning a brief dependency
+          # outage into a restart loop.
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          # readiness: "should it get traffic right now?" This one does include the
+          # dependency checks, so a service whose database is unreachable is taken
+          # out of the Service's endpoints instead of returning errors.
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: http
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 512Mi
+            limits:
+              # No CPU limit on purpose: CPU is compressible, and a limit mostly
+              # causes throttling during JIT warm-up and GC. Memory is not
+              # compressible, so that one is capped.
+              memory: 1Gi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            capabilities:
+              drop:
+                - ALL
+      # Long enough for in-flight requests to finish; the services are configured
+      # with server.shutdown=graceful.
+      terminationGracePeriodSeconds: 40
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  namespace: ecommerce
+  labels:
+    app: order-service
+    app.kubernetes.io/part-of: ecommerce
+spec:
+  type: ClusterIP
+  selector:
+    app: order-service
+  ports:
+    - name: http
+      port: 8083
+      targetPort: http
