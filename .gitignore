@@ -5,7 +5,14 @@ node_modules/
 # Build outputs
 dist/
 build/
-target/
+
+# Maven build output, anchored per module so a source directory named
+# "target" is never ignored by accident.
+/backend/target/
+/services/api-gateway/target/
+/services/catalog-service/target/
+/services/auth-service/target/
+/services/order-service/target/
 
 # Environment variables
 .env
