@@ -1,0 +1,125 @@
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    # order-service owns this database. auth-service has its own, on a different
+    # instance. No service reads another service's tables.
+    url: ${ORDER_DATASOURCE_URL:jdbc:postgresql://localhost:5434/orderdb}
+    username: ${ORDER_DATASOURCE_USERNAME:orders}
+    password: ${ORDER_DATASOURCE_PASSWORD:}
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 3000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # Wait for all in-sync replicas. The outbox row is only marked published once
+      # the broker has acknowledged, so a weaker ack would mean marking rows done
+      # that could still be lost.
+      acks: all
+      retries: 3
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+        delivery.timeout.ms: 15000
+        request.timeout.ms: 5000
+
+server:
+  port: ${SERVER_PORT:8083}
+  shutdown: graceful
+
+order:
+  catalog:
+    base-url: ${CATALOG_SERVICE_URL:http://localhost:8081}
+    # A catalog that does not answer costs one second to connect and two to read,
+    # not a request thread held for ever. The JDK default is no timeout at all.
+    connect-timeout-ms: ${CATALOG_CONNECT_TIMEOUT_MS:1000}
+    read-timeout-ms: ${CATALOG_READ_TIMEOUT_MS:2000}
+  outbox:
+    topic: ${KAFKA_ORDER_PLACED_TOPIC:order-placed}
+    poll-interval-ms: ${OUTBOX_POLL_INTERVAL_MS:1000}
+    batch-size: 50
+    send-timeout-seconds: 10
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      catalog:
+        # Count based rather than time based, so behaviour is the same under light
+        # and heavy traffic and is easy to reason about in a test.
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        # Once open, stop calling for 10 seconds, then let 3 trial calls through to
+        # see whether the catalog has recovered.
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+        register-health-indicator: true
+        # An ignore list, not a record list. With record-exceptions, anything NOT
+        # named is counted as a SUCCESS, so a failure mode nobody anticipated would
+        # leave the breaker closed for ever while every call failed. Recording
+        # everything by default and naming only the exceptions that mean "the
+        # catalog answered, the request was wrong" fails safe instead.
+        ignore-exceptions:
+          - org.springframework.web.client.HttpClientErrorException
+  retry:
+    instances:
+      catalog:
+        # One retry, for the single dropped connection. More than that just makes a
+        # struggling dependency worse, which is what the breaker is for.
+        max-attempts: 2
+        wait-duration: 200ms
+        retry-exceptions:
+          - org.springframework.web.client.ResourceAccessException
+          - java.io.IOException
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,circuitbreakers
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+    circuitbreakers:
+      enabled: true
+  metrics:
+    tags:
+      application: order-service
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [order-service] [%X{correlationId:-no-correlation-id}] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    com.ecommerce.order: INFO

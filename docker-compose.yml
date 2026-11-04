@@ -79,6 +79,29 @@ services:
       retries: 10
       start_period: 20s
 
+  # --------------------------------------------------------------- order database
+  # Its own instance, separate from auth's. Database per service.
+  order-postgres:
+    image: postgres:16-alpine
+    container_name: ecommerce-order-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${ORDER_POSTGRES_DB:?set ORDER_POSTGRES_DB in .env}
+      POSTGRES_USER: ${ORDER_POSTGRES_USER:?set ORDER_POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${ORDER_POSTGRES_PASSWORD:?set ORDER_POSTGRES_PASSWORD in .env}
+    ports:
+      - "5434:5432"
+    volumes:
+      - order_postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
   # -------------------------------------------------------------------- Kafka
   # Single node in KRaft mode: the broker is its own controller, so there is no
   # ZooKeeper to run. One node means one replica, which is fine for local work and
@@ -176,6 +199,39 @@ services:
       retries: 12
       start_period: 40s
 
+  # --------------------------------------------------------------- order service
+  order-service:
+    build:
+      context: ./services/order-service
+    container_name: ecommerce-order-service
+    restart: unless-stopped
+    environment:
+      SERVER_PORT: 8083
+      ORDER_DATASOURCE_URL: jdbc:postgresql://order-postgres:5432/${ORDER_POSTGRES_DB}
+      ORDER_DATASOURCE_USERNAME: ${ORDER_POSTGRES_USER}
+      ORDER_DATASOURCE_PASSWORD: ${ORDER_POSTGRES_PASSWORD}
+      # Called synchronously for prices and stock, behind a timeout and a circuit
+      # breaker. This is the only service-to-service HTTP call in the system.
+      CATALOG_SERVICE_URL: http://catalog-service:8081
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    ports:
+      - "8083:8083"
+    depends_on:
+      order-postgres:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      catalog-service:
+        condition: service_healthy
+    networks:
+      - ecommerce
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8083/actuator/health/readiness"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+
   # ----------------------------------------------------------------- the front door
   api-gateway:
     build:
@@ -186,6 +242,7 @@ services:
       SERVER_PORT: 8080
       CATALOG_SERVICE_URL: http://catalog-service:8081
       AUTH_SERVICE_URL: http://auth-service:8082
+      ORDER_SERVICE_URL: http://order-service:8083
       GATEWAY_ALLOWED_ORIGINS: ${GATEWAY_ALLOWED_ORIGINS:?set GATEWAY_ALLOWED_ORIGINS in .env}
       JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
     ports:
@@ -194,6 +251,8 @@ services:
       catalog-service:
         condition: service_healthy
       auth-service:
+        condition: service_healthy
+      order-service:
         condition: service_healthy
     networks:
       - ecommerce
@@ -206,6 +265,7 @@ services:
 
 volumes:
   auth_postgres_data:
+  order_postgres_data:
   catalog_mongo_data:
   redis_data:
   kafka_data:
